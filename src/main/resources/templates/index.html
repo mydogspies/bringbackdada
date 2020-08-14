@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Bringbackdada Index</title>
-    <link rel="stylesheet" th:href="@{/resources/css/main.css}" />
+<!DOCTYPE HTML>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head th:replace="fragments/layout :: head_tag">
+    <title>index</title>
 </head>
+
 <body>
-    <h1>Bringbackdada Index</h1>
+
+<h1 th:replace="fragments/layout :: h1_text">THIS IS INDEX</h1>
 </body>
 </html>
