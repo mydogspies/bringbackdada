@@ -15,7 +15,7 @@ public class IndexController {
 
     private final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    @RequestMapping({"", "/", "index"})
+    @RequestMapping({"", "/", "index", "index.html"})
     public String getIndexPage(){
         logger.info("--> Called index.html");
         return "index";

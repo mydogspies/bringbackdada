@@ -686,3 +686,15 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [about
 2020-08-14 12:14:31,158 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
 2020-08-14 12:14:31,160 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 0.551 seconds (JVM running for 309.515)
 2020-08-14 12:14:31,161 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-08-14 14:02:43,350 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-14 14:02:43,351 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-08-14 14:02:43,353 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2020-08-14 14:02:43,358 INFO com.bringbackdada.site.controllers.AboutController [http-nio-8080-exec-1] --> Calling about.html
+2020-08-14 14:02:55,296 INFO com.bringbackdada.site.controllers.AboutController [http-nio-8080-exec-2] --> Calling about.html
+2020-08-14 14:02:58,579 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-14 14:07:54,428 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-9] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-14 14:07:54,428 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-9] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-14 14:07:54,428 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-9] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-14 14:07:54,630 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-9] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2020-08-14 14:07:54,630 INFO com.zaxxer.hikari.HikariDataSource [Thread-9] HikariPool-2 - Shutdown initiated...
+2020-08-14 14:07:54,631 INFO com.zaxxer.hikari.HikariDataSource [Thread-9] HikariPool-2 - Shutdown completed.
