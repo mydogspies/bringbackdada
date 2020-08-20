@@ -1,13 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+<!--@thymesVar id="title_text" type="String"-->
+<!--*/-->
+
 <head th:fragment="head_tag">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bringbackdada - photography - v0.0.1 pre-release</title>
+    <title th:text="${title_text}">Bringbackdada - Error in dynamic title</title>
 
     <link rel="stylesheet" th:href="@{/resources/css/main.css}"/>
 
@@ -19,8 +23,15 @@
     <h1>-- header placeholder --</h1>
 </div>
 
-<div th:fragment="gallery">
-    <h1>-- gallery component placeholder</h1>
+<div class="grid_gallery" th:fragment="gallery">
+    <div><img th:src="@{/images/projects/nudes/bbd_20.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/nudes/bbd_21.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/nudes/bbd_22.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/nudes/bbd_24.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/nudes/LS_shoot_30032017_4.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/rope_one/bbd_6.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/rope_one/bbd_7.jpg}" height="400px"/></div>
+    <div><img th:src="@{/images/projects/rope_one/bbd_9.jpg}" height="400px"/></div>
 </div>
 
 <div th:fragment="footer">
