@@ -1,0 +1,5 @@
+INSERT INTO tags (tag) VALUES ('3d')
+INSERT INTO tags (tag) VALUES ('spring')
+INSERT INTO tags (tag) VALUES ('design')
+INSERT INTO tags (tag) VALUES ('photography')
+INSERT INTO tags (tag) VALUES ('nature')
