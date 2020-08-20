@@ -22,9 +22,6 @@ public class Blog {
     @Enumerated(value = EnumType.STRING)
     private Set<ContentCategory> category;
 
-    public Blog() {
-    }
-
     public Long getId() {
         return id;
     }

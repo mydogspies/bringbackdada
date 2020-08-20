@@ -34,6 +34,31 @@
     <div><img th:src="@{/images/projects/rope_one/bbd_9.jpg}" height="400px"/></div>
 </div>
 
+<div class="project_table" th:fragment="projects">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Gallery</th>
+            <th>Creator</th>
+            <th>Blog</th>
+            <th>Description</th>
+            <th>Tags</th>
+        </tr>
+        <tr th:each="project:${projects}">
+            <td th:text="${project.id}">n/a</td>
+            <td th:text="${project.name}">n/a</td>
+            <td th:text="${project.projectCategory}">n/a</td>
+            <td th:text="${project.gallery}">n/a</td>
+            <td th:text="${project.creator}">n/a</td>
+            <td th:text="${project.blog}">n/a</td>
+            <td th:text="${project.description}">n/a</td>
+            <td th:text="${project.tags}">n/a</td>
+        </tr>
+    </table>
+</div>
+
 <div th:fragment="footer">
     <h1>-- footer placeholder --</h1>
 </div>

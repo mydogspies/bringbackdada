@@ -2,6 +2,7 @@ package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.model.Tags;
 import com.bringbackdada.site.repositories.TagsRepository;
+import com.bringbackdada.site.services.ProjectService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,19 +20,17 @@ public class IndexController {
 
     private final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    private TagsRepository tagsRepository;
+    private final ProjectService projectService;
 
-    public IndexController(TagsRepository tagsRepository) {
-        this.tagsRepository = tagsRepository;
+    public IndexController(ProjectService projectService) {
+        this.projectService = projectService;
     }
 
     @RequestMapping({"", "/", "index", "index.html"})
     public String getIndexPage(Model model){
 
-        Optional<Tags> tags = tagsRepository.findById(1L);
-        model.addAttribute("tag", tags.get().getTag());
-
         model.addAttribute("title_text", "Bringbackdada - INDEX");
+        model.addAttribute("projects", projectService.findAll());
 
         logger.info("--> Called index.html");
         return "index";

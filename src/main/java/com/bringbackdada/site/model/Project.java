@@ -10,6 +10,9 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
+    @Enumerated(value = EnumType.STRING)
     private ProjectCategory projectCategory;
 
     @OneToMany
@@ -23,12 +26,23 @@ public class Project {
 
     private String description;
 
+    @ManyToMany
+    private Set<Tags> tags;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public ProjectCategory getProjectCategory() {
@@ -69,5 +83,13 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Tags> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<Tags> tags) {
+        this.tags = tags;
     }
 }

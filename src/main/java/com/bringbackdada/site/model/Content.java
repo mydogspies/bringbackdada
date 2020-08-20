@@ -9,24 +9,24 @@ public class Content {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long projectId;
 
     private String contentTitle;
 
-    @ManyToMany(mappedBy = "content")
-    private Set<Creator> creatorId;
+    @JoinTable
+    @ManyToMany
+    private Set<Creator> creator;
 
-    @ManyToMany(mappedBy = "content")
-    private Set<Model> modelId;
+    @JoinTable
+    @ManyToMany
+    private Set<Model> model;
 
-    @ManyToMany(mappedBy = "content")
-    private Set<Gallery> gallery;
-
+    @Enumerated(value = EnumType.STRING)
     private ContentCategory category;
+
     private String contentFile;
     private String contentUrl;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private License license;
 
     @Lob
@@ -34,14 +34,6 @@ public class Content {
 
     @ManyToMany
     private Set<Tags> tags;
-
-    public String getContentTitle() {
-        return contentTitle;
-    }
-
-    public void setContentTitle(String contentTitle) {
-        this.contentTitle = contentTitle;
-    }
 
     public Long getId() {
         return id;
@@ -51,36 +43,28 @@ public class Content {
         this.id = id;
     }
 
-    public Long getProjectId() {
-        return projectId;
+    public String getContentTitle() {
+        return contentTitle;
     }
 
-    public void setProjectId(Long projectId) {
-        this.projectId = projectId;
+    public void setContentTitle(String contentTitle) {
+        this.contentTitle = contentTitle;
     }
 
-    public Set<Creator> getCreatorId() {
-        return creatorId;
+    public Set<Creator> getCreator() {
+        return creator;
     }
 
-    public void setCreatorId(Set<Creator> creatorId) {
-        this.creatorId = creatorId;
+    public void setCreator(Set<Creator> creator) {
+        this.creator = creator;
     }
 
-    public Set<Model> getModelId() {
-        return modelId;
+    public Set<Model> getModel() {
+        return model;
     }
 
-    public void setModelId(Set<Model> modelId) {
-        this.modelId = modelId;
-    }
-
-    public Set<Gallery> getGallery() {
-        return gallery;
-    }
-
-    public void setGallery(Set<Gallery> gallery) {
-        this.gallery = gallery;
+    public void setModel(Set<Model> model) {
+        this.model = model;
     }
 
     public ContentCategory getCategory() {

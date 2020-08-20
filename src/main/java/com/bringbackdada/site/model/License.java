@@ -9,8 +9,12 @@ public class License {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(value = EnumType.STRING)
     private LicenseCategory category;
+
     private String url;
+
+    @Lob
     private String shortDescription;
 
     public Long getId() {

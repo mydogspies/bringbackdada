@@ -18,14 +18,14 @@ public class DataInitializer {
 
     private final Logger logger = LoggerFactory.getLogger(DataInitializer.class);
 
-    private BlogRepository blogRepository;
-    private ContentRepository contentRepository;
-    private CreatorRepository creatorRepository;
-    private GalleryRepository galleryRepository;
-    private LicenseRepository licenseRepository;
-    private ModelRepository modelRepository;
-    private ProjectRepository projectRepository;
-    private TagsRepository tagsRepository;
+    private final BlogRepository blogRepository;
+    private final ContentRepository contentRepository;
+    private final CreatorRepository creatorRepository;
+    private final GalleryRepository galleryRepository;
+    private final LicenseRepository licenseRepository;
+    private final ModelRepository modelRepository;
+    private final ProjectRepository projectRepository;
+    private final TagsRepository tagsRepository;
 
     public DataInitializer(BlogRepository blogRepository,
                            ContentRepository contentRepository,
