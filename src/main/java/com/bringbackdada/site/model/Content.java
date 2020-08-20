@@ -11,6 +11,8 @@ public class Content {
     private Long id;
     private Long projectId;
 
+    private String contentTitle;
+
     @ManyToMany(mappedBy = "content")
     private Set<Creator> creatorId;
 
@@ -32,6 +34,14 @@ public class Content {
 
     @ManyToMany
     private Set<Tags> tags;
+
+    public String getContentTitle() {
+        return contentTitle;
+    }
+
+    public void setContentTitle(String contentTitle) {
+        this.contentTitle = contentTitle;
+    }
 
     public Long getId() {
         return id;

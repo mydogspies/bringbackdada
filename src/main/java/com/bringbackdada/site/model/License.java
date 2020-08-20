@@ -1,7 +1,6 @@
 package com.bringbackdada.site.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class License {

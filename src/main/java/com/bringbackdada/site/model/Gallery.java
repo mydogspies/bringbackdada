@@ -29,12 +29,20 @@ public class Gallery {
         this.id = id;
     }
 
-    public Set<Content> getContents() {
+    public Set<Content> getContent() {
         return content;
     }
 
-    public void setContents(Set<Content> contents) {
-        this.content = contents;
+    public void setContent(Set<Content> content) {
+        this.content = content;
+    }
+
+    public Set<Project> getProject() {
+        return project;
+    }
+
+    public void setProject(Set<Project> project) {
+        this.project = project;
     }
 
     public String getDescription() {
