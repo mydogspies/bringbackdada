@@ -10,14 +10,9 @@ public class Gallery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JoinTable
     @ManyToMany
-    @JoinTable(name = "gallery_content",
-            joinColumns = @JoinColumn(name = "content_id"),
-            inverseJoinColumns = @JoinColumn(name = "gallery_id"))
     private Set<Content> content;
-
-    @ManyToMany
-    private Set<Project> project;
     
     private String description;
 
@@ -29,12 +24,12 @@ public class Gallery {
         this.id = id;
     }
 
-    public Set<Content> getContents() {
+    public Set<Content> getContent() {
         return content;
     }
 
-    public void setContents(Set<Content> contents) {
-        this.content = contents;
+    public void setContent(Set<Content> content) {
+        this.content = content;
     }
 
     public String getDescription() {

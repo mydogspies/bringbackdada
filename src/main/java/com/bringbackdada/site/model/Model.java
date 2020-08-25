@@ -1,7 +1,6 @@
 package com.bringbackdada.site.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 public class Model {
@@ -12,12 +11,6 @@ public class Model {
 
     private String name;
     private String description;
-
-    @ManyToMany
-    @JoinTable(name = "model_content",
-            joinColumns = @JoinColumn(name = "content_id"),
-            inverseJoinColumns = @JoinColumn(name = "model_id"))
-    private Set<Content> content;
 
     public Long getId() {
         return id;
@@ -41,13 +34,5 @@ public class Model {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Set<Content> getContent() {
-        return content;
-    }
-
-    public void setContent(Set<Content> content) {
-        this.content = content;
     }
 }

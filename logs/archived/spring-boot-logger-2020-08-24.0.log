@@ -1,0 +1,368 @@
+2020-08-24 10:39:13,984 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 10:41:56,560 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 10:47:41,874 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 10:48:59,371 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 10:50:18,296 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 10:57:01,717 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 10:57:12,832 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 11:01:29,865 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-24 11:02:36,666 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-24 11:06:31,801 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-24 11:06:48,322 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-24 11:07:11,873 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-24 11:07:11,946 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.SiteApplicationTests], using SpringBootContextLoader
+2020-08-24 11:07:11,950 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.SiteApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-24 11:07:11,951 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.SiteApplicationTests]: SiteApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-24 11:07:12,027 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.SiteApplicationTests
+2020-08-24 11:07:12,128 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-24 11:07:12,141 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@379ce046, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@701bc94e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3d8b319e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@27a97e08, org.springframework.test.context.support.DirtiesContextTestExecutionListener@77e7246b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5918c260, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3d7b1f1c, org.springframework.test.context.event.EventPublishingTestExecutionListener@51ce6f85, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1f44ddab, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5017e1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@65b66b08, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4726927c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7eb6b6b6, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7ed9499e]
+2020-08-24 11:07:12,412 INFO org.springframework.boot.StartupInfoLogger [main] Starting SiteApplicationTests on WZB with PID 7924 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-24 11:07:12,413 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-24 11:07:12,413 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-24 11:07:13,028 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-24 11:07:13,090 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54ms. Found 8 JPA repository interfaces.
+2020-08-24 11:07:13,529 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 11:07:13,551 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-24 11:07:13,735 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-24 11:07:13,812 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-24 11:07:13,878 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-24 11:07:13,921 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-24 11:07:14,219 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-24 11:07:14,714 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-24 11:07:14,721 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 11:07:15,044 INFO com.bringbackdada.site.bootstrap.DataInitializer [main] Default NULL entries initialized in the database
+2020-08-24 11:07:15,050 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CREATOR added to database
+2020-08-24 11:07:15,053 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data MODEL added to database
+2020-08-24 11:07:15,055 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data LICENSE added to database
+2020-08-24 11:07:15,181 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CONTENT added to database
+2020-08-24 11:07:15,186 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data GALLERY added to database
+2020-08-24 11:07:15,198 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 11:07:15,206 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 11:07:15,359 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-24 11:07:15,596 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-24 11:07:16,476 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-24 11:07:16,477 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-24 11:07:16,487 INFO org.springframework.boot.StartupInfoLogger [main] Started SiteApplicationTests in 4.304 seconds (JVM running for 5.632)
+2020-08-24 11:07:16,489 INFO com.bringbackdada.site.DataLoader [main] DataLoader executed
+2020-08-24 11:07:16,566 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-24 11:07:16,568 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 11:07:16,575 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 11:07:16,575 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-24 11:07:16,584 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 11:07:16,585 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-24 11:07:16,588 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-24 11:45:23,946 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 11:47:11,237 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 11:47:59,942 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 11:49:15,356 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 11:50:20,601 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 11:54:41,706 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 11:55:29,975 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:00:24,169 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:00:44,379 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:01:32,001 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:10:13,508 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:14:45,195 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:19:15,845 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:19:40,407 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:20:47,982 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:22:09,536 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:22:10,151 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:24:22,469 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:25:44,002 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:26:20,718 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:26:20,738 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:28:59,355 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:28:59,374 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:28:59,376 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:30:14,107 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:30:14,126 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:30:14,128 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:30:14,141 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:32:37,631 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:32:37,649 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:32:37,651 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:33:37,966 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:33:37,994 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:33:38,001 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:33:38,004 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:38:09,247 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:38:09,264 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:38:09,270 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:38:09,272 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:39:23,097 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:39:23,114 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:39:23,120 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 12:39:23,122 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:07:30,177 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-24 13:07:30,237 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.SiteApplicationTests], using SpringBootContextLoader
+2020-08-24 13:07:30,241 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.SiteApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-24 13:07:30,241 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.SiteApplicationTests]: SiteApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-24 13:07:30,307 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.SiteApplicationTests
+2020-08-24 13:07:30,391 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-24 13:07:30,401 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@244e619a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@10acd6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@61dde151, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@b25b095, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5cb042da, org.springframework.test.context.transaction.TransactionalTestExecutionListener@59c33386, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@571a9686, org.springframework.test.context.event.EventPublishingTestExecutionListener@719d35e8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2f651f93, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6ffa56fa, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6c575325, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@747d1932, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@736309a9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4e93dcb9]
+2020-08-24 13:07:30,621 INFO org.springframework.boot.StartupInfoLogger [main] Starting SiteApplicationTests on WZB with PID 3788 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-24 13:07:30,621 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-24 13:07:30,622 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-24 13:07:31,169 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-24 13:07:31,223 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46ms. Found 8 JPA repository interfaces.
+2020-08-24 13:07:31,662 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 13:07:31,674 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-24 13:07:31,819 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-24 13:07:31,893 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-24 13:07:31,940 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-24 13:07:31,973 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-24 13:07:32,231 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-24 13:07:32,680 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-24 13:07:32,687 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 13:07:33,018 INFO com.bringbackdada.site.bootstrap.DataInitializer [main] Default NULL entries initialized in the database
+2020-08-24 13:07:33,024 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CREATOR added to database
+2020-08-24 13:07:33,026 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data MODEL added to database
+2020-08-24 13:07:33,028 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data LICENSE added to database
+2020-08-24 13:07:33,163 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CONTENT added to database
+2020-08-24 13:07:33,170 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data GALLERY added to database
+2020-08-24 13:07:33,183 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 13:07:33,194 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 13:07:33,375 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-24 13:07:33,624 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-24 13:07:34,489 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-24 13:07:34,490 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-24 13:07:34,499 INFO org.springframework.boot.StartupInfoLogger [main] Started SiteApplicationTests in 4.07 seconds (JVM running for 5.309)
+2020-08-24 13:07:34,501 INFO com.bringbackdada.site.DataLoader [main] DataLoader executed
+2020-08-24 13:07:34,558 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:07:34,560 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:07:34,566 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:07:34,568 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:07:34,598 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-24 13:07:34,600 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 13:07:34,606 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 13:07:34,607 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-24 13:07:34,615 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 13:07:34,616 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-24 13:07:34,619 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-24 13:59:07,508 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-24 13:59:07,561 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.SiteApplicationTests], using SpringBootContextLoader
+2020-08-24 13:59:07,564 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.SiteApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-24 13:59:07,564 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.SiteApplicationTests]: SiteApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-24 13:59:07,631 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.SiteApplicationTests
+2020-08-24 13:59:07,714 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-24 13:59:07,726 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7ed9499e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@28e19366, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5b275174, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@10ef5fa0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@244e619a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@10acd6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61dde151, org.springframework.test.context.event.EventPublishingTestExecutionListener@b25b095, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5cb042da, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@59c33386, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@571a9686, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@719d35e8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2f651f93, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6ffa56fa]
+2020-08-24 13:59:07,961 INFO org.springframework.boot.StartupInfoLogger [main] Starting SiteApplicationTests on WZB with PID 1912 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-24 13:59:07,962 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-24 13:59:07,962 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-24 13:59:08,521 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-24 13:59:08,573 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46ms. Found 8 JPA repository interfaces.
+2020-08-24 13:59:09,025 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 13:59:09,040 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-24 13:59:09,224 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-24 13:59:09,307 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-24 13:59:09,364 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-24 13:59:09,407 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-24 13:59:09,692 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-24 13:59:10,166 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-24 13:59:10,173 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 13:59:10,499 INFO com.bringbackdada.site.bootstrap.DataInitializer [main] Default NULL entries initialized in the database
+2020-08-24 13:59:10,507 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CREATOR added to database
+2020-08-24 13:59:10,509 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data MODEL added to database
+2020-08-24 13:59:10,511 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data LICENSE added to database
+2020-08-24 13:59:10,644 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CONTENT added to database
+2020-08-24 13:59:10,651 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data GALLERY added to database
+2020-08-24 13:59:10,662 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 13:59:10,672 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 13:59:10,828 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-24 13:59:11,075 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-24 13:59:11,929 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-24 13:59:11,930 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-24 13:59:11,938 INFO org.springframework.boot.StartupInfoLogger [main] Started SiteApplicationTests in 4.185 seconds (JVM running for 5.473)
+2020-08-24 13:59:11,940 INFO com.bringbackdada.site.DataLoader [main] DataLoader executed
+2020-08-24 13:59:11,991 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:59:11,992 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:59:11,999 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:59:12,001 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 13:59:12,029 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-24 13:59:12,032 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 13:59:12,040 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 13:59:12,040 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-24 13:59:12,048 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 13:59:12,049 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-24 13:59:12,052 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-24 13:59:58,071 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-24 13:59:58,138 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.SiteApplicationTests], using SpringBootContextLoader
+2020-08-24 13:59:58,141 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.SiteApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-24 13:59:58,142 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.SiteApplicationTests]: SiteApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-24 13:59:58,209 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.SiteApplicationTests
+2020-08-24 13:59:58,291 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-24 13:59:58,302 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2f651f93, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ffa56fa, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6c575325, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@747d1932, org.springframework.test.context.support.DirtiesContextTestExecutionListener@736309a9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e93dcb9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@188b6035, org.springframework.test.context.event.EventPublishingTestExecutionListener@4a34e9f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6f6621e3, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3fc05ea2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7c891ba7, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6240651f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3cf7298d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1ff55ff]
+2020-08-24 13:59:58,534 INFO org.springframework.boot.StartupInfoLogger [main] Starting SiteApplicationTests on WZB with PID 13012 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-24 13:59:58,535 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-24 13:59:58,536 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-24 13:59:59,107 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-24 13:59:59,158 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 45ms. Found 8 JPA repository interfaces.
+2020-08-24 13:59:59,587 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 13:59:59,601 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-24 13:59:59,753 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-24 13:59:59,821 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-24 13:59:59,873 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-24 13:59:59,910 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-24 14:00:00,192 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-24 14:00:00,637 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-24 14:00:00,644 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 14:00:00,948 INFO com.bringbackdada.site.bootstrap.DataInitializer [main] Default NULL entries initialized in the database
+2020-08-24 14:00:00,954 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CREATOR added to database
+2020-08-24 14:00:00,956 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data MODEL added to database
+2020-08-24 14:00:00,958 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data LICENSE added to database
+2020-08-24 14:00:01,086 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CONTENT added to database
+2020-08-24 14:00:01,093 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data GALLERY added to database
+2020-08-24 14:00:01,104 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 14:00:01,113 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-24 14:00:01,261 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-24 14:00:01,486 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-24 14:00:02,367 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-24 14:00:02,369 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-24 14:00:02,379 INFO org.springframework.boot.StartupInfoLogger [main] Started SiteApplicationTests in 4.049 seconds (JVM running for 5.326)
+2020-08-24 14:00:02,381 INFO com.bringbackdada.site.DataLoader [main] DataLoader executed
+2020-08-24 14:00:02,444 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 14:00:02,446 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 14:00:02,453 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 14:00:02,455 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-24 14:00:02,487 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-24 14:00:02,489 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-24 14:00:02,496 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 14:00:02,496 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-24 14:00:02,505 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-24 14:00:02,506 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-24 14:00:02,510 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-24 14:00:32,943 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SiteApplication on WZB with PID 2544 (M:\30_CODING\70_WEB\bringbackdada.com\target\classes started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-24 14:00:32,945 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-24 14:00:32,945 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-24 14:00:33,063 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in M:\30_CODING\97_MAVEN\10_REPOSITORY\com\github\lltyk\dojo-shrinksafe\1.7.2\dojo-shrinksafe-1.7.2.jar referenced one or more files that do not exist: file:/M:/30_CODING/97_MAVEN/10_REPOSITORY/com/github/lltyk/dojo-shrinksafe/1.7.2/js.jar
+2020-08-24 14:00:33,064 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-24 14:00:33,064 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-24 14:00:33,417 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-24 14:00:33,464 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 43ms. Found 8 JPA repository interfaces.
+2020-08-24 14:00:33,811 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-24 14:00:33,817 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-24 14:00:33,818 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-24 14:00:33,818 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-24 14:00:33,884 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-24 14:00:33,884 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 820 ms
+2020-08-24 14:00:33,909 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-24 14:00:33,964 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-24 14:00:33,967 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-08-24 14:00:34,044 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-24 14:00:34,074 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-24 14:00:34,101 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-24 14:00:34,167 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-24 14:00:34,224 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-24 14:00:34,648 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-24 14:00:34,653 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-24 14:00:34,860 INFO com.bringbackdada.site.bootstrap.DataInitializer [restartedMain] Default NULL entries initialized in the database
+2020-08-24 14:00:34,884 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-08-24 14:00:34,888 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CREATOR added to database
+2020-08-24 14:00:34,889 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data MODEL added to database
+2020-08-24 14:00:34,891 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data LICENSE added to database
+2020-08-24 14:00:34,994 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CONTENT added to database
+2020-08-24 14:00:34,999 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data GALLERY added to database
+2020-08-24 14:00:35,006 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-24 14:00:35,014 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-24 14:00:35,036 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-24 14:00:35,144 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-08-24 14:00:35,536 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-24 14:00:35,555 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-24 14:00:35,556 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-24 14:00:35,556 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-24 14:00:35,564 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 2.822 seconds (JVM running for 3.585)
+2020-08-24 14:00:35,566 INFO com.bringbackdada.site.DataLoader [restartedMain] DataLoader executed
+2020-08-24 14:00:37,777 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-24 14:00:37,777 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-08-24 14:00:37,781 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-08-24 14:00:37,798 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 14:04:59,856 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:05:01,651 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 14:05:40,787 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 14:07:08,414 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 14:07:09,386 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:07:10,023 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:07:22,527 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 14:09:15,020 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 14:10:23,064 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:10:54,283 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:12:46,294 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 14:15:18,556 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 14:15:34,391 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called index.html
+2020-08-24 14:17:04,375 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 14:18:16,297 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 14:20:39,834 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:21:04,007 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:23:13,400 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 14:25:12,303 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 14:26:02,117 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:26:36,339 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:26:47,394 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 14:27:52,921 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 14:28:26,885 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 14:29:33,887 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:30:05,837 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 14:30:23,748 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 14:30:30,969 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 14:30:51,872 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:31:18,683 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:32:02,122 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 14:32:31,803 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 14:33:12,956 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 14:34:03,737 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:37:30,721 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 14:37:44,888 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 14:38:25,324 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 14:39:35,712 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:39:59,410 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 14:41:51,784 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 14:42:11,036 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 14:43:45,820 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 14:45:16,219 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 14:48:10,006 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 14:48:51,898 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 14:50:42,605 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called index.html
+2020-08-24 14:52:49,799 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 14:53:55,662 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 14:53:58,275 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 15:03:03,648 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 15:03:43,774 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 15:04:00,876 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 15:04:19,359 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 15:04:36,765 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 15:04:49,667 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 15:05:17,105 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 15:06:10,129 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 15:07:09,567 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 15:07:23,649 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 15:23:01,306 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 15:24:43,991 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 15:25:16,848 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 15:25:18,205 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called index.html
+2020-08-24 15:25:35,258 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 15:25:51,778 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 15:26:18,242 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 15:26:52,419 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 15:27:33,433 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called index.html
+2020-08-24 15:29:26,900 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 15:30:03,488 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 15:30:18,730 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 15:30:37,586 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 15:30:49,905 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called index.html
+2020-08-24 15:31:39,385 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-10] --> Called index.html
+2020-08-24 15:32:12,714 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-24 15:36:51,445 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 15:37:15,258 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called index.html
+2020-08-24 15:37:20,767 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 15:37:57,081 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 15:38:14,258 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
+2020-08-24 15:38:22,225 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-5] --> Called index.html
+2020-08-24 15:38:25,520 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called index.html
+2020-08-24 15:38:46,552 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 15:39:11,480 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 15:41:03,641 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called index.html
+2020-08-24 15:41:23,333 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called index.html
+2020-08-24 15:42:48,785 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-8] --> Called index.html
+2020-08-24 15:43:32,541 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called index.html
+2020-08-24 15:43:47,254 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called index.html
