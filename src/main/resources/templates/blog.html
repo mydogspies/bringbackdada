@@ -5,8 +5,12 @@
     <title>blog</title>
 </head>
 
-<body>
-<h1>// blog page //</h1>
-    <div th:replace="fragments/layout :: footer"></div>
+<body onload="onLoadFuncs()">
+<div class="top_container">
+    <div class="index_grid_container">
+        <div th:replace="fragments/layout :: header_public"></div>
+        <div th:replace="fragments/layout :: footer_public"></div>
+    </div>
+</div>
 </body>
 </html>
