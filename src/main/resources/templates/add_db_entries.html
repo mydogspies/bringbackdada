@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments/layout :: head_tag">
+    <title>index</title>
+</head>
+
+<body>
+
+<div class="top_container">
+<div class="admin_grid_container">
+    <div th:replace="fragments/layout :: header_admin"></div>
+    <div th:replace="fragments/add_db_entries :: creator_input"></div>
+    <div th:replace="fragments/add_db_entries :: model_input"></div>
+    <div th:replace="fragments/add_db_entries :: content_input"></div>
+    <div th:replace="fragments/add_db_entries :: gallery_input"></div>
+    <div th:replace="fragments/add_db_entries :: project_input"></div>
+    <div th:replace="fragments/add_db_entries :: blog_input"></div>
+    <div th:replace="fragments/layout :: footer_admin"></div>
+</div>
+</div>
+>
+</body>
+</html>

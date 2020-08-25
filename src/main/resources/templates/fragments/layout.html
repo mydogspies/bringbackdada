@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 
 <!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
 <!--@thymesVar id="title_text" type="String"-->
@@ -15,12 +15,40 @@
 
     <link rel="stylesheet" th:href="@{/resources/css/main.css}"/>
 
+    <!-- NOTE! ALL FONTS TO BECOME EMBEDDED FOR PRODUCTION!!!!-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-<div th:fragment="header">
-    <h1>-- header placeholder --</h1>
+<!-- HEADER FOR PUBLIC PAGES -->
+<div th:fragment="header_public" class="headers" id="header_public">
+    <div id="header_logo_text">bri+gba*kDADA</div>
+
+    <div class="top_menu" id="home">home</div>
+    <div class="top_menu" id="projects">photography projects</div>
+    <div class="top_menu" id="blog">artist blog</div>
+    <div class="top_menu" id="about">about bringbackdada</div>
+</div>
+
+<!-- FOOTER FOR PUBLIC PAGES -->
+<div th:fragment="footer_public" class="footers" id="footer_public">
+    <div id="footer_copyright"><a href="/" target="_self">home</a> | bri+gba*kDADA 2020 all rights reserved | Creative Commons <a href="https://creativecommons.org/licenses/by-nc/3.0/" target="_blank">CC-BY-NC 3.0</a></div>
+</div>
+
+<!-- HEADER FOR ADMIN PAGES -->
+<div th:fragment="header_admin" class="headers" id="header_admin">
+    <div class="header_admin_grid">
+        <div><a href="/" target="_self">home</a></div>
+    </div>
+</div>
+
+<!-- FOOTER FOR ADMIN PAGES -->
+<div th:fragment="footer_admin" class="footers" id="footer_admin">
+    <div class="footer_admin_grid">
+        <div>-- admin footer placeholder --</div>
+    </div>
 </div>
 
 <div class="grid_gallery" th:fragment="gallery">
@@ -32,35 +60,6 @@
     <div><img th:src="@{/images/projects/rope_one/bbd_6.jpg}" height="400px"/></div>
     <div><img th:src="@{/images/projects/rope_one/bbd_7.jpg}" height="400px"/></div>
     <div><img th:src="@{/images/projects/rope_one/bbd_9.jpg}" height="400px"/></div>
-</div>
-
-<div class="project_table" th:fragment="projects">
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Gallery</th>
-            <th>Creator</th>
-            <th>Blog</th>
-            <th>Description</th>
-            <th>Tags</th>
-        </tr>
-        <tr th:each="project:${projects}">
-            <td th:text="${project.id}">n/a</td>
-            <td th:text="${project.name}">n/a</td>
-            <td th:text="${project.projectCategory}">n/a</td>
-            <td th:text="${project.gallery}">n/a</td>
-            <td th:text="${project.creator}">n/a</td>
-            <td th:text="${project.blog}">n/a</td>
-            <td th:text="${project.description}">n/a</td>
-            <td th:text="${project.tags}">n/a</td>
-        </tr>
-    </table>
-</div>
-
-<div th:fragment="footer">
-    <h1>-- footer placeholder --</h1>
 </div>
 
 </body>

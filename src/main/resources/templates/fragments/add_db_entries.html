@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+<!--@thymesVar id="title_text" type="String"-->
+<!--*/-->
+
+<head th:fragment="head_tag">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title th:text="${title_text}">Bringbackdada.com</title>
+
+    <link rel="stylesheet" th:href="@{/resources/css/main.css}"/>
+
+</head>
+
+<body>
+
+
+<!-- CREATOR INPUT FIELDS -->
+<div class="input_forms" id="creator_input_form" th:fragment="creator_input">
+    <form id="creator_input" th:action="@{/save_creator}" th:object="${creator}" method="post" action="#">
+        <label>Creator name</label><br>
+        <label>
+            <input type="text" th:field="*{name}">
+        </label><br>
+
+        <label>Descriptive text</label><br>
+        <label>
+            <textarea id="creator_text" th:field="*{description}"></textarea>
+        </label><br>
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+<!-- MODEL INPUT FIELDS -->
+<div class="input_forms" id="model_input_form" th:fragment="model_input">
+    <form id="model_input" action="" method="post">
+        <label>Model name</label><br>
+        <label>
+            <input type="text" name="name">
+        </label><br>
+
+        <label>Descriptive text</label><br>
+        <label>
+            <textarea id="model_text" name="description"></textarea>
+        </label><br>
+
+        <button>Add model</button>
+    </form>
+</div>
+
+<!-- CONTENT INPUT FIELDS-->
+<div class="input_forms" id="content_input_form" th:fragment="content_input">
+    <form id="content_input" action="" method="post">
+        <label>Content title</label><br>
+        <label>
+            <input type="text" name="contentTitle">
+        </label><br>
+
+        <label for="creators">Select a creator</label>
+        <select name="creator" id="creators">
+            <option value="null" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
+        </select><br>
+
+        <label for="file">Select a file:</label>
+        <input type="file" id="file" name="contentFile"><br>
+
+        <label for="license">Select a license type</label>
+        <select name="license" id="license">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label>Descriptive text</label><br>
+        <label>
+            <textarea id="content_text" name="description"></textarea>
+        </label><br>
+
+        <button>Add content</button>
+    </form>
+</div>
+
+<!-- GALLERY INPUT FIELDS-->
+<div class="input_forms" id="gallery_input_form" th:fragment="gallery_input">
+    <form id="gallery_input" action="" method="post">
+
+        <label for="content">Select content</label>
+        <select name="content" id="content">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label>Descriptive text</label><br>
+        <label>
+            <textarea id="gallery_text" name="description"></textarea>
+        </label><br>
+
+        <button>Add a gallery</button>
+    </form>
+</div>
+
+<!-- PROJECT INPUT FIELDS-->
+<div class="input_forms" id="project_input_form" th:fragment="project_input">
+    <form id="project_input" action="" method="post">
+        <label>Project title</label><br>
+        <label>
+            <input type="text" name="name">
+        </label><br>
+
+        <label for="category">Select a category</label>
+        <select name="projectCategory" id="category">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label for="gallery">Select a gallery</label>
+        <select name="gallery" id="gallery">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label for="creator">Select a creator</label>
+        <select name="creator" id="creator">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label for="blog">Select a blog</label>
+        <select name="blog" id="blog">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label>Descriptive text</label><br>
+        <label>
+            <textarea id="project_text" name="description"></textarea>
+        </label><br>
+
+        <button>Add a project</button>
+    </form>
+</div>
+
+<!-- MODEL INPUT FIELDS -->
+<div class="input_forms" id="blog_input_form" th:fragment="blog_input">
+    <form id="blog_input" action="" method="post">
+        <label>Blog entry name</label><br>
+        <label>
+            <input type="text" name="entryName">
+        </label><br>
+
+        <label>Blog text</label><br>
+        <label>
+            <textarea id="blog_text" name="entryContent"></textarea>
+        </label><br>
+
+        <label for="blog_creator">Select a creator</label>
+        <select name="creator" id="blog_creator">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <label for="content_category">Select content category/label></label>
+        <select name="category" id="content_category">
+            <option value="null">--placeholder--</option>
+        </select><br>
+
+        <button>Add blog</button>
+    </form>
+</div>
+
+
+</body>
+</html>
