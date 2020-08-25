@@ -1,6 +1,3 @@
-function test() {
-    console.log('THIS IS MY JS FILE!');
-}
 
 /* FUNCTIONS TO BE CALLED ON EVERY LOAD */
 function onLoadFuncs() {
@@ -14,12 +11,14 @@ function styleCurrentPageLink() {
 
     if (page === "") {
         page = "home"
+
+        /* for the special case 'home' link in the footer */
         const footerElement = document.getElementById('afooter')
         console.log(footerElement)
         footerElement.classList.add('onCurrentPage')
     }
 
+    /* and all the cases in the header */
     const element = document.getElementById(page);
     element.classList.add('onCurrentPage');
-
 }
