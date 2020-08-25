@@ -1234,3 +1234,462 @@ Caused by: java.lang.NullPointerException: null
 	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
 	... 99 common frames omitted
 2020-08-25 12:26:03,519 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:42:16,856 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SiteApplication on WZB with PID 4044 (M:\30_CODING\70_WEB\bringbackdada.com\target\classes started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:42:16,858 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:42:16,858 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-25 12:42:16,970 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in M:\30_CODING\97_MAVEN\10_REPOSITORY\com\github\lltyk\dojo-shrinksafe\1.7.2\dojo-shrinksafe-1.7.2.jar referenced one or more files that do not exist: file:/M:/30_CODING/97_MAVEN/10_REPOSITORY/com/github/lltyk/dojo-shrinksafe/1.7.2/js.jar
+2020-08-25 12:42:16,971 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-25 12:42:16,971 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-25 12:42:17,318 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-25 12:42:17,361 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 38ms. Found 8 JPA repository interfaces.
+2020-08-25 12:42:17,698 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-25 12:42:17,704 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-25 12:42:17,705 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-25 12:42:17,705 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-25 12:42:17,767 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-25 12:42:17,767 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 796 ms
+2020-08-25 12:42:17,793 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-08-25 12:42:17,850 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-08-25 12:42:17,853 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-08-25 12:42:17,928 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:42:17,957 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-25 12:42:17,982 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-25 12:42:18,042 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-25 12:42:18,094 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-25 12:42:18,510 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-25 12:42:18,515 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:42:18,718 INFO com.bringbackdada.site.bootstrap.DataInitializer [restartedMain] Default NULL entries initialized in the database
+2020-08-25 12:42:18,742 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-08-25 12:42:18,746 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CREATOR added to database
+2020-08-25 12:42:18,747 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data MODEL added to database
+2020-08-25 12:42:18,749 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data LICENSE added to database
+2020-08-25 12:42:18,852 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CONTENT added to database
+2020-08-25 12:42:18,856 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data GALLERY added to database
+2020-08-25 12:42:18,863 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-25 12:42:18,869 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-25 12:42:18,891 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-25 12:42:18,995 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-08-25 12:42:19,388 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-08-25 12:42:19,403 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-25 12:42:19,404 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-25 12:42:19,405 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-25 12:42:19,413 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 2.762 seconds (JVM running for 3.493)
+2020-08-25 12:42:19,415 INFO com.bringbackdada.site.DataLoader [restartedMain] DataLoader executed
+2020-08-25 12:42:23,197 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-25 12:42:23,197 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-08-25 12:42:23,200 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2020-08-25 12:42:23,216 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-25 12:42:23,426 ERROR org.thymeleaf.TemplateEngine [http-nio-8080-exec-1] [THYMELEAF][http-nio-8080-exec-1] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:64)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.attoparser.ParseException: Error during execution of processor 'org.thymeleaf.spring5.processor.SpringHrefTagProcessor' (template: "fragments/layout" - line 14, col 28)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Error during execution of processor 'org.thymeleaf.spring5.processor.SpringHrefTagProcessor' (template: "fragments/layout" - line 14, col 28)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:117)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.webjars.WebJarAssetLocator.getFullPathExact(WebJarAssetLocator.java:262)
+	at org.springframework.web.servlet.resource.WebJarsResourceResolver.findWebJarResourcePath(WebJarsResourceResolver.java:109)
+	at org.springframework.web.servlet.resource.WebJarsResourceResolver.resolveUrlPathInternal(WebJarsResourceResolver.java:94)
+	at org.springframework.web.servlet.resource.AbstractResourceResolver.resolveUrlPath(AbstractResourceResolver.java:54)
+	at org.springframework.web.servlet.resource.DefaultResourceResolverChain.resolveUrlPath(DefaultResourceResolverChain.java:82)
+	at org.springframework.web.servlet.resource.ResourceUrlProvider.getForLookupPath(ResourceUrlProvider.java:239)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter$ResourceUrlEncodingRequestWrapper.resolveUrlPath(ResourceUrlEncodingFilter.java:124)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter$ResourceUrlEncodingResponseWrapper.encodeURL(ResourceUrlEncodingFilter.java:157)
+	at org.thymeleaf.linkbuilder.StandardLinkBuilder.processLink(StandardLinkBuilder.java:528)
+	at org.thymeleaf.linkbuilder.StandardLinkBuilder.buildLink(StandardLinkBuilder.java:138)
+	at org.thymeleaf.context.AbstractEngineContext.buildLink(AbstractEngineContext.java:167)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:290)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	... 69 common frames omitted
+2020-08-25 12:42:23,427 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+java.lang.NullPointerException: null
+	at org.webjars.WebJarAssetLocator.getFullPathExact(WebJarAssetLocator.java:262)
+	at org.springframework.web.servlet.resource.WebJarsResourceResolver.findWebJarResourcePath(WebJarsResourceResolver.java:109)
+	at org.springframework.web.servlet.resource.WebJarsResourceResolver.resolveUrlPathInternal(WebJarsResourceResolver.java:94)
+	at org.springframework.web.servlet.resource.AbstractResourceResolver.resolveUrlPath(AbstractResourceResolver.java:54)
+	at org.springframework.web.servlet.resource.DefaultResourceResolverChain.resolveUrlPath(DefaultResourceResolverChain.java:82)
+	at org.springframework.web.servlet.resource.ResourceUrlProvider.getForLookupPath(ResourceUrlProvider.java:239)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter$ResourceUrlEncodingRequestWrapper.resolveUrlPath(ResourceUrlEncodingFilter.java:124)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter$ResourceUrlEncodingResponseWrapper.encodeURL(ResourceUrlEncodingFilter.java:157)
+	at org.thymeleaf.linkbuilder.StandardLinkBuilder.processLink(StandardLinkBuilder.java:528)
+	at org.thymeleaf.linkbuilder.StandardLinkBuilder.buildLink(StandardLinkBuilder.java:138)
+	at org.thymeleaf.context.AbstractEngineContext.buildLink(AbstractEngineContext.java:167)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:290)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.servlet.resource.ResourceUrlEncodingFilter.doFilter(ResourceUrlEncodingFilter.java:64)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-08-25 12:43:20,159 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-5] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:43:20,159 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-5] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-25 12:43:20,175 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-5] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:20,378 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-5] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2020-08-25 12:43:20,378 INFO com.zaxxer.hikari.HikariDataSource [Thread-5] HikariPool-1 - Shutdown initiated...
+2020-08-25 12:43:20,381 INFO com.zaxxer.hikari.HikariDataSource [Thread-5] HikariPool-1 - Shutdown completed.
+2020-08-25 12:43:27,928 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SiteApplication on WZB with PID 4044 (M:\30_CODING\70_WEB\bringbackdada.com\target\classes started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:43:27,929 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:43:27,929 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-25 12:43:28,049 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-25 12:43:28,065 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 16ms. Found 8 JPA repository interfaces.
+2020-08-25 12:43:28,153 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-25 12:43:28,154 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-25 12:43:28,154 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-25 12:43:28,175 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-25 12:43:28,175 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 244 ms
+2020-08-25 12:43:28,193 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Starting...
+2020-08-25 12:43:28,195 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-3 - Start completed.
+2020-08-25 12:43:28,195 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-08-25 12:43:28,217 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:28,222 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-25 12:43:28,229 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-25 12:43:28,329 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-25 12:43:28,330 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:43:28,396 INFO com.bringbackdada.site.bootstrap.DataInitializer [restartedMain] Default NULL entries initialized in the database
+2020-08-25 12:43:28,403 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-08-25 12:43:28,406 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CREATOR added to database
+2020-08-25 12:43:28,406 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data MODEL added to database
+2020-08-25 12:43:28,407 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data LICENSE added to database
+2020-08-25 12:43:28,423 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CONTENT added to database
+2020-08-25 12:43:28,425 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data GALLERY added to database
+2020-08-25 12:43:28,428 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-25 12:43:28,434 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-25 12:43:28,442 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-25 12:43:28,481 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-08-25 12:43:28,810 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-25 12:43:28,810 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-25 12:43:28,810 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-25 12:43:28,814 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 0.916 seconds (JVM running for 72.894)
+2020-08-25 12:43:28,815 INFO com.bringbackdada.site.DataLoader [restartedMain] DataLoader executed
+2020-08-25 12:43:28,816 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-08-25 12:43:29,578 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-25 12:43:29,621 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:43:29,623 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:43:29,628 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:43:29,629 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:43:29,631 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-25 12:43:29,683 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest], using SpringBootContextLoader
+2020-08-25 12:43:29,686 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-25 12:43:29,687 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest]: IndexControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-25 12:43:29,770 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.controllers.IndexControllerIntegrationTest
+2020-08-25 12:43:29,772 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-25 12:43:29,784 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5d1b9c3d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@69e05f61, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49a26d19, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@730e5763, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7275c74b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@19058533, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4315e9af, org.springframework.test.context.event.EventPublishingTestExecutionListener@42210be1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1eb2d371, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2babf189, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@479f2dc2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@dab48d3, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@58a2b4c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7159a5cd]
+2020-08-25 12:43:30,109 INFO org.springframework.boot.StartupInfoLogger [main] Starting IndexControllerIntegrationTest on WZB with PID 9608 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:43:30,109 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:43:30,111 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-25 12:43:30,907 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:30,981 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-25 12:43:31,663 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-08-25 12:43:31,663 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-08-25 12:43:31,675 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 12 ms
+2020-08-25 12:43:31,700 INFO org.springframework.boot.StartupInfoLogger [main] Started IndexControllerIntegrationTest in 1.888 seconds (JVM running for 3.077)
+2020-08-25 12:43:31,747 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-25 12:43:32,027 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-25 12:43:32,059 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.SiteApplicationTests], using SpringBootContextLoader
+2020-08-25 12:43:32,060 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.SiteApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-25 12:43:32,060 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.SiteApplicationTests]: SiteApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-25 12:43:32,064 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.SiteApplicationTests
+2020-08-25 12:43:32,067 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-25 12:43:32,067 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@55f6f965, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@40ddf339, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@c83ed77, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@d271a54, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ff8e744, org.springframework.test.context.transaction.TransactionalTestExecutionListener@409395b9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@53e82089, org.springframework.test.context.event.EventPublishingTestExecutionListener@66a8751a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4ec27c4c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@12200670, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5e80d5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@257b3561, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@78861d9e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6a878778]
+2020-08-25 12:43:32,084 INFO org.springframework.boot.StartupInfoLogger [main] Starting SiteApplicationTests on WZB with PID 9608 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:43:32,084 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:43:32,085 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-25 12:43:32,275 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-25 12:43:32,332 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 50ms. Found 8 JPA repository interfaces.
+2020-08-25 12:43:32,591 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:32,604 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-25 12:43:32,784 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-25 12:43:32,888 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-25 12:43:32,941 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-25 12:43:32,980 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-25 12:43:33,256 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-25 12:43:33,685 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-25 12:43:33,690 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:43:34,028 INFO com.bringbackdada.site.bootstrap.DataInitializer [main] Default NULL entries initialized in the database
+2020-08-25 12:43:34,034 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CREATOR added to database
+2020-08-25 12:43:34,036 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data MODEL added to database
+2020-08-25 12:43:34,039 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data LICENSE added to database
+2020-08-25 12:43:34,203 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CONTENT added to database
+2020-08-25 12:43:34,210 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data GALLERY added to database
+2020-08-25 12:43:34,222 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-25 12:43:34,236 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-25 12:43:34,386 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-25 12:43:34,501 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-25 12:43:35,124 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories�
+2020-08-25 12:43:35,125 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-25 12:43:35,130 INFO org.springframework.boot.StartupInfoLogger [main] Started SiteApplicationTests in 3.061 seconds (JVM running for 6.507)
+2020-08-25 12:43:35,132 INFO com.bringbackdada.site.DataLoader [main] DataLoader executed
+2020-08-25 12:43:35,164 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:35,165 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:43:35,166 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-25 12:43:35,173 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:35,173 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-25 12:43:35,177 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-08-25 12:43:41,040 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-25 12:43:41,041 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-08-25 12:43:41,042 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2020-08-25 12:43:41,043 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called index.html
+2020-08-25 12:43:41,389 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-15] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:43:41,390 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-15] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-25 12:43:41,395 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-15] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:41,595 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [Thread-15] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2020-08-25 12:43:41,595 INFO com.zaxxer.hikari.HikariDataSource [Thread-15] HikariPool-3 - Shutdown initiated...
+2020-08-25 12:43:41,596 INFO com.zaxxer.hikari.HikariDataSource [Thread-15] HikariPool-3 - Shutdown completed.
+2020-08-25 12:43:41,652 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SiteApplication on WZB with PID 4044 (M:\30_CODING\70_WEB\bringbackdada.com\target\classes started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:43:41,652 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:43:41,652 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-08-25 12:43:41,748 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-25 12:43:41,763 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 14ms. Found 8 JPA repository interfaces.
+2020-08-25 12:43:41,823 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-08-25 12:43:41,824 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-08-25 12:43:41,824 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-25 12:43:41,838 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-08-25 12:43:41,838 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 185 ms
+2020-08-25 12:43:41,851 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-4 - Starting...
+2020-08-25 12:43:41,852 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-4 - Start completed.
+2020-08-25 12:43:41,852 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-08-25 12:43:41,869 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:43:41,874 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-25 12:43:41,880 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-25 12:43:41,945 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-25 12:43:41,946 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:43:41,999 INFO com.bringbackdada.site.bootstrap.DataInitializer [restartedMain] Default NULL entries initialized in the database
+2020-08-25 12:43:42,005 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-08-25 12:43:42,007 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CREATOR added to database
+2020-08-25 12:43:42,008 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data MODEL added to database
+2020-08-25 12:43:42,008 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data LICENSE added to database
+2020-08-25 12:43:42,021 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data CONTENT added to database
+2020-08-25 12:43:42,023 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data GALLERY added to database
+2020-08-25 12:43:42,024 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-25 12:43:42,028 INFO com.bringbackdada.site.bootstrap.TestData [restartedMain] TEST data BLOG added to database
+2020-08-25 12:43:42,036 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-25 12:43:42,064 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-08-25 12:43:42,317 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-25 12:43:42,318 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-08-25 12:43:42,318 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-08-25 12:43:42,320 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 0.688 seconds (JVM running for 86.401)
+2020-08-25 12:43:42,321 INFO com.bringbackdada.site.DataLoader [restartedMain] DataLoader executed
+2020-08-25 12:43:42,321 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-08-25 12:44:11,922 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest], using SpringBootContextLoader
+2020-08-25 12:44:11,927 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-25 12:44:11,928 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest]: IndexControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-25 12:44:12,021 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.controllers.IndexControllerIntegrationTest
+2020-08-25 12:44:12,023 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-25 12:44:12,036 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@67ab1c47, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@b78a709, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@30bcf3c1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2a3c96e3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@15cafec7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5b444398, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@cb191ca, org.springframework.test.context.event.EventPublishingTestExecutionListener@42f48531, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@a776e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@792bbc74, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@79145d5a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1f2f9244, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4c4d27c8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6821ea29]
+2020-08-25 12:44:12,403 INFO org.springframework.boot.StartupInfoLogger [main] Starting IndexControllerIntegrationTest on WZB with PID 11652 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:44:12,404 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:44:12,407 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-25 12:44:13,286 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:44:13,361 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-25 12:44:14,113 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-08-25 12:44:14,114 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-08-25 12:44:14,124 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 10 ms
+2020-08-25 12:44:14,148 INFO org.springframework.boot.StartupInfoLogger [main] Started IndexControllerIntegrationTest in 2.068 seconds (JVM running for 2.866)
+2020-08-25 12:44:14,420 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-25 12:44:14,699 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:55:32,426 INFO com.bringbackdada.site.controllers.AboutController [main] --> Calling about.html
+2020-08-25 12:55:32,486 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.SiteApplicationTests], using SpringBootContextLoader
+2020-08-25 12:55:32,489 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.SiteApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-25 12:55:32,490 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.SiteApplicationTests]: SiteApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-25 12:55:32,557 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.SiteApplicationTests
+2020-08-25 12:55:32,641 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-25 12:55:32,652 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5eb2172, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@41ffaeb8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@43f0c2d1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5fb65013, org.springframework.test.context.support.DirtiesContextTestExecutionListener@38a1a26, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3fbcfe81, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7a1f45ed, org.springframework.test.context.event.EventPublishingTestExecutionListener@1744a475, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@444cc791, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1c5c616f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1c6c6f24, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2eb917d0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@c6b2dd9, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@73437222]
+2020-08-25 12:55:32,886 INFO org.springframework.boot.StartupInfoLogger [main] Starting SiteApplicationTests on WZB with PID 7432 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:55:32,886 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:55:32,887 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-25 12:55:33,438 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-08-25 12:55:33,492 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 48ms. Found 8 JPA repository interfaces.
+2020-08-25 12:55:33,950 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:55:33,963 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-08-25 12:55:34,128 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-08-25 12:55:34,197 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-08-25 12:55:34,245 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-08-25 12:55:34,287 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-08-25 12:55:34,553 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-08-25 12:55:35,009 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-08-25 12:55:35,017 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:55:35,365 INFO com.bringbackdada.site.bootstrap.DataInitializer [main] Default NULL entries initialized in the database
+2020-08-25 12:55:35,373 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CREATOR added to database
+2020-08-25 12:55:35,375 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data MODEL added to database
+2020-08-25 12:55:35,377 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data LICENSE added to database
+2020-08-25 12:55:35,507 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data CONTENT added to database
+2020-08-25 12:55:35,513 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data GALLERY added to database
+2020-08-25 12:55:35,524 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-25 12:55:35,535 INFO com.bringbackdada.site.bootstrap.TestData [main] TEST data BLOG added to database
+2020-08-25 12:55:35,680 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-08-25 12:55:35,949 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-25 12:55:36,874 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-08-25 12:55:36,875 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-08-25 12:55:36,884 INFO org.springframework.boot.StartupInfoLogger [main] Started SiteApplicationTests in 4.204 seconds (JVM running for 5.458)
+2020-08-25 12:55:36,886 INFO com.bringbackdada.site.DataLoader [main] DataLoader executed
+2020-08-25 12:55:36,966 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:55:36,969 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:55:36,975 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:55:36,977 INFO com.bringbackdada.site.controllers.AdminController [main] --> Called add-project.html
+2020-08-25 12:55:37,006 INFO com.bringbackdada.site.controllers.BlogController [main] --> Calling blog.html
+2020-08-25 12:55:37,011 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-25 12:55:37,016 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest], using SpringBootContextLoader
+2020-08-25 12:55:37,017 INFO org.springframework.test.context.support.AbstractContextLoader [main] Could not detect default resource locations for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-08-25 12:55:37,017 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.bringbackdada.site.controllers.IndexControllerIntegrationTest]: IndexControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-08-25 12:55:37,032 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.bringbackdada.site.SiteApplication for test class com.bringbackdada.site.controllers.IndexControllerIntegrationTest
+2020-08-25 12:55:37,033 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-08-25 12:55:37,033 INFO org.springframework.test.context.support.AbstractTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7fa8fff, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4423692a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2175d53f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@29ae2517, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a78d2aa, org.springframework.test.context.transaction.TransactionalTestExecutionListener@254d8ef6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2a9e7b4d, org.springframework.test.context.event.EventPublishingTestExecutionListener@72406594, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4e1104f4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@76219fe, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5eff5e4c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2fe2fcc2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@69926b6e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@7ea8224b]
+2020-08-25 12:55:37,059 INFO org.springframework.boot.StartupInfoLogger [main] Starting IndexControllerIntegrationTest on WZB with PID 7432 (started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-08-25 12:55:37,059 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 12:55:37,060 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-08-25 12:55:37,295 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:55:37,321 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page template: index
+2020-08-25 12:55:37,779 INFO org.springframework.mock.web.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-08-25 12:55:37,780 INFO org.springframework.web.servlet.FrameworkServlet [main] Initializing Servlet ''
+2020-08-25 12:55:37,788 INFO org.springframework.web.servlet.FrameworkServlet [main] Completed initialization in 8 ms
+2020-08-25 12:55:37,798 INFO org.springframework.boot.StartupInfoLogger [main] Started IndexControllerIntegrationTest in 0.762 seconds (JVM running for 6.372)
+2020-08-25 12:55:37,832 INFO com.bringbackdada.site.controllers.IndexController [main] --> Called index.html
+2020-08-25 12:55:38,099 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:55:38,100 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-25 12:55:38,100 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringContextShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-08-25 12:55:38,106 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 12:55:38,106 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-08-25 12:55:38,109 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
