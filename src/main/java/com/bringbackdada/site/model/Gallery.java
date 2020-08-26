@@ -11,7 +11,7 @@ public class Gallery {
     private Long id;
 
     @JoinTable
-    @ManyToMany
+    @ManyToMany(cascade =  CascadeType.ALL)
     private Set<Content> content;
     
     private String description;

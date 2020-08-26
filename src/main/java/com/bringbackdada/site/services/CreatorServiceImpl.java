@@ -20,16 +20,13 @@ public class CreatorServiceImpl implements CreatorService {
     @Override
     public Set<Creator> findAll() {
         Iterable<Creator> result = creatorRepository.findAll();
-
-        Set<Creator> resultSet =
-                StreamSupport.stream(result.spliterator(), false)
+        Set<Creator> resultSet = StreamSupport.stream(result.spliterator(), false)
                         .collect(Collectors.toSet());
-
         return resultSet;
     }
 
     @Override
-    public Creator findById(Integer integer) {
+    public Creator findById(Long aLong) {
         return null;
     }
 
@@ -45,7 +42,7 @@ public class CreatorServiceImpl implements CreatorService {
     }
 
     @Override
-    public void deleteById(Integer integer) {
+    public void deleteById(Long aLong) {
 
     }
 

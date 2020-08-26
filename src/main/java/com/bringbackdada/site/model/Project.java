@@ -24,10 +24,11 @@ public class Project {
     @OneToMany
     private Set<Blog> blog;
 
+    @Lob
     private String description;
 
     @ManyToMany
-    private Set<Tags> tags;
+    private Set<Tag> tags;
 
     public Long getId() {
         return id;
@@ -85,11 +86,11 @@ public class Project {
         this.description = description;
     }
 
-    public Set<Tags> getTags() {
+    public Set<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(Set<Tags> tags) {
+    public void setTags(Set<Tag> tags) {
         this.tags = tags;
     }
 }

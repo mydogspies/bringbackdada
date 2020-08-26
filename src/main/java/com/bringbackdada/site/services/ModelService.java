@@ -1,6 +1,6 @@
 package com.bringbackdada.site.services;
 
-import org.springframework.ui.Model;
+import com.bringbackdada.site.model.Model;
 
 public interface ModelService extends CrudService<Model, Integer> {
 
