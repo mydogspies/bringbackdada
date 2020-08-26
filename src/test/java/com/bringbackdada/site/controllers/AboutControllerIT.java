@@ -10,7 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.junit.jupiter.api.Assertions.*;
 
 @WebMvcTest(controllers = AboutController.class)
-class AboutControllerIntegrationTest {
+class AboutControllerIT {
 
     @Autowired
     private MockMvc mockMvc;

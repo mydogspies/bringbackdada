@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.repositories.BlogRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -27,7 +28,8 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public Blog findById(Long aLong) {
-        return null;
+        Optional<Blog> blog = blogRepository.findById(aLong);
+        return blog.get();
     }
 
     @Override

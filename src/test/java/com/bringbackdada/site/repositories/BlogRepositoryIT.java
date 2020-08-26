@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-class BlogRepositoryIntegrationTest {
+class BlogRepositoryIT {
 
     @Autowired
     BlogRepository blogRepository;
@@ -26,8 +26,7 @@ class BlogRepositoryIntegrationTest {
 
     @Test
     void findById() {
-
         Optional<Blog> blog = blogRepository.findById(1L);
-
+        assertFalse(blog.isPresent());
     }
 }
