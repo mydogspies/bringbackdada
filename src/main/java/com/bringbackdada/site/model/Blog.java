@@ -13,6 +13,8 @@ public class Blog {
 
     private Date date;
     private String entryName;
+
+    @Lob
     private String entryContent;
 
     @OneToOne

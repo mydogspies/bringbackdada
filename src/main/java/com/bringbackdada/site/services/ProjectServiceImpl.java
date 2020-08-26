@@ -30,7 +30,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Project save(Project object) {
-        return null;
+        projectRepository.save(object);
+        return object;
     }
 
     @Override

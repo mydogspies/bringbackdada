@@ -14,5 +14,4 @@ public interface CrudService<T, ID> {
     void deleteById(ID id);
 
     int count (Set<T> set);
-
 }
