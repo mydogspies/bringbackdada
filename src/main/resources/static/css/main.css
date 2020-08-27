@@ -1,74 +1,163 @@
+
+/* GENERAL */
+
 body {
   background-color: #1d2a32;
   color: #e6f1ff;
 }
+
 a:link {
   color: #ede2de;
   text-decoration: none;
   border-bottom: 1px #ede2de dotted;
 }
+
 a:hover,
 a:active {
   color: #aca19d;
 }
+
 a:active {
   color: #aca19d;
 }
+
+/* ALL THE MAIN CSS GRID CONTAINERS */
+
+/*
+This is the main container for ALL content and it's width is device dependent.
+ */
 .top_container {
+  width: 65vw;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .top_container {width: 75vw;}
+}
+
+@media screen and (max-width: 600px) {
+  .top_container {width: 100%;}
+}
+
+/*
+NOTE! index_grid_container is part of EVERY page called by the browser and should not be defined
+in fragments, only as the container for page specific content. See index.html as template.
+ */
+
+.index_grid_container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.admin_grid_container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* GENERAL PAGE DESIGN */
+
+.page_titles {
+  font-family: 'latoregular', Arial, sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* BLOGS */
+
+.blogs {
   display: flex;
   justify-content: center;
 }
-.index_grid_container {
-  width: 60vw;
+
+/*
+This is the actual blog posts. The top one is full width while the rest are in a
+two column layout. We simply collapse the blog posts at a certain min width to
+a single column.
+ */
+
+#blog_roll {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
-.admin_grid_container {
-  width: 50vw;
-  display: grid;
-  grid-template-columns: 1fr;
+
+@media screen and (max-width: 900px) {
+  #blog_roll {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
-.grid_gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  align-content: center;
-  grid-gap: 1%;
-  grid-column-gap: 1%;
+
+#blog_page_title {
+  grid-column: 1/-1;
 }
+
+#featured_blog {
+  grid-column: 1/-1;
+}
+
+/* FORMS */
+
 .input_forms {
   margin: 10px 0 20px 10px;
 }
+
+/* HEADERS and FOOTERS */
+
 .headers,
 .footers {
   display: flex;
   justify-content: center;
 }
+
+/* The HEADER NAV MENU */
+
+/*
+This is the actual grid that contains the nav menu links on top.
+NOTE! Above a certain width we have condensed the width but since it is
+bugs out below 400 pixels we do it selectively.
+ */
+
+#top_menu_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media screen and (min-width: 500px) {
+  #top_menu_container {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-self: center;
+    justify-self: center;
+  }
+}
+
 #header_public {
   margin-top: 7px;
   display: grid;
-  grid-template-columns: 12% 1fr 1fr 1fr 1fr 15%;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
-#footer_public {
-  margin-top: 10px;
-}
+
 #header_logo_text {
   margin: 0 0 3px 0;
-  grid-column-start: 1;
-  grid-column-end: 7;
+  grid-column: 1/-1;
   place-self: center;
-  font-family: 'Lato', sans-serif;
-  font-size: 24px;
+  font-family: 'latoregular', Arial, sans-serif;
+  font-size: 26px;
 }
+
 .top_menu {
   place-self: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'latoregular', Arial, sans-serif;
   font-size: 16px;
   text-align: center;
 }
-.top_menu#home {
-  grid-column-start: 2;
-}
+
+/*
+These properties together with the styleCurrentPageLink() in scripts.js
+together change the link colors depending on page location.
+ */
+
 .onCurrentPage a:link {
   color: #696c68;
   text-decoration: none;
@@ -76,14 +165,26 @@ a:active {
   pointer-events: none;
   cursor: default;
 }
-.footers#footer_copyright {
-  font-family: 'Lato', sans-serif;
-  font-size: 10px;
+
+/* The FOOTER text and links */
+
+#footer_public {
+  margin-top: 16px;
+  text-align: center;
 }
+
+.footers #footer_copyright {
+  font-family: 'latoregular', Arial, sans-serif;
+  font-size: 15px;
+}
+
+/* The ADMIN headers and footers */
+
 .header_admin_grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
 .footer_admin_grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

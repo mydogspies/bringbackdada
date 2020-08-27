@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -117,6 +117,10 @@ public class DataInitializer {
         tags.add(tag3);
         tags.add(tag4);
 
+        /* DEFAULT "ZERO" CONTENT */
+        Content zeroContent = new Content();
+        contentService.save(zeroContent);
+
         /* CONTENT - PAINTING GALLERY */
         Content content = new Content();
         content.setContentTitle("Portrait of Karl Friedrich Schinkel");
@@ -133,6 +137,7 @@ public class DataInitializer {
         modelSet.add(model);
         content.setModel(modelSet);
         content.setTags(tags);
+        content.setOnFrontPage(false);
         contentService.save(content);
 
         Content content2 = new Content();
@@ -146,7 +151,8 @@ public class DataInitializer {
         content2.setLicense(license);
         content2.setDescription("Schloß am Strom");
         contentGallerySet.add(content2);
-        content.setTags(tags);
+        content2.setTags(tags);
+        content2.setOnFrontPage(true);
         contentService.save(content2);
 
         Content content3 = new Content();
@@ -158,7 +164,8 @@ public class DataInitializer {
         content3.setLicense(license);
         content3.setDescription("Blick auf den Mont Blanc");
         contentGallerySet.add(content3);
-        content.setTags(tags);
+        content3.setTags(tags);
+        content3.setOnFrontPage(true);
         contentService.save(content3);
 
         Content content4 = new Content();
@@ -170,7 +177,8 @@ public class DataInitializer {
         content4.setLicense(license);
         content4.setDescription("Mittelalterliche Stadt an einem Fluss");
         contentGallerySet.add(content4);
-        content.setTags(tags);
+        content4.setTags(tags);
+        content4.setOnFrontPage(true);
         contentService.save(content4);
 
         Content content5 = new Content();
@@ -182,7 +190,8 @@ public class DataInitializer {
         content5.setLicense(license);
         content5.setDescription("Gotische Kirche auf einem Felsen am Meer");
         contentGallerySet.add(content5);
-        content.setTags(tags);
+        content5.setTags(tags);
+        content5.setOnFrontPage(true);
         contentService.save(content5);
 
         Content content6 = new Content();
@@ -194,7 +203,8 @@ public class DataInitializer {
         content6.setLicense(license);
         content6.setDescription("Stage set for Mozart's Magic Flute");
         contentGallerySet.add(content6);
-        content.setTags(tags);
+        content6.setTags(tags);
+        content6.setOnFrontPage(true);
         contentService.save(content6);
 
         Content content60 = new Content();
@@ -206,7 +216,8 @@ public class DataInitializer {
         content60.setLicense(license);
         content60.setDescription("Gotischer Dom am Wasser");
         contentGallerySet.add(content60);
-        content.setTags(tags);
+        content60.setTags(tags);
+        content60.setOnFrontPage(true);
         contentService.save(content60);
 
         /* CONTENT - BUILDING GALLERY */
@@ -219,7 +230,8 @@ public class DataInitializer {
         content7.setLicense(license);
         content7.setDescription("The Altes Museum and Lustgarten in Berlin around 1900");
         buildingGallerySet.add(content7);
-        content.setTags(tags);
+        content7.setTags(tags);
+        content7.setOnFrontPage(true);
         contentService.save(content7);
 
         Content content8 = new Content();
@@ -231,7 +243,8 @@ public class DataInitializer {
         content8.setLicense(license);
         content8.setDescription("Moskowitischer Entwurf Grundriss");
         buildingGallerySet.add(content8);
-        content.setTags(tags);
+        content8.setTags(tags);
+        content8.setOnFrontPage(true);
         contentService.save(content8);
 
         Content content9 = new Content();
@@ -243,7 +256,8 @@ public class DataInitializer {
         content9.setLicense(license);
         content9.setDescription("Konzerthaus in Berlin");
         buildingGallerySet.add(content9);
-        content.setTags(tags);
+        content9.setTags(tags);
+        content9.setOnFrontPage(true);
         contentService.save(content9);
 
         Content content10 = new Content();
@@ -255,7 +269,8 @@ public class DataInitializer {
         content10.setLicense(license);
         content10.setDescription("Nikolaikirche");
         buildingGallerySet.add(content10);
-        content.setTags(tags);
+        content10.setTags(tags);
+        content10.setOnFrontPage(true);
         contentService.save(content10);
 
         Content content11 = new Content();
@@ -267,7 +282,8 @@ public class DataInitializer {
         content11.setLicense(license);
         content11.setDescription("Schloss Stolzenfels");
         buildingGallerySet.add(content11);
-        content.setTags(tags);
+        content10.setTags(tags);
+        content11.setOnFrontPage(true);
         contentService.save(content11);
 
         // re-save with the updated set
@@ -278,24 +294,48 @@ public class DataInitializer {
 
         /* BLOG */
         Blog blog = new Blog();
-        blog.setDate(new Date());
+        blog.setMilliseconds(Instant.now());
         blog.setEntryName("The works of Karl Friedrich Schinkel");
         blog.setEntryContent("Schinkel was born in Neuruppin, Margraviate of Brandenburg. When he was six, his father died in the disastrous Neuruppin fire of 1787. He became a student of architect Friedrich Gilly (1772–1800) (the two became close friends) and his father, David Gilly, in Berlin. After returning to Berlin from his first trip to Italy in 1805, he started to earn his living as a painter. When he saw Caspar David Friedrich's painting Wanderer above the Sea of Fog at the 1810 Berlin art exhibition he decided that he would never reach such mastery of painting and turned to architecture.[citation needed] Working for the stage, in 1816 he created a star-spangled backdrop for the appearance of the \"Königin der Nacht\" in Wolfgang Amadeus Mozart's opera The Magic Flute, which is even quoted in modern productions of this perennial piece. After Napoleon's defeat, Schinkel oversaw the Prussian Building Commission. In this position, he was not only responsible for reshaping the still relatively unspectacular city of Berlin into a representative capital for Prussia, but also oversaw projects in the expanded Prussian territories from the Rhineland in the west to Königsberg in the east, such as New Altstadt Church.[2]\n" +
                 "\n" +
                 "From 1808 to 1817 Schinkel renovated and reconstructed Schloss Rosenau, Coburg, in the Gothic Revival style.[3] He also rebuilt the ruins of Chorin Abbey. ");
+        blog.setContentSnippet(" German architect and painter whose Romantic–Classical creations in other related arts made him the leading arbiter of national aesthetic taste in his lifetime.");
         blog.setCreator(SilenceisgrandCreator);
         Set<ContentCategory> contentCategory = new HashSet<>();
         contentCategory.add(ContentCategory.IMAGE);
         blog.setCategory(contentCategory);
+        blog.setBlogImageId(2L);
         blogService.save(blog);
 
         Blog blog2 = new Blog();
-        blog2.setDate(new Date());
+        blog2.setMilliseconds(Instant.now());
         blog2.setEntryName("Schinkel's architecture");
         blog2.setEntryContent("His most famous extant buildings are found in and around Berlin. These include the Neue Wache (1816–1818), the National Monument for the Liberation Wars (1818–1821), the Schauspielhaus (1819–1821) at the Gendarmenmarkt, which replaced the earlier theatre that was destroyed by fire in 1817, and the Altes Museum on Museum Island (1823–1830). He also carried out improvements to the Crown Prince's Palace and to Schloss Charlottenburg. Schinkel was also responsible for the interior decoration of a number of private Berlin residences. Although the buildings themselves have long been destroyed, portions of a stairwell from the Weydinger House were able to be rescued and built into the Nicolaihaus on Brüderstr. and its formal dining hall into the Palais am Festungsgraben.[2]");
+        blog2.setContentSnippet("Hardly any other architect is as connected to Berlin's buildings and sights as Karl Friedrich Schinkel. Schlossbrücke and Altes Museum are just two of many buildings designed by Schinkel.");
         blog2.setCreator(SilenceisgrandCreator);
         blog2.setCategory(contentCategory);
+        blog2.setBlogImageId(10L);
         blogService.save(blog2);
+
+        Blog blog3 = new Blog();
+        blog3.setMilliseconds(Instant.now());
+        blog3.setEntryName("Charlie Chaplin");
+        blog3.setEntryContent("Sir Charles Spencer Chaplin KBE (16 April 1889 – 25 December 1977) was an English comic actor, filmmaker, and composer who rose to fame in the era of silent film. He became a worldwide icon through his screen persona, \"The Tramp\", and is considered one of the most important figures in the history of the film industry. His career spanned more than 75 years, from childhood in the Victorian era until a year before his death in 1977, and encompassed both adulation and controversy. ");
+        blog3.setContentSnippet("Charlie Chaplin was a comedic British actor who became one of the biggest stars of the 20th century's silent-film era.");
+        blog3.setCreator(SilenceisgrandCreator);
+        Set<ContentCategory> category2 = new HashSet<>();
+        category2.add(ContentCategory.TEXT);
+        blog3.setCategory(category2);
+        blogService.save(blog3);
+
+        Blog blog4 = new Blog();
+        blog4.setMilliseconds(Instant.now());
+        blog4.setEntryName("Pyrrhocoris apterus - also commonly called the Firebug");
+        blog4.setEntryContent("The firebug, Pyrrhocoris apterus, is a common insect of the family Pyrrhocoridae. Easily recognizable due to its striking red and black coloration, but may be confused with the similarly coloured though unrelated Corizus hyoscyami (cinnamon bug, squash bug) (see comparison).[1] Pyrrhocoris apterus is distributed throughout the Palaearctic from the Atlantic coast of Europe to northwest China. It has also been reported from the US, Central America and India.[2] It has been reported as recently expanding its distribution northwards into mainland UK and eastward on to the coast of the Mediterranean sea. [3] They are frequently observed to form aggregations, especially as immature forms, with from tens to perhaps a hundred individuals.");
+        blog4.setContentSnippet("The Firebug (Pyrrhocoris apterus) is a common insect of the family Pyrrhocoridae and easy to recognize due to its striking coloration. ");
+        blog4.setCreator(SilenceisgrandCreator);
+        blog3.setCategory(category2);
+        blogService.save(blog4);
 
         /* PROJECT */
         Project project = new Project();

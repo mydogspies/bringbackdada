@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+<!--@thymesVar id="title_text" type="String"-->
+<!--*/-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="blog_roll" class="blogs" id="blog_roll">
+    <div class="page_titles" id="blog_page_title">THE PHOTOGRAPHY & PROJECT BLOG</div>
+    <div class="blog_content" id="featured_blog">
+        <div th:text="${firstBlog.entryName}">entryName</div>
+        <div th:text="${firstBlog.contentSnippet}">entryContent</div>
+        <div th:text="${firstBlog.creator}"></div>
+        <div th:text="${firstBlog.time}"></div>
+    </div>
+    <div class="blog_content" th:each="iter : ${restBlogs}">
+        <div th:text="${iter.entryName}">entryName</div>
+        <div th:text="${iter.contentSnippet}">entryContent</div>
+        <div th:text="${iter.creator.name}"></div>
+        <div th:text="${firstBlog.time}"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

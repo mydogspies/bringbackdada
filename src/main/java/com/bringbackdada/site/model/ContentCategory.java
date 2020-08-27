@@ -2,5 +2,5 @@ package com.bringbackdada.site.model;
 
 public enum ContentCategory {
 
-    IMAGE, VIDEO, TEXT
+    IMAGE, VIDEO, TEXT, INTERNAL, BLOG
 }

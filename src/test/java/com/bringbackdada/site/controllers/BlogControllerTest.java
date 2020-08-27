@@ -1,5 +1,7 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.services.BlogService;
+import com.bringbackdada.site.services.ContentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -16,12 +18,18 @@ class BlogControllerTest {
     BlogController blogController;
 
     @Mock
+    BlogService mockBlogService;
+
+    @Mock
+    ContentService mockContentService;
+
+    @Mock
     Model model;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.blogController = new BlogController();
+        this.blogController = new BlogController(mockBlogService, mockContentService);
     }
 
     @Test

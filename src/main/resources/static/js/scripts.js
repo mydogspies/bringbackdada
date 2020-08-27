@@ -4,7 +4,7 @@ function onLoadFuncs() {
     styleCurrentPageLink();
 }
 
-
+/* Swap link styling depending on page loaded */
 function styleCurrentPageLink() {
     var path = window.location.pathname;
     var page = path.split("/").pop();

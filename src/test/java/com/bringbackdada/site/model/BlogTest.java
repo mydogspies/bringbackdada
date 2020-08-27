@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.HashSet;
 
@@ -30,9 +31,9 @@ class BlogTest {
 
     @Test
     void getDate() {
-        Date date = new Date();
-        blog.setDate(date);
-        assertEquals(date, blog.getDate());
+        Instant now = Instant.now();
+        blog.setMilliseconds(now);
+        assertEquals(now, blog.getMilliseconds());
     }
 
     @Test

@@ -5,6 +5,7 @@ import com.bringbackdada.site.repositories.ContentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -28,7 +29,9 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public Content findById(Long aLong) {
-        return null;
+        Optional<Content> content = contentService.findById(aLong);
+        // TODO add isPresent() exception
+        return content.get();
     }
 
     @Override

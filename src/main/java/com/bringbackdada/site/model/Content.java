@@ -35,6 +35,8 @@ public class Content {
     @ManyToMany
     private Set<Tag> tags;
 
+    private Boolean onFrontPage;
+
     public Long getId() {
         return id;
     }
@@ -113,5 +115,13 @@ public class Content {
 
     public void setTags(Set<Tag> tags) {
         this.tags = tags;
+    }
+
+    public Boolean getOnFrontPage() {
+        return onFrontPage;
+    }
+
+    public void setOnFrontPage(Boolean onFrontPage) {
+        this.onFrontPage = onFrontPage;
     }
 }
