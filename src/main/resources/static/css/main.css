@@ -3,13 +3,13 @@
 
 body {
   background-color: #1d2a32;
-  color: #e6f1ff;
+  color: #d4dfee;
 }
 
 a:link {
   color: #ede2de;
   text-decoration: none;
-  border-bottom: 1px #ede2de dotted;
+  border-bottom: 1px #747f8d dotted;
 }
 
 a:hover,
@@ -27,7 +27,7 @@ a:active {
 This is the main container for ALL content and it's width is device dependent.
  */
 .top_container {
-  width: 65vw;
+  width: 60vw;
   margin: 0 auto;
 }
 
@@ -60,13 +60,85 @@ in fragments, only as the container for page specific content. See index.html as
   font-family: 'latoregular', Arial, sans-serif;
   font-size: 24px;
   text-align: center;
+  color: #aca19d;
 }
 
-/* BLOGS */
+/* BLOGS ROLL - FEATURED CONTENT */
 
 .blogs {
+  margin: 25px 0 0 0;
   display: flex;
   justify-content: center;
+}
+
+.featured_blog_content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: #1b2831;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .featured_blog_content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+img.blog_main_image {
+  height: 150px;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.featured_blog_body {
+  font-family: 'latoregular', Arial, sans-serif;
+  font-size: 18px;
+}
+
+.featured_blog_body {
+  margin: 0 0 0 24px;
+}
+
+#featured_blog_content_container {
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-self: center stretch;
+}
+
+@media screen and (max-width: 450px) {
+  #featured_blog_content_container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+#blog_page_title {
+  margin: 0 0 10px 0;
+  background-color: #1b2831;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#feature_blog_name {
+  font-size: 25px;
+}
+
+#feature_blog_snippet {
+  color: #dbd8d5;
+}
+
+#feature_blog_creator {
+  font-size: 14px;
+  color: #85909e;
+}
+
+#feature_blog_time {
+  font-size: 12px;
+  color: #85909e;
 }
 
 /*
@@ -93,6 +165,62 @@ a single column.
 
 #featured_blog {
   grid-column: 1/-1;
+}
+
+/* BLOGS ROLL - THE 2 COLUMN REST */
+
+.blog_content {
+  margin: 14px 4px 0 4px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: #1b2831;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .blog_content {
+    margin: 20px 0 7px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #1b2831;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+.blog_body {
+  font-family: 'latoregular', Arial, sans-serif;
+  font-size: 16px;
+}
+
+#blog_content_container {
+  margin: 0 2px 0 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-self: center stretch;
+}
+
+.blog_body {
+  margin: 2px 0 2px 0;
+}
+
+#blog_name {
+  font-size: 20px;
+}
+
+#blog_snippet {
+  color: #dbd8d5;
+}
+
+#blog_creator {
+  font-size: 12px;
+  color: #85909e;
+}
+
+#blog_time {
+  font-size: 10px;
+  color: #85909e;
 }
 
 /* FORMS */
@@ -133,13 +261,13 @@ bugs out below 400 pixels we do it selectively.
 }
 
 #header_public {
-  margin-top: 7px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: 1fr;
 }
 
 #header_logo_text {
-  margin: 0 0 3px 0;
+  margin: 0 0 14px 0;
   grid-column: 1/-1;
   place-self: center;
   font-family: 'latoregular', Arial, sans-serif;

@@ -12,17 +12,38 @@
 
 <div th:fragment="blog_roll" class="blogs" id="blog_roll">
     <div class="page_titles" id="blog_page_title">THE PHOTOGRAPHY & PROJECT BLOG</div>
-    <div class="blog_content" id="featured_blog">
-        <div th:text="${firstBlog.entryName}">entryName</div>
-        <div th:text="${firstBlog.contentSnippet}">entryContent</div>
-        <div th:text="${firstBlog.creator}"></div>
-        <div th:text="${firstBlog.time}"></div>
+
+    <div class="featured_blog_content" id="featured_blog">
+
+        <div th:switch="${firstBlog.imgUrl}">
+            <div th:case="'n/a'"></div>
+            <div th:case="*" class="blog_image_container"><img th:src="${firstBlog.imgUrl}" class="blog_main_image"/>
+            </div>
+        </div>
+
+        <div id="featured_blog_content_container">
+            <div th:text="${firstBlog.entryName}" class="featured_blog_body" id="feature_blog_name"></div>
+            <div th:text="${firstBlog.contentSnippet}" class="featured_blog_body" id="feature_blog_snippet"></div>
+            <div th:text="${firstBlog.creator.name}" class="featured_blog_body" id="feature_blog_creator"></div>
+            <div th:text="${firstBlog.time}" class="featured_blog_body" id="feature_blog_time"></div>
+        </div>
+
     </div>
+
     <div class="blog_content" th:each="iter : ${restBlogs}">
-        <div th:text="${iter.entryName}">entryName</div>
-        <div th:text="${iter.contentSnippet}">entryContent</div>
-        <div th:text="${iter.creator.name}"></div>
-        <div th:text="${firstBlog.time}"></div>
+
+        <div th:switch="${iter.imgUrl}">
+            <div th:case="'n/a'"></div>
+            <div th:case="*" class="blog_image_container"><img th:src="${iter.imgUrl}" class="blog_main_image"/></div>
+        </div>
+
+        <div id="blog_content_container">
+            <div th:text="${iter.entryName}" class="blog_body" id="blog_name"></div>
+            <div th:text="${iter.contentSnippet}" class="blog_body" id="blog_snippet"></div>
+            <div th:text="${iter.creator.name}" class="blog_body" id="blog_creator"></div>
+            <div th:text="${firstBlog.time}" class="blog_body" id="blog_time"></div>
+        </div>
+
     </div>
 
 </div>
