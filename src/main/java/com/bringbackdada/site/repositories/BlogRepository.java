@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface BlogRepository extends CrudRepository<Blog, Long> {
 
     Optional<Blog> findById(Long id);
+
+    Iterable<Blog> findAll();
 }

@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @WebMvcTest(controllers = AboutController.class)
 class AboutControllerIT {
@@ -17,7 +18,8 @@ class AboutControllerIT {
 
     @Test
     void getAboutPageResponse() throws Exception {
-        mockMvc.perform(get("/about"))
-                .andExpect(status().isOk());
+        mockMvc.perform(get("/about-bringbackdada"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("about"));
     }
 }

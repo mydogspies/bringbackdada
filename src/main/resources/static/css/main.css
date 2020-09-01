@@ -41,7 +41,7 @@ This is the main container for ALL content and it's width is device dependent.
 
 /*
 NOTE! index_grid_container is part of EVERY page called by the browser and should not be defined
-in fragments, only as the container for page specific content. See index.html as template.
+in fragments, only as the container for page specific content. See home.html as template.
  */
 
 .index_grid_container {

@@ -18,9 +18,9 @@ public class IndexController {
     @RequestMapping({"", "/", "index", "index.html"})
     public String getIndexPage(Model model){
 
-        model.addAttribute("title_text", "Bringbackdada.com - INDEX");
+        model.addAttribute("title_text", "Bringbackdada.com - HOME");
 
-        logger.info("--> Called index.html");
-        return "index";
+        logger.info("--> Called home.html");
+        return "home";
     }
 }

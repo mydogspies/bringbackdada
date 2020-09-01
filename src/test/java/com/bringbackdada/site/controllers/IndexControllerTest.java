@@ -37,7 +37,7 @@ class IndexControllerTest {
     void getEntryInputPageAndCheckTitleTextAttribute() {
         String returnUrl = controller.getIndexPage(model);
 
-        assertEquals("index", returnUrl);
+        assertEquals("home", returnUrl);
         verify(model, times(1)).addAttribute(eq("title_text"), Mockito.any(String.class));
     }
 }

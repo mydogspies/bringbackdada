@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
 import java.time.ZoneId;
@@ -34,7 +35,7 @@ public class BlogController {
 
     private final Logger logger = LoggerFactory.getLogger(BlogController.class);
 
-    @RequestMapping(value = {"blog", "blog.html"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"photography-blog", "photography-blog.html"}, method = RequestMethod.GET)
     public String getBlog(Model model) {
 
         Set<Blog> blogSet = blogService.findAll();

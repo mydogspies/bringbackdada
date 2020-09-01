@@ -15,7 +15,7 @@ public class ProjectsController {
 
     private final Logger logger = LoggerFactory.getLogger(ProjectsController.class);
 
-    @RequestMapping({"projects","projects.html"})
+    @RequestMapping({"photo-projects","photo-projects.html"})
     public String getAboutPage(Model model){
         model.addAttribute("title_text", "Bringbackdada - PROJECTS");
 

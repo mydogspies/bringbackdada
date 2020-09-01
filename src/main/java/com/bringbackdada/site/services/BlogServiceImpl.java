@@ -29,6 +29,11 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog findById(Long aLong) {
         Optional<Blog> blog = blogRepository.findById(aLong);
+
+        if(blog.isEmpty()) {
+            throw new RuntimeException("Blog not found");
+        }
+
         return blog.get();
     }
 
