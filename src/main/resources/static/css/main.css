@@ -330,10 +330,29 @@ together change the link colors depending on page location.
   margin: 20px 0 0 0;
 }
 
+/* ERROR PAGES */
+
+.error-messages {
+  margin: 0 auto;
+  font-family: 'latoregular', Arial, sans-serif;
+}
+
+#error-header {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 26px 0 0 0;
+}
+
+#error-body {
+  margin: 10px 0 20px 0;
+  font-size: 15px;
+  text-align: center;
+}
+
 /* FAIRLIGHT GALLERY */
 
 /* customized gallery */
-
 .featherlight-gallery2 {
   background: rgba(100,100,100,0.5);
 }

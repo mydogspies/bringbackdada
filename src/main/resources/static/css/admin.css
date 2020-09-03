@@ -1,0 +1,22 @@
+
+/* GENERAL */
+
+body {
+    background-color: #1d2a32;
+    color: #d4dfee;
+}
+
+a:link {
+    color: #ede2de;
+    text-decoration: none;
+    border-bottom: 1px #747f8d dotted;
+}
+
+a:hover,
+a:active {
+    color: #aca19d;
+}
+
+a:active {
+    color: #aca19d;
+}

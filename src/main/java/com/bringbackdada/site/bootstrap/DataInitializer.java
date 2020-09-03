@@ -47,9 +47,76 @@ public class DataInitializer {
         this.blogService = blogService;
         this.tagService = tagService;
         this.projectService = projectService;
-        initializeDefaultTestEntries();
+        // initializeDefaultTestEntries(); // TODO for dev only!!!
+        initializeDefaultDatabase();
     }
 
+    private void initializeDefaultDatabase() {
+        /* CREATOR */
+        Creator publicCreator = new Creator();
+        publicCreator.setName("Public");
+        publicCreator.setDescription("This resource is in the Public Domain and has no particular license.");
+        creatorService.save(publicCreator);
+
+        Creator silenceisgrandCreator = new Creator();
+        silenceisgrandCreator.setName("Silenceisgrand");
+        silenceisgrandCreator.setDescription("Silenceisgrand is a Berlin-based photographer and visual artist.");
+        creatorService.save(silenceisgrandCreator);
+
+        /* LICENSE */
+        License license = new License();
+        license.setCategory(LicenseCategory.PUBLIC_DOMAIN);
+        license.setShortDescription("No permission or license is required for a work in the public domain, such as one with an expired copyright. Such work may be used in any context.");
+        license.setUrl("https://wiki.creativecommons.org/wiki/public_domain");
+        licenseService.save(license);
+
+        License byNcLicense = new License();
+        byNcLicense.setCategory(LicenseCategory.CC);
+        byNcLicense.setShortDescription("Attribution-NonCommercial 4.0 International (CC BY-NC 4.0); You are free to:\n" +
+                "    Share — copy and redistribute the material in any medium or format & " +
+                "    Adapt — remix, transform, and build upon the material ");
+        byNcLicense.setUrl("https://creativecommons.org/licenses/by-nc/4.0/");
+        licenseService.save(byNcLicense);
+
+        /* MODEL */
+        Model model = new Model();
+        model.setName("Louise");
+        model.setDescription("");
+        modelService.save(model);
+
+        /* TAGS */
+        Tag tag1 = new Tag();
+        tag1.setTag("photography");
+        tagService.save(tag1);
+
+        Tag tag2 = new Tag();
+        tag2.setTag("nude");
+        tagService.save(tag2);
+
+        Tag tag3 = new Tag();
+        tag3.setTag("fine art photography");
+        tagService.save(tag3);
+
+        Tag tag4 = new Tag();
+        tag4.setTag("abstract");
+        tagService.save(tag4);
+
+        Set<Tag> tags = new HashSet<>();
+        tags.add(tag1);
+        tags.add(tag2);
+        tags.add(tag3);
+        tags.add(tag4);
+
+        /* DEFAULT "ZERO" CONTENT */
+        Content zeroContent = new Content();
+        contentService.save(zeroContent);
+
+        logger.info("Default entries initialized in the database");
+    }
+
+
+    // TODO should not be used for production
+    /* TEST ONLY */
     private void initializeDefaultTestEntries() {
         /* CREATOR */
         Creator publicCreator = new Creator();
@@ -72,6 +139,7 @@ public class DataInitializer {
         Set<Content> contentGallerySet = new HashSet<>();
         paintingGallery.setContent(contentGallerySet);
         paintingGallery.setDescription("Karl Friedrich Schinkel - some paintings");
+        paintingGallery.setFeatured(true);
         galleryService.save(paintingGallery);
 
         Gallery buildingGallery = new Gallery();

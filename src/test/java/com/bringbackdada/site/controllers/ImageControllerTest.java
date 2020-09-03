@@ -1,5 +1,6 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.services.CreatorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -12,9 +13,12 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-class AboutControllerTest {
+class ImageControllerTest {
 
-    AboutController controller;
+    ImageController imageController;
+
+    @Mock
+    CreatorService creatorService;
 
     @Mock
     Model model;
@@ -22,13 +26,13 @@ class AboutControllerTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.controller = new AboutController();
+        this.imageController = new ImageController(creatorService);
     }
 
     @Test
-    void getAboutPageTitle() {
-        String returnUrl = controller.getAboutPage(model);
+    void getAddContentPageTitle() {
+        String returnUrl = imageController.getAddContentPage(model);
         verify(model,times(1)).addAttribute(eq("title_text"), Mockito.any(String.class));
-        assertEquals(returnUrl, "about");
+        assertEquals(returnUrl, "add-content");
     }
 }

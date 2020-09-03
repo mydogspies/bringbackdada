@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments/layout_fragments :: head_tag">
+    <title>Bringbackdada.com | Error 404</title>
+</head>
+
+<body onload="onLoadFuncs()">
+
+<div class="top_container">
+    <div class="index_grid_container">
+        <div th:replace="fragments/layout_fragments :: header_public"></div>
+
+        <div class="error-messages">
+            <div id="error-header">Error 404 - Resources not found</div>
+            <div id="error-body">The request did not return any data. Please contact the admin of this site.</div>
+        </div>
+
+        <div th:replace="fragments/layout_fragments :: footer_public"></div>
+    </div>
+</div>
+
+
+<script src="/js/jquery.js"></script>
+</body>
+</html>

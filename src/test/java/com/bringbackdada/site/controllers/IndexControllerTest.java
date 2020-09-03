@@ -1,5 +1,9 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.model.Content;
+import com.bringbackdada.site.model.Gallery;
+import com.bringbackdada.site.services.ContentService;
+import com.bringbackdada.site.services.GalleryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -7,14 +11,20 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 class IndexControllerTest {
 
     IndexController controller;
+
+    @Mock
+    GalleryService mockGalleryService;
 
     @Mock
     Model model;
@@ -22,16 +32,8 @@ class IndexControllerTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.controller = new IndexController();
+        this.controller = new IndexController(mockGalleryService);
     }
-
-    // TODO implemenet MVC test with Junit5
-
-//    @Test
-//    void testController() {
-//        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
-//        mockMvc.perform(get("/"))
-//    }
 
     @Test
     void getEntryInputPageAndCheckTitleTextAttribute() {
@@ -40,4 +42,5 @@ class IndexControllerTest {
         assertEquals("home", returnUrl);
         verify(model, times(1)).addAttribute(eq("title_text"), Mockito.any(String.class));
     }
+
 }

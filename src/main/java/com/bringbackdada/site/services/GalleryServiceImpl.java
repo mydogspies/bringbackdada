@@ -18,6 +18,16 @@ public class GalleryServiceImpl implements GalleryService {
     }
 
     @Override
+    public Gallery getGalleryByFeatured() {
+        Iterable<Gallery> result = galleryRepository.findAll();
+        for (Gallery gallery : result) {
+            if (gallery.getFeatured().equals(true));
+            return gallery;
+        }
+        return null;
+    }
+
+    @Override
     public Set<Gallery> findAll() {
         Iterable<Gallery> result = galleryRepository.findAll();
         Set<Gallery> resultSet = StreamSupport.stream(result.spliterator(), false)
@@ -50,4 +60,5 @@ public class GalleryServiceImpl implements GalleryService {
     public int count(Set<Gallery> set) {
         return 0;
     }
+
 }

@@ -11,33 +11,17 @@
 <body>
 
 <div th:fragment="masonry_main" id="masonry_grid">
+
     <div id="macy-container" data-featherlight-gallery data-featherlight-filter="a">
+    <div class="masonry-content" th:each="content : ${contentList}">
         <div class="macy-item">
-            <a href="/images/test/800px-Schinkel1.jpg" class="gallery2">
-                <img src="/images/test/800px-Schinkel1.jpg" width="225" class="macy-image" alt="First image"/>
-            </a>
-        </div>
-        <div class="macy-item">
-            <a href="/images/test/1280px-Karl_Friedrich_Schinkel_-_Schloß_am_Strom_-_Google_Art_Project.jpg" class="gallery"2>
-                <img src="/images/test/1280px-Karl_Friedrich_Schinkel_-_Schloß_am_Strom_-_Google_Art_Project.jpg" width="225" class="macy-image"/>
-            </a>
-        </div>
-        <div class="macy-item">
-            <a href="images/test/1813_Schinkel_Blick_auf_den_Mont_Blanc_anagoria.jpg" class="gallery2">
-                <img src="images/test/1813_Schinkel_Blick_auf_den_Mont_Blanc_anagoria.jpg" width="225" class="macy-image"/>
-            </a>
-        </div>
-        <div class="macy-item">
-            <a href="/images/test/1815_Schinkel_Mittelalterliche_Stadt_an_einem_Fluss_anagoria.JPG" class="gallery2">
-                <img src="/images/test/1815_Schinkel_Mittelalterliche_Stadt_an_einem_Fluss_anagoria.JPG" width="225" class="macy-image"/>
-            </a>
-        </div>
-        <div class="macy-item">
-            <a href="/images/test/1920px-Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg" class="gallery2">
-                <img src="/images/test/1920px-Karl_Friedrich_Schinkel_-_Gotische_Kirche_auf_einem_Felsen_am_Meer_-_Google_Art_Project.jpg" width="225" class="macy-image"/>
+            <a th:href="'/images/' + ${content.contentUrl} + '/' + ${content.contentFile}" class="gallery2">
+                <img th:src="'/images/' + ${content.contentUrl} + '/' + ${content.contentFile}" width="225" class="macy-image" alt="First image"/>
             </a>
         </div>
     </div>
+    </div>
+
 </div>
 
 </body>

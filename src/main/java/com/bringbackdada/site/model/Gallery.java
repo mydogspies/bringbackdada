@@ -16,6 +16,12 @@ public class Gallery {
     
     private String description;
 
+    private Boolean isFeatured;
+
+    public Gallery() {
+        this.isFeatured = false;
+    }
+
     public Long getId() {
         return id;
     }
@@ -38,5 +44,13 @@ public class Gallery {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getFeatured() {
+        return isFeatured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        isFeatured = featured;
     }
 }

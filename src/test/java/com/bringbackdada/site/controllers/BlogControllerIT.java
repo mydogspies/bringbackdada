@@ -1,5 +1,6 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.exceptions.NotFoundException;
 import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.services.BlogService;
@@ -31,10 +32,13 @@ class BlogControllerIT {
     @Mock
     ContentService mockContentService;
 
+    MockMvc mockMvc;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
         this.blogController = new BlogController(mockBlogService, mockContentService);
+        this.mockMvc = MockMvcBuilders.standaloneSetup(blogController).build();
     }
 
     @Test
@@ -50,14 +54,20 @@ class BlogControllerIT {
         Content content = new Content();
         content.setId(1L);
 
-        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(blogController).build();
-
         when(mockBlogService.findAll()).thenReturn(blogSet);
         when(mockContentService.findById(anyLong())).thenReturn(content);
 
         mockMvc.perform(get("/photography-blog"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("blog"));
+    }
 
+    @Test
+    public void blogFindAllNotFoundTest() throws Exception {
+
+        when(mockBlogService.findAll()).thenThrow(NotFoundException.class);
+
+        mockMvc.perform(get("/blog"))
+                .andExpect(status().isNotFound());
     }
 }

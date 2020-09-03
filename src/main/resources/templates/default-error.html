@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments/layout_fragments :: head_tag">
+    <title>Bringbackdada.com</title>
+</head>
+
+<body onload="onLoadFuncs()">
+<div class="top_container">
+    <div class="index_grid_container">
+        <div th:replace="fragments/layout_fragments :: header_public"></div>
+        <div style="margin: 0 auto; padding: 20px 0 8px 0;">-- ERROR WITHOUT EXCEPTION --</div>
+        <div style="margin: 0 auto; padding: 0 0 20px 0;">Default error - Not for production!</div>
+        <div th:replace="fragments/layout_fragments :: footer_public"></div>
+    </div>
+</div>
+<script src="/js/jquery.js"></script>
+</body>
+</html>
