@@ -1,6 +1,7 @@
 package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.services.CreatorService;
+import com.bringbackdada.site.services.LicenseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -12,12 +13,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.Mockito.mock;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-@WebMvcTest(controllers = ImageController.class)
-class ImageControllerIT {
+@WebMvcTest(controllers = AdminAddContentController.class)
+class AdminAddContentControllerIT {
 
     @Autowired
     MockMvc mockMvc;
@@ -25,10 +25,14 @@ class ImageControllerIT {
     @MockBean
     CreatorService creatorService;
 
+    @MockBean
+    LicenseService licenseService;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
         this.creatorService = mock(CreatorService.class);
+        this.licenseService = mock(LicenseService.class);
     }
 
     @Test

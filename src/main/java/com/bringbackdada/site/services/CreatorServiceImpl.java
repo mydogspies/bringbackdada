@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.Creator;
 import com.bringbackdada.site.repositories.CreatorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -27,7 +28,9 @@ public class CreatorServiceImpl implements CreatorService {
 
     @Override
     public Creator findById(Long aLong) {
-        return null;
+        Optional<Creator> creator = creatorRepository.findById(aLong);
+        // TODO add isPresent() exception
+        return creator.get();
     }
 
     @Override

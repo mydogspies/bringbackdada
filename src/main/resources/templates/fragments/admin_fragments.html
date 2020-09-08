@@ -2,7 +2,6 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 
 <!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
-<!--@thymesVar id="title_text" type="String"-->
 <!--*/-->
 
 <head th:fragment="head_admin_tag">
@@ -13,7 +12,7 @@
 
     <title th:text="${title_text}">Bringbackdada.com - ADMIN</title>
 
-    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-4.5.2-dist/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-4.5.2-dist/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/fonts/fonts.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/admin.css}">
     <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
@@ -25,36 +24,67 @@
 <body>
 
 <!-- CONTENT INPUT FIELDS-->
-<div class="input_forms" id="content_input_form" th:fragment="content-input">
-    <form id="content_input" action="" method="post" class="form-group">
-        <label>Content title</label><br>
-        <label>
-            <input type="text" name="contentTitle">
-        </label><br>
+<!--@thymesVar id="content" type="com.bringbackdada.site.model.Content"-->
+<div class="form-container" id="content_input_form" th:fragment="content-input">
 
-        <label for="creators">Select a creator</label>
-        <select name="creator" id="creators">
-            <option value="null" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
-        </select><br>
+    <div class="form_title_text">ADD NEW CONTENT</div>
 
-        <label for="file">Select a file:</label>
-        <input type="file" id="file" name="contentFile"><br>
+    <div class="form">
+        <form id="content_input" class="form-group"
+              th:action="@{/admin/save-new-content}" method="post" enctype="multipart/form-data">
+            <input type="hidden">
 
-        <label for="license">Select a license type</label>
-        <select name="license" id="license">
-            <option value="null">--placeholder--</option>
-        </select><br>
+            <div class="form-field">
+                <label class="form label">Content title</label>
+                <label>
+                    <input type="text" name="contentTitle">
+                </label>
+            </div>
 
-        <label>Descriptive text</label><br>
-        <label>
-            <textarea id="content_text" name="description"></textarea>
-        </label><br>
+            <div class="form-field">
+                <label class="form label" for="creators">Select a creator</label>
+                <select name="creators" id="creators">
+                    <option th:value="${iter.id}" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
+                </select>
+            </div>
 
-        <button class="btn btn-primary">Add content</button>
-    </form>
+            <div class="form-field">
+                <label class="form label" for="license">Select a license type</label>
+                <select name="license" id="license">
+                    <option th:value="${iter.id}" th:each="iter : ${licenseSet}" th:text="${iter.category}">--placeholder--
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label">Descriptive text</label>
+                <label>
+                    <textarea id="content_text" name="description"></textarea>
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="file">Select an image:</label>
+                <input type="file" id="file" name="imageFile">
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="category">Content category</label>
+                <select name="category" id="category">
+                    <option th:each="state : ${T(com.bringbackdada.site.model.ContentCategory).values()}"
+                            th:value="${state}"
+                            th:text="${state}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Add content</button>
+            </div>
+
+        </form>
+    </div>
 </div>
-
-
 
 
 </body>

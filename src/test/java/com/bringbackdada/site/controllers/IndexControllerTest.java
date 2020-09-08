@@ -1,8 +1,5 @@
 package com.bringbackdada.site.controllers;
 
-import com.bringbackdada.site.model.Content;
-import com.bringbackdada.site.model.Gallery;
-import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,10 +7,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.eq;

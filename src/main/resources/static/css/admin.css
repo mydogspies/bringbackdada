@@ -20,3 +20,44 @@ a:active {
 a:active {
     color: #aca19d;
 }
+
+/* ALL THE MAIN CSS GRID CONTAINERS */
+
+/*
+This is the main container for ALL content and it's width is device dependent.
+ */
+.top_container {
+    width: 60vw;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    .top_container {width: 75vw;}
+}
+
+@media screen and (max-width: 600px) {
+    .top_container {width: 100%;}
+}
+
+/* FORMS */
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    font-family: 'latoregular', Arial, sans-serif;
+    font-size: 18px;
+}
+
+.form_title_text, .form {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.form_title_text {
+    padding: 10px 0 20px 0;
+}
+
+.form {
+    padding: 8px 0 8px 0;
+}

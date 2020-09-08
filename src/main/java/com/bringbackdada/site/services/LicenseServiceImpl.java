@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.License;
 import com.bringbackdada.site.repositories.LicenseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -27,7 +28,9 @@ public class LicenseServiceImpl implements LicenseService {
 
     @Override
     public License findById(Long aLong) {
-        return null;
+        Optional<License> license = licenseRepository.findById(aLong);
+        // TODO add isPresent() exception
+        return license.get();
     }
 
     @Override

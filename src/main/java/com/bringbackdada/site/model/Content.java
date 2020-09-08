@@ -37,6 +37,9 @@ public class Content {
 
     private Boolean onFrontPage;
 
+    @Lob
+    private Byte[] imageFile;
+
     public Long getId() {
         return id;
     }
@@ -123,5 +126,13 @@ public class Content {
 
     public void setOnFrontPage(Boolean onFrontPage) {
         this.onFrontPage = onFrontPage;
+    }
+
+    public Byte[] getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(Byte[] imageFile) {
+        this.imageFile = imageFile;
     }
 }
