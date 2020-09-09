@@ -8,6 +8,5 @@ import java.util.Optional;
 public interface GalleryRepository extends CrudRepository<Gallery, Long> {
 
     Iterable<Gallery> findAll();
-
     Optional<Gallery> findById(Long id);
 }

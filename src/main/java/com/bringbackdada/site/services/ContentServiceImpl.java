@@ -20,28 +20,27 @@ public class ContentServiceImpl implements ContentService {
 
     private final Logger logger = LoggerFactory.getLogger(ContentServiceImpl.class);
 
-    private final ContentRepository contentService;
+    private final ContentRepository contentRepository;
     private final ContentCmdToContent contentCmdToContent;
     private final ContentToContentCmd contentToContentCmd;
 
-    public ContentServiceImpl(ContentRepository contentService, ContentCmdToContent contentCmdToContent, ContentToContentCmd contentToContentCmd1) {
-        this.contentService = contentService;
+    public ContentServiceImpl(ContentRepository contentRepository, ContentCmdToContent contentCmdToContent, ContentToContentCmd contentToContentCmd1) {
+        this.contentRepository = contentRepository;
         this.contentCmdToContent = contentCmdToContent;
         this.contentToContentCmd = contentToContentCmd1;
     }
 
     @Override
-    @Transactional
     public ContentCommand saveContentCommand(ContentCommand command) {
         Content detachedContent = contentCmdToContent.convert(command);
-        Content savedContent = contentService.save(detachedContent); // TODO fix this line
+        Content savedContent = contentRepository.save(detachedContent); // TODO fix this line
         logger.debug("Content detached from cmd object and saved as id: " + savedContent.getId());
         return contentToContentCmd.convert(savedContent);
     }
 
     @Override
     public Set<Content> findAll() {
-        Iterable<Content> result = contentService.findAll();
+        Iterable<Content> result = contentRepository.findAll();
         Set<Content> resultSet = StreamSupport.stream(result.spliterator(), false)
                 .collect(Collectors.toSet());
         return resultSet;
@@ -49,14 +48,14 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public Content findById(Long aLong) {
-        Optional<Content> content = contentService.findById(aLong);
+        Optional<Content> content = contentRepository.findById(aLong);
         // TODO add isPresent() exception
         return content.get();
     }
 
     @Override
     public Content save(Content object) {
-        contentService.save(object);
+        contentRepository.save(object);
         return object;
     }
 

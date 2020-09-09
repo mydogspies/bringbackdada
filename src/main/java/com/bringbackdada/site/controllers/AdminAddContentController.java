@@ -13,12 +13,14 @@ import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -37,28 +39,29 @@ public class AdminAddContentController {
     }
 
     @GetMapping(value={"/admin/add-new-content", "/admin/add-new-content.html"})
-    public String getAddContentPage(Model model) {
+    public String showAddContentPage(Model model) {
 
         model.addAttribute("creatorSet", creatorService.findAll());
         model.addAttribute("licenseSet", licenseService.findAll());
-
         model.addAttribute("title_text", "Bringbackdada | admin | add new content");
 
         logger.info("--> Called add-content.html");
         return "add-content";
     }
 
+    @Transactional
     @PostMapping(value={"/admin/save-new-content"})
     public String saveOrUpdateContent(@RequestParam("contentTitle") String contentTitle,
                                       @RequestParam("imageFile") MultipartFile file,
                                       @RequestParam("description") String description,
                                       @RequestParam("license") Long licenseId,
-                                      @RequestParam("creators") Long creatorId,
-                                      @RequestParam("category")ContentCategory category){
+                                      @RequestParam("creators") List<Long> creatorIds,
+                                      @RequestParam("category") ContentCategory category,
+                                      @RequestParam("featured") Integer featured){
 
         ContentCommand command = new ContentCommand();
 
-        Byte[] byteFile = null;
+        byte[] byteFile = null;
         try {
             byteFile = convertIntoByteArray(file);
         } catch (IOException e) {
@@ -70,21 +73,30 @@ public class AdminAddContentController {
         command.setContentTitle(contentTitle);
         command.setDescription(description);
         command.setCategory(category);
+        command.setOnFrontPage(featured != 0);
 
         License license = licenseService.findById(licenseId);
         command.setLicense(license);
 
-        // TODO implement creators
+        Set<CreatorCommand> creatorSet = new HashSet<>();
+        for (Long id : creatorIds) {
+            Creator creator = creatorService.findById(id);
+            CreatorCommand creatorCmd = new CreatorToCreatorCmd().convert(creator);
+            creatorSet.add(creatorCmd);
+        }
+        command.setCreators(creatorSet);
 
-        ContentCommand savedCommand = contentService.saveContentCommand(command);
+        // TODO implement tags
+        // TODO implement models
 
+        contentService.saveContentCommand(command);
 
-        return "add-content";
+        return "admin-data-saved";
     }
 
-    private Byte[] convertIntoByteArray (MultipartFile file) throws IOException {
+    private byte[] convertIntoByteArray (MultipartFile file) throws IOException {
 
-        Byte[] byteArray = new Byte[file.getBytes().length];
+        byte[] byteArray = new byte[file.getBytes().length];
         int i = 0;
         for (byte b : file.getBytes()) {
             byteArray[i++] = b;

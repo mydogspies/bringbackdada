@@ -41,3 +41,24 @@ function loadMasonry() {
         margin: 4
     });
 }
+
+/* FORM SCRIPTS */
+
+function submitAddContentForm() {
+    $.ajax(
+        {
+            type: "POST",
+            data: $("#content_input_form").serialize(),
+            cache: false,
+            url: "/admin/save-new-content",
+            success: function(data)
+            {
+                alert("Data saved");
+            },
+            error: function()
+            {
+                alert("Error - Data not saved");
+            }
+
+        });
+}

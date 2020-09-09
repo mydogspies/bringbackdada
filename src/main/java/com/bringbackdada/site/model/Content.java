@@ -38,7 +38,7 @@ public class Content {
     private Boolean onFrontPage;
 
     @Lob
-    private Byte[] imageFile;
+    private byte[] imageFile;
 
     public Long getId() {
         return id;
@@ -128,11 +128,11 @@ public class Content {
         this.onFrontPage = onFrontPage;
     }
 
-    public Byte[] getImageFile() {
+    public byte[] getImageFile() {
         return imageFile;
     }
 
-    public void setImageFile(Byte[] imageFile) {
+    public void setImageFile(byte[] imageFile) {
         this.imageFile = imageFile;
     }
 }

@@ -1,5 +1,6 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.CreatorService;
 import com.bringbackdada.site.services.LicenseService;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,11 +29,15 @@ class AdminAddContentControllerIT {
     @MockBean
     LicenseService licenseService;
 
+    @MockBean
+    ContentService contentService;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
         this.creatorService = mock(CreatorService.class);
         this.licenseService = mock(LicenseService.class);
+        this.contentService = mock(ContentService.class);
     }
 
     @Test

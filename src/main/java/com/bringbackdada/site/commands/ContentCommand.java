@@ -18,7 +18,7 @@ public class ContentCommand {
     private Set<CreatorCommand> creators = new HashSet<>();
     private Set<ModelCommand> models = new HashSet<>();
     private ContentCategory category;
-    private Byte[] imageFile = null;
+    private byte[] imageFile = null;
     private License license;
     private String description;
     private Set<TagCommand> tags = new HashSet<>();

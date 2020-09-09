@@ -1,9 +1,17 @@
 package com.bringbackdada.site.services;
 
+import com.bringbackdada.site.commands.GalleryCommand;
+import com.bringbackdada.site.commands.converters.GalleryCmdToGallery;
+import com.bringbackdada.site.commands.converters.GalleryToGalleryCmd;
 import com.bringbackdada.site.model.Gallery;
 import com.bringbackdada.site.repositories.GalleryRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -11,20 +19,35 @@ import java.util.stream.StreamSupport;
 @Service
 public class GalleryServiceImpl implements GalleryService {
 
-    private final GalleryRepository galleryRepository;
+    private final Logger logger = LoggerFactory.getLogger(GalleryServiceImpl.class);
 
-    public GalleryServiceImpl(GalleryRepository galleryRepository) {
+    private final GalleryRepository galleryRepository;
+    private final GalleryCmdToGallery galleryCmdToGallery;
+    private final GalleryToGalleryCmd galleryToGalleryCmd;
+
+    public GalleryServiceImpl(GalleryRepository galleryRepository, GalleryCmdToGallery galleryCmdToGallery, GalleryToGalleryCmd galleryToGalleryCmd) {
         this.galleryRepository = galleryRepository;
+        this.galleryCmdToGallery = galleryCmdToGallery;
+        this.galleryToGalleryCmd = galleryToGalleryCmd;
     }
 
     @Override
-    public Gallery getGalleryByFeatured() {
+    public List<Gallery> getGalleryByFeatured() {
         Iterable<Gallery> result = galleryRepository.findAll();
+        List<Gallery> galleryList = new ArrayList<>();
         for (Gallery gallery : result) {
             if (gallery.getFeatured().equals(true));
-            return gallery;
+            galleryList.add(gallery);
         }
-        return null;
+        return galleryList;
+    }
+
+    @Override
+    public GalleryCommand saveGalleryCommand(GalleryCommand command) {
+        Gallery detachedGallery = galleryCmdToGallery.convert(command);
+        Gallery savedGallery = galleryRepository.save(detachedGallery);
+        logger.debug("Gallery detached from cmd object and saved as id: " + savedGallery.getId());
+        return galleryToGalleryCmd.convert(savedGallery);
     }
 
     @Override

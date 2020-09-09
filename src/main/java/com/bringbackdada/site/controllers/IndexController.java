@@ -4,16 +4,20 @@ import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryService;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * The controller for the main index page
@@ -25,19 +29,27 @@ public class IndexController {
     private final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     private final GalleryService galleryService;
+    private final ContentService contentService;
 
-    public IndexController(GalleryService galleryService) {
+    public IndexController(GalleryService galleryService, ContentService contentService) {
         this.galleryService = galleryService;
+        this.contentService = contentService;
     }
 
-    @RequestMapping({"", "/", "index", "index.html"})
+    @GetMapping({"", "/", "index", "index.html"})
     public String getIndexPage(Model model){
 
-        Gallery featuredGallery = galleryService.getGalleryByFeatured();
-        List<Content> contentList = null;
+        List<Gallery> galleryList = galleryService.getGalleryByFeatured();
+        List<Content> contentList = new ArrayList<>();
 
-        if (featuredGallery != null) {
-            contentList = new ArrayList<>(featuredGallery.getContent());
+        // TODO should be command object instead of model object
+
+        if (!galleryList.isEmpty()) {
+            for (Gallery gallery : galleryList) {
+                contentList.addAll(gallery.getContent());
+            }
+        } else {
+            return "404error";
         }
 
         logger.debug("contentList = " + contentList);
@@ -47,5 +59,16 @@ public class IndexController {
 
         logger.info("--> Called home.html");
         return "home";
+    }
+
+    @GetMapping("/gallery/image/{id}")
+    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
+
+        response.setContentType("image/jpeg");
+
+        Content content = contentService.findById(id);
+
+        InputStream is = new ByteArrayInputStream(content.getImageFile());
+        IOUtils.copy(is, response.getOutputStream());
     }
 }

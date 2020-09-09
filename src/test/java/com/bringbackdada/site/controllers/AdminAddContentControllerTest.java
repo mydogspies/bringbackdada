@@ -39,7 +39,7 @@ class AdminAddContentControllerTest {
 
     @Test
     void getAddContentPageTitle() {
-        String returnUrl = adminAddContentController.getAddContentPage(model);
+        String returnUrl = adminAddContentController.showAddContentPage(model);
         verify(model,times(1)).addAttribute(eq("title_text"), Mockito.any(String.class));
         assertEquals(returnUrl, "add-content");
     }

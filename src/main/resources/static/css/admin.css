@@ -39,6 +39,12 @@ This is the main container for ALL content and it's width is device dependent.
     .top_container {width: 100%;}
 }
 
+/* ADMIN LAYOUT */
+.add_admin_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
 /* FORMS */
 
 .form-container {

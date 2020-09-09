@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+<!--@thymesVar id="title_text" type="String"-->
+<!--*/-->
+<head th:replace="fragments/admin_fragments :: head_admin_tag">
+    <title>response-fragments</title>
+</head>
+<body>
+
+<!-- DATA SAVED RESPONSE -->
+<div th:fragment="message_data_saved">
+    <div class="error-messages">
+        <div id="error-header">DATA SAVED</div>
+        <div id="error-body">The received data have been saved to the database.</div>
+    </div>
+</div>
+
+</body>
+</html>

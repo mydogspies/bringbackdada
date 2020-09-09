@@ -30,7 +30,7 @@
     <div class="form_title_text">ADD NEW CONTENT</div>
 
     <div class="form">
-        <form id="content_input" class="form-group"
+        <form id="content_input" class="form-group" action="#"
               th:action="@{/admin/save-new-content}" method="post" enctype="multipart/form-data">
             <input type="hidden">
 
@@ -43,7 +43,7 @@
 
             <div class="form-field">
                 <label class="form label" for="creators">Select a creator</label>
-                <select name="creators" id="creators">
+                <select name="creators" id="creators" multiple="multiple">
                     <option th:value="${iter.id}" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
                 </select>
             </div>
@@ -79,6 +79,13 @@
             </div>
 
             <div class="form-field">
+                <label class="form label" for="notOnPage">Not featured</label>
+                <input type="radio" id="notOnPage" name="featured" value="0" checked="checked">
+                <label class="form label" for="onPage">Featured</label>
+                <input type="radio" id="onPage" name="featured" value="1">
+            </div>
+
+            <div class="form-field">
                 <button type="submit" class="btn btn-primary">Add content</button>
             </div>
 
@@ -86,6 +93,46 @@
     </div>
 </div>
 
+<!-- GALLERY INPUT FIELDS-->
+<!--@thymesVar id="content" type="com.bringbackdada.site.model.Content"-->
+<div class="form-container" id="gallery_input_form" th:fragment="gallery-input">
+
+    <div class="form_title_text">ADD NEW GALLERY</div>
+
+    <div class="form">
+        <form id="gallery_input" class="form-group"
+              th:action="@{/admin/save-new-gallery}" method="post">
+            <input type="hidden">
+
+
+            <div class="form-field">
+                <label class="form label" for="content">Select content</label>
+                <select name="content" id="content" multiple="multiple">
+                    <option th:value="${iter.id}" th:each="iter : ${contentSet}" th:text="${iter.contentTitle}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label">Descriptive text</label>
+                <label>
+                    <textarea id="gallery_text" name="description"></textarea>
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="notFeatured">Not featured</label>
+                <input type="radio" id="notFeatured" name="featured" value="0" checked="checked">
+                <label class="form label" for="featured">Featured</label>
+                <input type="radio" id="featured" name="featured" value="1">
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Add new gallery</button>
+            </div>
+
+        </form>
+    </div>
+</div>
 
 </body>
 </html>

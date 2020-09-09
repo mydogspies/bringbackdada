@@ -46,10 +46,19 @@
             3.0</a></div>
 </div>
 
+<!-- ADMIN AREA -->
+
 <!-- HEADER FOR ADMIN PAGES -->
 <div th:fragment="header_admin" class="headers" id="header_admin">
     <div class="header_admin_grid">
         <div><a href="/" target="_self">home</a></div>
+    </div>
+</div>
+
+<div th:fragment="add_admin" class="headers" id="add_admin">
+    <div class="add_admin_grid">
+        <div><a href="/admin/add-new-content" target="_self">add content</a></div>
+        <div><a href="/admin/add-new-gallery" target="_self">add a gallery</a></div>
     </div>
 </div>
 

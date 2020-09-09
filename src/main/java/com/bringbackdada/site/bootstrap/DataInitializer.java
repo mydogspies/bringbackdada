@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -62,6 +64,12 @@ public class DataInitializer {
         silenceisgrandCreator.setName("Silenceisgrand");
         silenceisgrandCreator.setDescription("Silenceisgrand is a Berlin-based photographer and visual artist.");
         creatorService.save(silenceisgrandCreator);
+
+        Creator mydogspiesCreator = new Creator();
+        mydogspiesCreator.setName("Mydogspies");
+        mydogspiesCreator.setDescription("Berlin-based software and content developer");
+        creatorService.save(mydogspiesCreator);
+
 
         /* LICENSE */
         License license = new License();
@@ -136,14 +144,14 @@ public class DataInitializer {
 
         /* GALLERY */
         Gallery paintingGallery = new Gallery();
-        Set<Content> contentGallerySet = new HashSet<>();
+        List<Content> contentGallerySet = new ArrayList<>();
         paintingGallery.setContent(contentGallerySet);
         paintingGallery.setDescription("Karl Friedrich Schinkel - some paintings");
         paintingGallery.setFeatured(true);
         galleryService.save(paintingGallery);
 
         Gallery buildingGallery = new Gallery();
-        Set<Content> buildingGallerySet = new HashSet<>();
+        List<Content> buildingGallerySet = new ArrayList<>();
         buildingGallery.setContent(buildingGallerySet);
         buildingGallery.setDescription("Karl Friedrich Schinkel - some buildings");
         galleryService.save(buildingGallery);

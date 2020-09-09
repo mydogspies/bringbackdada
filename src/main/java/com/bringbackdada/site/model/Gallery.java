@@ -1,6 +1,7 @@
 package com.bringbackdada.site.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,8 +12,8 @@ public class Gallery {
     private Long id;
 
     @JoinTable
-    @ManyToMany(cascade =  CascadeType.ALL)
-    private Set<Content> content;
+    @ManyToMany
+    private List<Content> content;
     
     private String description;
 
@@ -30,11 +31,11 @@ public class Gallery {
         this.id = id;
     }
 
-    public Set<Content> getContent() {
+    public List<Content> getContent() {
         return content;
     }
 
-    public void setContent(Set<Content> content) {
+    public void setContent(List<Content> content) {
         this.content = content;
     }
 

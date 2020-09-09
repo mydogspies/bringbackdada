@@ -12,11 +12,11 @@
 
 <div th:fragment="masonry_main" id="masonry_grid">
 
-    <div id="macy-container" data-featherlight-gallery data-featherlight-filter="a">
+    <div id="macy-container" data-featherlight-gallery data-featherlight-filter="a" data-featherlight-type="image">
     <div class="masonry-content" th:each="content : ${contentList}">
         <div class="macy-item">
-            <a th:href="'/images/' + ${content.contentUrl} + '/' + ${content.contentFile}" class="gallery2">
-                <img th:src="'/images/' + ${content.contentUrl} + '/' + ${content.contentFile}" width="225" class="macy-image" alt="First image"/>
+            <a th:href="@{'/gallery/image/' + ${content.id}}" class="gallery2">
+                <img th:src="@{'/gallery/image/' + ${content.id}}" width="225" class="macy-image" alt="image"/>
             </a>
         </div>
     </div>
