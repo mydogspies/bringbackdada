@@ -1,0 +1,99 @@
+2020-09-10 07:56:25,377 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SiteApplication on WZB with PID 14288 (M:\30_CODING\70_WEB\bringbackdada.com\target\classes started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-09-10 07:56:25,377 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-09-10 07:56:25,377 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-09-10 07:56:25,408 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-10 07:56:25,408 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-10 07:56:25,925 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-10 07:56:25,979 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 49ms. Found 8 JPA repository interfaces.
+2020-09-10 07:56:26,394 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-09-10 07:56:26,394 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-10 07:56:26,394 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-09-10 07:56:26,394 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-10 07:56:26,456 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-09-10 07:56:26,456 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1048 ms
+2020-09-10 07:56:26,494 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-09-10 07:56:26,610 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-09-10 07:56:26,610 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-09-10 07:56:26,695 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-10 07:56:26,741 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-10 07:56:26,783 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-09-10 07:56:26,887 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-10 07:56:26,963 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-09-10 07:56:27,441 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-10 07:56:27,443 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-10 07:56:27,652 INFO com.bringbackdada.site.bootstrap.DataInitializer [restartedMain] Default entries initialized in the database
+2020-09-10 07:56:27,667 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-09-10 07:56:27,714 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-10 07:56:28,115 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-09-10 07:56:28,131 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-10 07:56:28,131 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-09-10 07:56:28,155 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-09-10 07:56:28,163 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 3.025 seconds (JVM running for 3.98)
+2020-09-10 07:56:32,501 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-10 07:56:32,501 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-09-10 07:56:32,506 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-09-10 07:56:46,564 INFO com.bringbackdada.site.controllers.AdminAddContentController [http-nio-8080-exec-4] --> Called add-content.html
+2020-09-10 07:56:53,123 DEBUG com.bringbackdada.site.services.ContentServiceImpl [http-nio-8080-exec-4] Content detached from cmd object and saved as id: 2
+2020-09-10 07:56:55,974 INFO com.bringbackdada.site.controllers.AdminAddContentController [http-nio-8080-exec-7] --> Called add-content.html
+2020-09-10 07:57:06,134 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting SiteApplication on WZB with PID 13872 (M:\30_CODING\70_WEB\bringbackdada.com\target\classes started by wzb in M:\30_CODING\70_WEB\bringbackdada.com)
+2020-09-10 07:57:06,134 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-09-10 07:57:06,134 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-09-10 07:57:06,165 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-10 07:57:06,165 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-10 07:57:06,582 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-10 07:57:06,619 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 44ms. Found 8 JPA repository interfaces.
+2020-09-10 07:57:06,965 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-09-10 07:57:06,970 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-10 07:57:06,971 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-09-10 07:57:06,971 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-10 07:57:07,021 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-09-10 07:57:07,022 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 857 ms
+2020-09-10 07:57:07,051 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-09-10 07:57:07,135 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-09-10 07:57:07,139 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-09-10 07:57:07,224 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-10 07:57:07,257 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-10 07:57:07,288 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-09-10 07:57:07,353 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-10 07:57:07,415 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-09-10 07:57:07,941 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-10 07:57:07,946 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-10 07:57:08,166 INFO com.bringbackdada.site.bootstrap.DataInitializer [restartedMain] Default entries initialized in the database
+2020-09-10 07:57:08,188 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-09-10 07:57:08,236 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-10 07:57:08,665 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-09-10 07:57:08,687 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-10 07:57:08,687 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-09-10 07:57:08,719 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-09-10 07:57:08,719 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SiteApplication in 2.822 seconds (JVM running for 3.624)
+2020-09-10 07:57:09,896 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-10 07:57:09,896 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-09-10 07:57:09,901 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-09-10 07:57:09,995 INFO com.bringbackdada.site.controllers.AdminAddContentController [http-nio-8080-exec-1] --> Called add-content.html
+2020-09-10 07:57:31,718 DEBUG com.bringbackdada.site.services.ContentServiceImpl [http-nio-8080-exec-1] Content detached from cmd object and saved as id: 2
+2020-09-10 07:57:33,292 INFO com.bringbackdada.site.controllers.AdminAddContentController [http-nio-8080-exec-10] --> Called add-content.html
+2020-09-10 07:57:41,910 DEBUG com.bringbackdada.site.services.ContentServiceImpl [http-nio-8080-exec-10] Content detached from cmd object and saved as id: 3
+2020-09-10 07:57:43,118 INFO com.bringbackdada.site.controllers.AdminAddContentController [http-nio-8080-exec-9] --> Called add-content.html
+2020-09-10 07:57:50,074 DEBUG com.bringbackdada.site.services.ContentServiceImpl [http-nio-8080-exec-9] Content detached from cmd object and saved as id: 4
+2020-09-10 07:57:51,444 INFO com.bringbackdada.site.controllers.AdminAddContentController [http-nio-8080-exec-8] --> Called add-content.html
+2020-09-10 07:57:59,057 DEBUG com.bringbackdada.site.services.ContentServiceImpl [http-nio-8080-exec-8] Content detached from cmd object and saved as id: 5
+2020-09-10 07:58:00,180 INFO com.bringbackdada.site.controllers.AdminAddGalleryController [http-nio-8080-exec-3] --> Called add-gallery.html
+2020-09-10 07:58:04,702 DEBUG com.bringbackdada.site.services.GalleryServiceImpl [http-nio-8080-exec-3] Gallery detached from cmd object and saved as id: 1
+2020-09-10 07:58:06,356 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] contentList = [com.bringbackdada.site.model.Content@51cb437c, com.bringbackdada.site.model.Content@502c0020, com.bringbackdada.site.model.Content@7236f760]
+2020-09-10 07:58:06,356 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called home.html
+2020-09-10 08:02:31,472 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] contentList = [com.bringbackdada.site.model.Content@38be087e, com.bringbackdada.site.model.Content@7220319e, com.bringbackdada.site.model.Content@68384df4]
+2020-09-10 08:02:31,473 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called home.html
+2020-09-10 08:02:38,309 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] contentList = [com.bringbackdada.site.model.Content@1e52ab88, com.bringbackdada.site.model.Content@3cfa7e3f, com.bringbackdada.site.model.Content@77d34cd8]
+2020-09-10 08:02:38,309 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-3] --> Called home.html
+2020-09-10 08:02:39,116 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] contentList = [com.bringbackdada.site.model.Content@6a843670, com.bringbackdada.site.model.Content@8e3c2a2, com.bringbackdada.site.model.Content@54b9050a]
+2020-09-10 08:02:39,116 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-9] --> Called home.html
+2020-09-10 08:02:40,200 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] contentList = [com.bringbackdada.site.model.Content@7f2d9020, com.bringbackdada.site.model.Content@5cce6b2d, com.bringbackdada.site.model.Content@2e050c0e]
+2020-09-10 08:02:40,200 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-2] --> Called home.html
+2020-09-10 08:02:53,458 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] contentList = [com.bringbackdada.site.model.Content@63e7d711, com.bringbackdada.site.model.Content@6b6d3537, com.bringbackdada.site.model.Content@41cbd35e]
+2020-09-10 08:02:53,458 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-4] --> Called home.html
+2020-09-10 08:09:42,427 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] contentList = [com.bringbackdada.site.model.Content@20d7c194, com.bringbackdada.site.model.Content@79e668ce, com.bringbackdada.site.model.Content@76e897fa]
+2020-09-10 08:09:42,427 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-7] --> Called home.html
+2020-09-10 08:09:52,646 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] contentList = [com.bringbackdada.site.model.Content@4e78977f, com.bringbackdada.site.model.Content@7093d935, com.bringbackdada.site.model.Content@139b1f52]
+2020-09-10 08:09:52,646 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-6] --> Called home.html
+2020-09-10 08:10:24,387 DEBUG com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] contentList = [com.bringbackdada.site.model.Content@616d1176, com.bringbackdada.site.model.Content@38f0b516, com.bringbackdada.site.model.Content@14152b53]
+2020-09-10 08:10:24,387 INFO com.bringbackdada.site.controllers.IndexController [http-nio-8080-exec-1] --> Called home.html

@@ -1,7 +1,12 @@
 package com.bringbackdada.site.services;
 
+import com.bringbackdada.site.commands.BlogCommand;
+import com.bringbackdada.site.commands.converters.BlogCmdToBlog;
+import com.bringbackdada.site.commands.converters.BlogToBlogCmd;
 import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.repositories.BlogRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,10 +17,24 @@ import java.util.stream.StreamSupport;
 @Service
 public class BlogServiceImpl implements BlogService {
 
-    private final BlogRepository blogRepository;
+    private final Logger logger = LoggerFactory.getLogger(BlogServiceImpl.class);
 
-    public BlogServiceImpl(BlogRepository blogRepository) {
+    private final BlogRepository blogRepository;
+    private final BlogToBlogCmd blogToBlogCmd;
+    private final BlogCmdToBlog blogCmdToBlog;
+
+    public BlogServiceImpl(BlogRepository blogRepository, BlogToBlogCmd blogToBlogCmd, BlogCmdToBlog blogCmdToBlog) {
         this.blogRepository = blogRepository;
+        this.blogToBlogCmd = blogToBlogCmd;
+        this.blogCmdToBlog = blogCmdToBlog;
+    }
+
+    @Override
+    public BlogCommand saveBlogCommand(BlogCommand command) {
+        Blog detachedBlog = blogCmdToBlog.convert(command);
+        Blog savedBlog = blogRepository.save(detachedBlog);
+        logger.debug("Blog detached from cmd object and saved as id: " + savedBlog.getId());
+        return blogToBlogCmd.convert(savedBlog);
     }
 
     @Override
@@ -57,4 +76,6 @@ public class BlogServiceImpl implements BlogService {
     public int count(Set<Blog> set) {
         return 0;
     }
+
+
 }

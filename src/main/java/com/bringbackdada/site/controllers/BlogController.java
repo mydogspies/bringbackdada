@@ -5,6 +5,7 @@ import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.services.BlogService;
 import com.bringbackdada.site.services.ContentService;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -36,7 +41,7 @@ public class BlogController {
         this.contentService = contentService;
     }
 
-    @RequestMapping(value = {"photography-blog", "photography-blog.html"}, method = RequestMethod.GET)
+    @GetMapping(value = {"photography-blog", "photography-blog.html"})
     public String getBlog(Model model) {
 
         Set<Blog> blogSet = blogService.findAll();
@@ -77,17 +82,32 @@ public class BlogController {
             String datetime = DateTimeFormatter.ISO_LOCAL_DATE.withZone(ZoneId.of("UTC")).format(instant);
             outputMap.put("time", datetime);
 
-            if (!blog.getBlogImageId().equals(1L)) {
-                Long imgId = blog.getBlogImageId();
-                Content content = contentService.findById(imgId);
-                outputMap.put("imgUrl", "/images" + content.getContentUrl() + "/" + content.getContentFile());
-            } else {
-                outputMap.put("imgUrl", "n/a");
-            }
+            outputMap.put("contentId", blog.getContentId());  // TODO this is the new method
+
+            // TODO refactor for persisted images
+//            if (!blog.getBlogImageId().equals(1L)) {
+//                Long imgId = blog.getBlogImageId();
+//                Content content = contentService.findById(imgId);
+//                outputMap.put("imgUrl", "/images" + content.getContentUrl() + "/" + content.getContentFile());
+//            } else {
+//                outputMap.put("imgUrl", "n/a");
+//            }
+
 
             outputList.add(outputMap);
         }
         return outputList;
+    }
+
+    @GetMapping("/blog/image/{id}")
+    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
+
+        response.setContentType("image/jpeg");
+
+        Content content = contentService.findById(id);
+
+        InputStream is = new ByteArrayInputStream(content.getImageFile());
+        IOUtils.copy(is, response.getOutputStream());
     }
 
     // TODO verify sort order and functionality with real life data

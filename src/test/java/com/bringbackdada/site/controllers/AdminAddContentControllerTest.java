@@ -2,6 +2,7 @@ package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.CreatorService;
+import com.bringbackdada.site.services.ImageService;
 import com.bringbackdada.site.services.LicenseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,12 +30,15 @@ class AdminAddContentControllerTest {
     ContentService contentService;
 
     @Mock
+    ImageService imageService;
+
+    @Mock
     Model model;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.adminAddContentController = new AdminAddContentController(creatorService, licenseService, contentService);
+        this.adminAddContentController = new AdminAddContentController(creatorService, licenseService, contentService, imageService);
     }
 
     @Test

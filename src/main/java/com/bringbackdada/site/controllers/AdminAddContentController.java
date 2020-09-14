@@ -8,8 +8,8 @@ import com.bringbackdada.site.model.Creator;
 import com.bringbackdada.site.model.License;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.CreatorService;
+import com.bringbackdada.site.services.ImageService;
 import com.bringbackdada.site.services.LicenseService;
-import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -31,11 +31,13 @@ public class AdminAddContentController {
     private final CreatorService creatorService;
     private final LicenseService licenseService;
     private final ContentService contentService;
+    private final ImageService imageService;
 
-    public AdminAddContentController(CreatorService creatorService, LicenseService licenseService, ContentService contentService) {
+    public AdminAddContentController(CreatorService creatorService, LicenseService licenseService, ContentService contentService, ImageService imageService) {
         this.creatorService = creatorService;
         this.licenseService = licenseService;
         this.contentService = contentService;
+        this.imageService = imageService;
     }
 
     @GetMapping(value={"/admin/add-new-content", "/admin/add-new-content.html"})
@@ -61,13 +63,7 @@ public class AdminAddContentController {
 
         ContentCommand command = new ContentCommand();
 
-        byte[] byteFile = null;
-        try {
-            byteFile = convertIntoByteArray(file);
-        } catch (IOException e) {
-            // TODO handle exception properly
-            logger.error("Multipart file could not be converted:", e);
-        }
+        byte[] byteFile = imageService.convertToByteArray(file);
 
         command.setImageFile(byteFile);
         command.setContentTitle(contentTitle);
@@ -92,16 +88,5 @@ public class AdminAddContentController {
         contentService.saveContentCommand(command);
 
         return "admin-data-saved";
-    }
-
-    private byte[] convertIntoByteArray (MultipartFile file) throws IOException {
-
-        byte[] byteArray = new byte[file.getBytes().length];
-        int i = 0;
-        for (byte b : file.getBytes()) {
-            byteArray[i++] = b;
-        }
-
-        return byteArray;
     }
 }

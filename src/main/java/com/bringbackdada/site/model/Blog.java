@@ -7,14 +7,6 @@ import java.util.Set;
 @Entity
 public class Blog {
 
-    /**
-     * Note that default blogImageId is id=1, that is the
-     * index that is by default interpreted as "none".
-     */
-    public Blog() {
-        this.blogImageId = 1L;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,7 +27,7 @@ public class Blog {
     @Enumerated(value = EnumType.STRING)
     private Set<ContentCategory> category;
 
-    private Long blogImageId;
+    private Long contentId;
 
     public Long getId() {
         return id;
@@ -92,12 +84,12 @@ public class Blog {
     public void setCategory(Set<ContentCategory> category) {
         this.category = category;
     }
-
-    public Long getBlogImageId() {
-        return blogImageId;
+    public Long getContentId() {
+        return contentId;
     }
 
-    public void setBlogImageId(Long blogImageId) {
-        this.blogImageId = blogImageId;
+    public void setContentId(Long contentId) {
+        this.contentId = contentId;
     }
+
 }

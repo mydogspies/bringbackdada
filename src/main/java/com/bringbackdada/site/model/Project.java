@@ -18,8 +18,8 @@ public class Project {
     @OneToMany
     private Set<Gallery> gallery;
 
-    @OneToOne
-    private Creator creator;
+    @OneToMany
+    private Set<Creator> creator;
 
     @OneToMany
     private Set<Blog> blog;
@@ -62,11 +62,11 @@ public class Project {
         this.gallery = gallery;
     }
 
-    public Creator getCreator() {
+    public Set<Creator> getCreator() {
         return creator;
     }
 
-    public void setCreator(Creator creator) {
+    public void setCreator(Set<Creator> creator) {
         this.creator = creator;
     }
 

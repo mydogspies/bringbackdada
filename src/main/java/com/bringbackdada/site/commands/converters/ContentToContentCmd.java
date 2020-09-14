@@ -26,6 +26,9 @@ public class ContentToContentCmd implements Converter<Content, ContentCommand> {
         this.tagConverter = tagConverter;
     }
 
+    // TODO implement MODEL
+    // TODO implement TAG
+
     @Synchronized
     @Nullable
     @Override

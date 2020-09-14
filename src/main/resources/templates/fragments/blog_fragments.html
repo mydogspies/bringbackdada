@@ -15,11 +15,7 @@
 
     <div class="featured_blog_content" id="featured_blog">
 
-        <div th:switch="${firstBlog.imgUrl}">
-            <div th:case="'n/a'"></div>
-            <div th:case="*" class="blog_image_container"><img th:src="${firstBlog.imgUrl}" class="blog_main_image"/>
-            </div>
-        </div>
+        <div class="blog_image_container"><img th:src="'/blog/image/' + ${firstBlog.contentId}" class="blog_main_image"/></div>
 
         <div id="featured_blog_content_container">
             <div th:text="${firstBlog.entryName}" class="featured_blog_body" id="feature_blog_name"></div>
@@ -32,10 +28,7 @@
 
     <div class="blog_content" th:each="iter : ${restBlogs}">
 
-        <div th:switch="${iter.imgUrl}">
-            <div th:case="'n/a'"></div>
-            <div th:case="*" class="blog_image_container"><img th:src="${iter.imgUrl}" class="blog_main_image"/></div>
-        </div>
+        <div class="blog_image_container"><img th:src="'/blog/image/' + ${iter.contentId}" class="blog_main_image"/></div>
 
         <div id="blog_content_container">
             <div th:text="${iter.entryName}" class="blog_body" id="blog_name"></div>

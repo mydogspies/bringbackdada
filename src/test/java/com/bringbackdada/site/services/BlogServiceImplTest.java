@@ -1,5 +1,7 @@
 package com.bringbackdada.site.services;
 
+import com.bringbackdada.site.commands.converters.BlogCmdToBlog;
+import com.bringbackdada.site.commands.converters.BlogToBlogCmd;
 import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.repositories.BlogRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,10 +22,16 @@ class BlogServiceImplTest {
     @Mock
     BlogRepository blogRepository;
 
+    @Mock
+    BlogToBlogCmd blogToBlogCmd;
+
+    @Mock
+    BlogCmdToBlog blogCmdToBlog;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        blogService = new BlogServiceImpl(blogRepository);
+        blogService = new BlogServiceImpl(blogRepository, blogToBlogCmd, blogCmdToBlog);
     }
 
     @Test

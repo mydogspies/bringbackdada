@@ -42,7 +42,7 @@ public class IndexController {
         List<Gallery> galleryList = galleryService.getGalleryByFeatured();
         List<Content> contentList = new ArrayList<>();
 
-        // TODO should be command object instead of model object
+        // TODO should be command object instead of model object?
 
         if (!galleryList.isEmpty()) {
             for (Gallery gallery : galleryList) {

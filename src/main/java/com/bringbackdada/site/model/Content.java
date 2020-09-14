@@ -23,6 +23,7 @@ public class Content {
     @Enumerated(value = EnumType.STRING)
     private ContentCategory category;
 
+    // TODO should be depricated and refactored out
     private String contentFile;
     private String contentUrl;
 

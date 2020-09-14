@@ -24,7 +24,7 @@
 <body>
 
 <!-- CONTENT INPUT FIELDS-->
-<!--@thymesVar id="content" type="com.bringbackdada.site.model.Content"-->
+<!--@thymesVar id="content" type="com.bringbackdada.site.model.ContentCommand"-->
 <div class="form-container" id="content_input_form" th:fragment="content-input">
 
     <div class="form_title_text">ADD NEW CONTENT</div>
@@ -94,7 +94,7 @@
 </div>
 
 <!-- GALLERY INPUT FIELDS-->
-<!--@thymesVar id="content" type="com.bringbackdada.site.model.Content"-->
+<!--@thymesVar id="content" type="com.bringbackdada.site.model.GalleryCommand"-->
 <div class="form-container" id="gallery_input_form" th:fragment="gallery-input">
 
     <div class="form_title_text">ADD NEW GALLERY</div>
@@ -128,6 +128,70 @@
 
             <div class="form-field">
                 <button type="submit" class="btn btn-primary">Add new gallery</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- BLOG INPUT FIELDS-->
+<!--@thymesVar id="content" type="com.bringbackdada.site.model.BlogCommand"-->
+<div class="form-container" id="blog_input_form" th:fragment="blog-input">
+
+    <div class="form_title_text">ADD NEW BLOG</div>
+
+    <div class="form">
+        <form id="blog_input" class="form-group"
+              th:action="@{/admin/save-new-blog}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label">Blog title</label>
+                <label>
+                    <input type="text" name="entryName">
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label">Blog text</label>
+                <label>
+                    <textarea id="blog_text" name="entryContent"></textarea>
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label">Blog snippet</label>
+                <label>
+                    <textarea id="blog_snippet" name="entrySnippet"></textarea>
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="blogCreator">Select a creator</label>
+                <select name="creator" id="blogCreator" multiple="multiple">
+                    <option th:value="${iter.id}" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="category">Content category</label>
+                <select name="category" id="blogCategory">
+                    <option th:each="state : ${T(com.bringbackdada.site.model.ContentCategory).values()}"
+                            th:value="${state}"
+                            th:text="${state}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="blogImage">Select blog image</label>
+                <select name="content" id="blogImage" multiple="multiple">
+                    <option th:value="${iter.id}" th:each="iter : ${contentSet}" th:text="${iter.contentTitle}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Add new blog</button>
             </div>
 
         </form>
