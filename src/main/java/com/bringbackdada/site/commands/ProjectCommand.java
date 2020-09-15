@@ -15,9 +15,9 @@ public class ProjectCommand {
     private Long id;
     private String name;
     private ProjectCategory projectCategory;
-    private Set<Gallery> gallery;
-    private Set<Creator> creator;
-    private Set<Blog> blog;
+    private Set<GalleryCommand> gallery;
+    private Set<CreatorCommand> creator;
+    private Set<BlogCommand> blog;
     private String description;
-    private Set<Tag> tags;
+    private Set<TagCommand> tags;
 }

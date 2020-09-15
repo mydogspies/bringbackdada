@@ -11,6 +11,8 @@ public class Gallery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String galleryTitle;
+
     @JoinTable
     @ManyToMany
     private List<Content> content;
@@ -29,6 +31,14 @@ public class Gallery {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getGalleryTitle() {
+        return galleryTitle;
+    }
+
+    public void setGalleryTitle(String galleryTitle) {
+        this.galleryTitle = galleryTitle;
     }
 
     public List<Content> getContent() {

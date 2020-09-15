@@ -46,11 +46,13 @@ public class AdminAddGalleryController {
     @PostMapping(value={"/admin/save-new-gallery"})
     public String saveOrUpdateGallery(@RequestParam("content") List<Long> contentList,
                                       @RequestParam("description") String description,
-                                      @RequestParam("featured") Integer featured) {
+                                      @RequestParam("featured") Integer featured,
+                                      @RequestParam("title") String title) {
 
         GalleryCommand command = new GalleryCommand();
         command.setDescription(description);
         command.setIsFeatured(featured != 0);
+        command.setGalleryTitle(title);
 
         List<ContentCommand> contentCmdList = new ArrayList<>();
         for (Long id : contentList) {

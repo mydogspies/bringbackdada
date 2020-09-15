@@ -12,6 +12,7 @@ import java.util.List;
 public class GalleryCommand {
 
     private Long id;
+    private String galleryTitle;
     private List<ContentCommand> content;
     private String description;
     private Boolean isFeatured;

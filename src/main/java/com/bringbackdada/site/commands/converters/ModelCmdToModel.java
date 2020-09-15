@@ -8,20 +8,20 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ModelToModelCmd implements Converter<Model, ModelCommand> {
+public class ModelCmdToModel implements Converter<ModelCommand, Model> {
 
     @Synchronized
     @Nullable
     @Override
-    public ModelCommand convert(Model model) {
+    public Model convert(ModelCommand modelCommand) {
 
-        if (model == null) { return null; }
+        if (modelCommand == null) { return null; }
 
-        ModelCommand command = new ModelCommand();
-        command.setId(model.getId());
-        command.setName(model.getName());
-        command.setDescription(model.getDescription());
+        Model model = new Model();
+        model.setId(modelCommand.getId());
+        model.setName(modelCommand.getName());
+        model.setDescription(modelCommand.getDescription());
 
-        return command;
+        return model;
     }
 }

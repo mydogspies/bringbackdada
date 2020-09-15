@@ -104,6 +104,12 @@
               th:action="@{/admin/save-new-gallery}" method="post">
             <input type="hidden">
 
+            <div class="form-field">
+                <label class="form label">Gallery title</label>
+                <label>
+                    <input type="text" name="title">
+                </label>
+            </div>
 
             <div class="form-field">
                 <label class="form label" for="content">Select content</label>
@@ -192,6 +198,77 @@
 
             <div class="form-field">
                 <button type="submit" class="btn btn-primary">Add new blog</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- PROJECT INPUT FIELDS-->
+<!--@thymesVar id="content" type="com.bringbackdada.site.model.ProjectCommand"-->
+<div class="form-container" id="project_input_form" th:fragment="project-input">
+
+    <div class="form_title_text">ADD NEW PROJECT</div>
+
+    <div class="form">
+        <form id="project_input" class="form-group"
+              th:action="@{/admin/save-new-project}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label">Project title</label>
+                <label>
+                    <input type="text" name="name">
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="project">Project category</label>
+                <select name="category" id="project">
+                    <option th:each="state : ${T(com.bringbackdada.site.model.ProjectCategory).values()}"
+                            th:value="${state}"
+                            th:text="${state}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label">Project description</label>
+                <label>
+                    <textarea id="project_description" name="description"></textarea>
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="gallerySet">Select galleries</label>
+                <select name="galleries" id="gallerySet" multiple="multiple">
+                    <option th:value="${iter.id}" th:each="iter : ${gallerySet}" th:text="${iter.galleryTitle}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="creatorSet">Select creators</label>
+                <select name="creators" id="creatorSet" multiple="multiple">
+                    <option th:value="${iter.id}" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="blogSet">Select blogs</label>
+                <select name="blogs" id="blogSet" multiple="multiple">
+                    <option th:value="${iter.id}" th:each="iter : ${blogSet}" th:text="${iter.entryName}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label class="form label">Project tags (comma separated)</label>
+                <label>
+                    <input type="text" name="tags">
+                </label>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Add new project</button>
             </div>
 
         </form>

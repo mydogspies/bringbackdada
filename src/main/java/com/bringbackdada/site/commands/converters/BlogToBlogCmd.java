@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class BlogToBlogCmd implements Converter<Blog, BlogCommand> {
 
+    private final CreatorToCreatorCmd creatorToCreatorCmd;
+
+    public BlogToBlogCmd(CreatorToCreatorCmd creatorToCreatorCmd) {
+        this.creatorToCreatorCmd = creatorToCreatorCmd;
+    }
+
     @Synchronized
     @Nullable
     @Override
@@ -24,7 +30,7 @@ public class BlogToBlogCmd implements Converter<Blog, BlogCommand> {
         command.setEntryContent(blog.getEntryContent());
         command.setContentSnippet(blog.getContentSnippet());
         command.setCategory(blog.getCategory());
-        command.setCreator(blog.getCreator());
+        command.setCreator(creatorToCreatorCmd.convert(blog.getCreator()));
         command.setContentId(blog.getContentId());
 
         return command;

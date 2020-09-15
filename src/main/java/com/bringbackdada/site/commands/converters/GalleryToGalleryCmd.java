@@ -30,6 +30,7 @@ public class GalleryToGalleryCmd implements Converter<Gallery, GalleryCommand> {
 
         GalleryCommand command = new GalleryCommand();
         command.setId(gallery.getId());
+        command.setGalleryTitle(gallery.getGalleryTitle());
         command.setDescription(gallery.getDescription());
         command.setIsFeatured(gallery.getFeatured());
 

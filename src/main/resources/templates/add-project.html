@@ -3,14 +3,15 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 
 <head th:replace="fragments/admin_fragments :: head_admin_tag">
-    <title>add-blog</title>
+    <title>add-project</title>
 </head>
 
 <body onload="onLoadFuncs()">
 
 <div class="container">
     <div th:replace="fragments/layout_fragments :: header_admin"></div>
-    <div th:replace="fragments/admin_fragments :: blog-input"></div>
+    <div th:replace="fragments/layout_fragments :: add_admin"></div>
+    <div th:replace="fragments/admin_fragments :: project-input"></div>
     <div th:replace="fragments/layout_fragments :: footer_admin"></div>
 </div>
 

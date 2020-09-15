@@ -1,7 +1,6 @@
 package com.bringbackdada.site.commands;
 
 import com.bringbackdada.site.model.ContentCategory;
-import com.bringbackdada.site.model.Creator;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,7 +18,7 @@ public class BlogCommand {
     private String entryName;
     private String entryContent;
     private String contentSnippet;
-    private Creator creator;
+    private CreatorCommand creator;
     private Set<ContentCategory> category;
     private Long contentId;
 }

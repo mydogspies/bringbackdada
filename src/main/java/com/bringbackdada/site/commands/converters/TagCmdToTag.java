@@ -8,19 +8,19 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TagToTagCmd implements Converter<Tag, TagCommand> {
+public class TagCmdToTag implements Converter<TagCommand, Tag> {
 
     @Synchronized
     @Nullable
     @Override
-    public TagCommand convert(Tag tag) {
+    public Tag convert(TagCommand tagCommand) {
 
-        if (tag == null) { return null; }
+        if (tagCommand == null) { return null; }
 
-        TagCommand command = new TagCommand();
-        command.setId(tag.getId());
-        command.setTag(tag.getTag());
+        Tag tag = new Tag();
+        tag.setId(tagCommand.getId());
+        tag.setTag(tagCommand.getTag());
 
-        return command;
+        return tag;
     }
 }

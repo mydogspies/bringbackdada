@@ -1,6 +1,7 @@
 package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.commands.BlogCommand;
+import com.bringbackdada.site.commands.converters.CreatorToCreatorCmd;
 import com.bringbackdada.site.model.ContentCategory;
 import com.bringbackdada.site.model.Creator;
 import com.bringbackdada.site.services.BlogService;
@@ -28,10 +29,16 @@ public class AdminAddBlogController {
     private final BlogService blogService;
     private final CreatorService creatorService;
 
-    public AdminAddBlogController(ContentService service, BlogService blogService, CreatorService creatorService) {
+    private final CreatorToCreatorCmd creatorToCreatorCmd;
+
+    public AdminAddBlogController(ContentService service,
+                                  BlogService blogService,
+                                  CreatorService creatorService,
+                                  CreatorToCreatorCmd creatorToCreatorCmd) {
         this.contentService = service;
         this.blogService = blogService;
         this.creatorService = creatorService;
+        this.creatorToCreatorCmd = creatorToCreatorCmd;
     }
 
     @GetMapping(value={"/admin/add-new-blog", "admin/add-new-content.html"})
@@ -65,7 +72,7 @@ public class AdminAddBlogController {
         command.setMilliseconds(instant);
 
         Creator blogCreator = creatorService.findById(creatorId);
-        command.setCreator(blogCreator);
+        command.setCreator(creatorToCreatorCmd.convert(blogCreator));
         blogService.saveBlogCommand(command);
 
         return "admin-data-saved";
