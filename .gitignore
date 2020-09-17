@@ -1,5 +1,7 @@
 ### PROJECT BASED ##
 /10_RESOURCES
+/docker-build
+/data
 
 HELP.md
 target/
