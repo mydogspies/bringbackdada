@@ -1,8 +1,5 @@
 ### PROJECT BASED ##
 /10_RESOURCES
-/docker-build
-/data
-/logs
 
 HELP.md
 target/
