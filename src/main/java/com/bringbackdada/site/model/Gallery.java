@@ -16,7 +16,8 @@ public class Gallery {
     @JoinTable
     @ManyToMany
     private List<Content> content;
-    
+
+    @Lob
     private String description;
 
     private Boolean isFeatured;

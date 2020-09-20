@@ -10,6 +10,8 @@ public class Model {
     private Long id;
 
     private String name;
+
+    @Lob
     private String description;
 
     public Long getId() {
