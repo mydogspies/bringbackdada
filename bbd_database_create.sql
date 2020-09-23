@@ -5,10 +5,10 @@ create table content_creator (content_id bigint not null, creator_id bigint not 
 create table content_model (content_id bigint not null, model_id bigint not null, primary key (content_id, model_id)) engine=InnoDB;
 create table content_tags (content_id bigint not null, tags_id bigint not null, primary key (content_id, tags_id)) engine=InnoDB;
 create table creator (id bigint not null auto_increment, description longtext, name varchar(255), primary key (id)) engine=InnoDB;
-create table gallery (id bigint not null auto_increment, description varchar(255), gallery_title varchar(255), is_featured bit, primary key (id)) engine=InnoDB;
+create table gallery (id bigint not null auto_increment, description longtext, gallery_title varchar(255), is_featured bit, primary key (id)) engine=InnoDB;
 create table gallery_content (gallery_id bigint not null, content_id bigint not null) engine=InnoDB;
 create table license (id bigint not null auto_increment, category varchar(255), short_description longtext, url varchar(255), primary key (id)) engine=InnoDB;
-create table model (id bigint not null auto_increment, description varchar(255), name varchar(255), primary key (id)) engine=InnoDB;
+create table model (id bigint not null auto_increment, description longtext, name varchar(255), primary key (id)) engine=InnoDB;
 create table project (id bigint not null auto_increment, description longtext, name varchar(255), project_category varchar(255), primary key (id)) engine=InnoDB;
 create table project_blog (project_id bigint not null, blog_id bigint not null, primary key (project_id, blog_id)) engine=InnoDB;
 create table project_creator (project_id bigint not null, creator_id bigint not null, primary key (project_id, creator_id)) engine=InnoDB;

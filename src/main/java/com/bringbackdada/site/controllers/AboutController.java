@@ -16,7 +16,7 @@ public class AboutController {
 
     private final Logger logger = LoggerFactory.getLogger(AboutController.class);
 
-    @RequestMapping({"about-bringbackdada","about-bringbackdada.html"})
+    @RequestMapping({"/site/about-bringbackdada","/site/about-bringbackdada.html"})
     public String getAboutPage(Model model){
         model.addAttribute("title_text", "Bringbackdada - ABOUT");
 

@@ -1,5 +1,7 @@
 ### PROJECT BASED ##
 /10_RESOURCES
+/data
+/logs
 
 HELP.md
 target/
