@@ -6,6 +6,11 @@ The project can be found at [https://www.bringbackdada.com] and is part of a sev
 projects. As a firm believer in open source and copy-left license forms, the source code for
 this project can be found here. 
 
+This project is written in Java 11/EE using the Spring framework and persists against a MySQL database. Testing
+is done with Junit5 and Mockito plus Circle CI. The site runs as a Docker container on a DigitalOcean droplet.
+
+####IMPORTANT
+
 Note though that the repo here is parts of the development
 environment and does not necessarily represent the final production version. Use it if you are
 looking for subjective examples of a what a simple but working website based on Spring could
