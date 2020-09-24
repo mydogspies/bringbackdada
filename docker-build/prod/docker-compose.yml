@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      # - MYSQL_DATA=bringbackdada
+      # - MYSQL_ROOT_HOST=localhost
+      # - MYSQL_DATABASE=testdb
+    volumes:
+     - /home/mydogspies/IdeaProjects/bringbackdada/data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
