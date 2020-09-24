@@ -1,8 +1,8 @@
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/mydogspies/bringbackdada) ![GitHub last commit](https://img.shields.io/github/last-commit/mydogspies/bringbackdada) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mydogspies/bringbackdada)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/mydogspies/bringbackdada) ![GitHub last commit](https://img.shields.io/github/last-commit/mydogspies/bringbackdada) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mydogspies/bringbackdada) ![CircleCI](https://img.shields.io/circleci/build/github/mydogspies/bringbackdada)
 ## BRINGBACKDADA.COM
 
 Bringbackdada.com is a photography project run by Berlin-based visual artist Silenceisgrand.
-The project can be found at [https://www.bringbackdada.com] and is part of a several art
+The project can be found at [https://www.bringbackdada.com] and is part of several art
 projects. As a firm believer in open source and copy-left license forms, the source code for
 this project can be found here. 
 
