@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.bringbackdada</groupId>
 	<artifactId>bringbackdada</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.9-SNAPSHOT</version>
 	<name>site</name>
 	<description>The core bringbackdada.com site</description>
 
