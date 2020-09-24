@@ -3,6 +3,7 @@
 /data
 /logs
 bbd_database_create.sql
+/docker-build
 
 HELP.md
 target/
