@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bringbackdada</groupId>
-	<artifactId>site</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>bringbackdada</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>site</name>
 	<description>The core bringbackdada.com site</description>
 
@@ -36,6 +36,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,15 +1,13 @@
 package com.bringbackdada.site.controllers;
 
-import com.bringbackdada.site.services.ContentService;
-import com.bringbackdada.site.services.CreatorService;
-import com.bringbackdada.site.services.ImageService;
-import com.bringbackdada.site.services.LicenseService;
+import com.bringbackdada.site.services.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.Mockito.mock;
@@ -23,6 +21,9 @@ class AdminAddContentControllerIT {
 
     @Autowired
     MockMvc mockMvc;
+
+    @MockBean
+    UserService userService;
 
     @MockBean
     CreatorService creatorService;
@@ -46,6 +47,7 @@ class AdminAddContentControllerIT {
     }
 
     @Test
+    @WithMockUser(username = "admin", password = "$2y$12$LoUoUX4t54/gDGDNvNf6w.hBhpVffPdoI3lZG0P0bVvEnBRVCsw5i")
     void getAddContentPageResponse() throws Exception {
         mockMvc.perform(get("/admin/add-new-content"))
                 .andExpect(status().isOk())

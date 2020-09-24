@@ -2,6 +2,7 @@
 /10_RESOURCES
 /data
 /logs
+bbd_database_create.sql
 
 HELP.md
 target/

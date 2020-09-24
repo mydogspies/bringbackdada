@@ -30,7 +30,7 @@ public class ProjectsController {
         this.projectService = projectService;
     }
 
-    @RequestMapping({"photo-projects","photo-projects.html"})
+    @RequestMapping({"/site/photo-projects","/site/photo-projects.html"})
     public String getProjectsPage(Model model){
 
         Set<Project> projects = projectService.findAll();

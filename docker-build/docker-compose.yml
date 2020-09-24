@@ -11,13 +11,8 @@ services:
       # - MYSQL_DATA=bringbackdada
       # - MYSQL_ROOT_HOST=localhost
       # - MYSQL_DATABASE=testdb
-    # volumes:
-    #  - /home/mydogspies/IdeaProjects/bringbackdada/data:/var/lib/mysql
-#  adminer:
-#    image: dockette/adminer:dg
-#    restart: always
-#    ports:
-#      - 8081:8080
+    volumes:
+     - /home/mydogspies/IdeaProjects/bringbackdada/data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin
     restart: always

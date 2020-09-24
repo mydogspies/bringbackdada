@@ -41,7 +41,7 @@ public class BlogController {
         this.contentService = contentService;
     }
 
-    @GetMapping(value = {"photography-blog", "photography-blog.html"})
+    @GetMapping(value = {"/site/photography-blog", "/site/photography-blog.html"})
     public String getBlog(Model model) {
 
         Set<Blog> blogSet = blogService.findAll();

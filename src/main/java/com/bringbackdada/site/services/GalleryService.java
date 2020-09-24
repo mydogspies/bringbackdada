@@ -10,5 +10,4 @@ public interface GalleryService extends CrudService<Gallery, Long> {
 
     List<Gallery> getGalleryByFeatured();
     GalleryCommand saveGalleryCommand(GalleryCommand command);
-
 }

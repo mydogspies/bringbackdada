@@ -15,6 +15,7 @@ create table project_creator (project_id bigint not null, creator_id bigint not 
 create table project_gallery (project_id bigint not null, gallery_id bigint not null, primary key (project_id, gallery_id)) engine=InnoDB;
 create table project_tags (project_id bigint not null, tags_id bigint not null, primary key (project_id, tags_id)) engine=InnoDB;
 create table tag (id bigint not null auto_increment, tag varchar(255), primary key (id)) engine=InnoDB;
+create table user (id bigint not null auto_increment, password varchar(255), username varchar(255), primary key (id)) engine=InnoDB;
 alter table project_blog add constraint UK_577gn33d33h2noqano3uuo8ih unique (blog_id);
 alter table project_creator add constraint UK_acrvu3pqualj7085rg1p70c7d unique (creator_id);
 alter table project_gallery add constraint UK_kkeo3bqqdk87im3lo2j1xh7hl unique (gallery_id);

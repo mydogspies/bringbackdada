@@ -57,7 +57,7 @@ class BlogControllerIT {
         when(mockBlogService.findAll()).thenReturn(blogSet);
         when(mockContentService.findById(anyLong())).thenReturn(content);
 
-        mockMvc.perform(get("/photography-blog"))
+        mockMvc.perform(get("/site/photography-blog"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("blog"));
     }
