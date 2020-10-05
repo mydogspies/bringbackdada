@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/bbd_prod
+    url: jdbc:mysql://db:3306/bbd_prod
     username: bbd_prod_user
     password: bbd
   jpa:
