@@ -4,6 +4,8 @@
 body {
   background-color: #1d2a32;
   color: #d4dfee;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 a:link {
@@ -57,10 +59,44 @@ in fragments, only as the container for page specific content. See home.html as 
 /* GENERAL PAGE DESIGN */
 
 .page_titles {
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 24px;
   text-align: center;
   color: #aca19d;
+}
+
+/* ABOUT PAGE */
+
+#about_page_content {
+  width: 55%;
+  margin: 0 auto;
+  padding-top: 22px;
+  padding-bottom: 16px;
+}
+
+.about_page_heading {
+  margin: 12px 0 15px 0;
+  font-family: 'Lato-Regular', Arial, sans-serif;
+  font-size: 26px;
+  text-align: center;
+  color: #aca19d;
+}
+
+.about_paragraph {
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+.about_paragraph_text {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.about_paragraph_small_text {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 13px;
+  color: #c4cfbe;
 }
 
 /* BLOGS ROLL - FEATURED CONTENT */
@@ -276,11 +312,15 @@ bugs out below 400 pixels we do it selectively.
 }
 
 .top_menu {
-  place-self: center;
   font-family: 'latoregular', Arial, sans-serif;
-  font-size: 16px;
-  text-align: center;
+  font-size: 15px;
+  justify-self: center;
 }
+
+.menu_item {
+  margin: 0 6px 0 6px;
+}
+
 
 /*
 These properties together with the styleCurrentPageLink() in scripts.js
