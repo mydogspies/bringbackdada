@@ -50,7 +50,7 @@ public class DataInitializer {
         this.tagService = tagService;
         this.projectService = projectService;
         // initializeDefaultTestEntries(); // TODO for dev only!!!
-        initializeDefaultDatabase();
+        // initializeDefaultDatabase();
     }
 
     private void initializeDefaultDatabase() {

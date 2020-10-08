@@ -6,7 +6,6 @@ bbd_database_create.sql
 /docker-build
 /db-build
 /src/main/scripts
-/src/main/resources/application.properties
 /src/main/resources/application-dev.yml
 /src/main/resources/application-prod.yml
 
