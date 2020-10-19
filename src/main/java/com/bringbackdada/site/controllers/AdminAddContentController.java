@@ -60,7 +60,9 @@ public class AdminAddContentController {
                                       @RequestParam("license") Long licenseId,
                                       @RequestParam("creators") List<Long> creatorIds,
                                       @RequestParam("category") ContentCategory category,
-                                      @RequestParam("featured") Integer featured){
+                                      @RequestParam("featured") Integer featured,
+                                      @RequestParam("contentOrder") Integer order,
+                                      @RequestParam("visible") Boolean visible){
 
         ContentCommand command = new ContentCommand();
 
@@ -71,6 +73,8 @@ public class AdminAddContentController {
         command.setDescription(description);
         command.setCategory(category);
         command.setOnFrontPage(featured != 0);
+        command.setContentOrder(order);
+        command.setVisible(visible);
 
         License license = licenseService.findById(licenseId);
         command.setLicense(license);

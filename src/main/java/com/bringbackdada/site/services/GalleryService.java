@@ -9,5 +9,6 @@ import java.util.Optional;
 public interface GalleryService extends CrudService<Gallery, Long> {
 
     List<Gallery> getGalleryByFeatured();
+    List<Gallery> sortGalleryByGalleryOrder(List<Gallery> unsortedList);
     GalleryCommand saveGalleryCommand(GalleryCommand command);
 }

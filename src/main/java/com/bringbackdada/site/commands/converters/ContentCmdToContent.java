@@ -36,6 +36,8 @@ public class ContentCmdToContent implements Converter<ContentCommand, Content> {
         content.setLicense(contentCommand.getLicense());
         content.setDescription(contentCommand.getDescription());
         content.setOnFrontPage(contentCommand.getOnFrontPage());
+        content.setContentOrder(contentCommand.getContentOrder());
+        content.setVisible(contentCommand.getVisible());
 
         Set<Creator> creatorSet = new HashSet<>();
         for (CreatorCommand cmd : contentCommand.getCreators()) {

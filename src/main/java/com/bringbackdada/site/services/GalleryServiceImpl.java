@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -40,6 +41,14 @@ public class GalleryServiceImpl implements GalleryService {
             galleryList.add(gallery);
         }
         return galleryList;
+    }
+
+    @Override
+    public List<Gallery> sortGalleryByGalleryOrder(List<Gallery> unsortedGalleryList) {
+        List<Gallery> sortedList = unsortedGalleryList.stream()
+                .sorted(Comparator.comparing(Gallery::getGalleryOrder))
+                .collect(Collectors.toList());
+        return sortedList;
     }
 
     @Override
@@ -76,7 +85,7 @@ public class GalleryServiceImpl implements GalleryService {
 
     @Override
     public void deleteById(Long aLong) {
-
+        galleryRepository.deleteById(aLong);
     }
 
     @Override

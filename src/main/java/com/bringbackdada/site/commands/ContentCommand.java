@@ -23,5 +23,6 @@ public class ContentCommand {
     private String description;
     private Set<TagCommand> tags = new HashSet<>();
     private Boolean onFrontPage;
-    private Integer order;
+    private Integer contentOrder;
+    private Boolean visible;
 }

@@ -16,4 +16,5 @@ public class GalleryCommand {
     private List<ContentCommand> content;
     private String description;
     private Boolean isFeatured;
+    private Integer galleryOrder;
 }

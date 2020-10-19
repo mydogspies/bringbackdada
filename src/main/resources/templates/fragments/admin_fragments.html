@@ -86,6 +86,21 @@
             </div>
 
             <div class="form-field">
+                <label class="form label">Content order</label>
+                <label>
+                    <input type="text" name="contentOrder">
+                </label>
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="category">Visibility</label>
+                <select name="visible" id="visible">
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+            </div>
+
+            <div class="form-field">
                 <button type="submit" class="btn btn-primary">Add content</button>
             </div>
 
@@ -269,6 +284,57 @@
 
             <div class="form-field">
                 <button type="submit" class="btn btn-primary">Add new project</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<!-- GALLERY DELETE FIELDS-->
+<div class="form-container" id="gallery-delete-form" th:fragment="gallery-delete">
+
+    <div class="form_title_text">DELETE A GALLERY</div>
+
+    <div class="form">
+        <form id="gallery-delete" class="form-group"
+              th:action="@{/admin/delete-a-gallery}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label" for="galleries">Select gallery to delete</label>
+                <select name="galleryToDelete" id="galleries">
+                    <option th:value="${iter.id}" th:each="iter : ${galleries}" th:text="${iter.galleryTitle}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Delete permanently</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- CONTENT DELETE FIELDS-->
+<div class="form-container" id="content-delete-form" th:fragment="content-delete">
+
+    <div class="form_title_text">DELETE SOME CONTENT</div>
+
+    <div class="form">
+        <form id="content-delete" class="form-group"
+              th:action="@{/admin/delete-this-content}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label" for="gallerySet">Select content to delete</label>
+                <select name="contentToDelete" id="allContent">
+                    <option th:value="${iter.id}" th:each="iter : ${allContent}" th:text="${iter.id + ' ' + iter.contentTitle}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Delete permanently</button>
             </div>
 
         </form>

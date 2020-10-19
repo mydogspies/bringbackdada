@@ -45,8 +45,16 @@ public class IndexController {
         // TODO should be command object instead of model object?
 
         if (!galleryList.isEmpty()) {
-            for (Gallery gallery : galleryList) {
-                contentList.addAll(gallery.getContent());
+            for (Gallery gallery : galleryService.sortGalleryByGalleryOrder(galleryList)) {
+
+                List<Content> unsortedContentList = new ArrayList<>();
+                for (Content content : gallery.getContent()) {
+                    if (content.getVisible()) {
+                        unsortedContentList.add(content);
+                    }
+                }
+                contentList.addAll(contentService.sortContentByContentOrder(unsortedContentList));
+
             }
         } else {
             return "404error";
@@ -68,7 +76,10 @@ public class IndexController {
 
         Content content = contentService.findById(id);
 
-        InputStream is = new ByteArrayInputStream(content.getImageFile());
-        IOUtils.copy(is, response.getOutputStream());
+        if (content.getVisible()) {
+            InputStream is = new ByteArrayInputStream(content.getImageFile());
+            IOUtils.copy(is, response.getOutputStream());
+        }
+
     }
 }

@@ -131,7 +131,7 @@ img.blog_main_image {
 }
 
 .featured_blog_body {
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -227,7 +227,7 @@ a single column.
 }
 
 .blog_body {
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -307,12 +307,12 @@ bugs out below 400 pixels we do it selectively.
   margin: 0 0 14px 0;
   grid-column: 1/-1;
   place-self: center;
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 26px;
 }
 
 .top_menu {
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 15px;
   justify-self: center;
 }
@@ -343,7 +343,7 @@ together change the link colors depending on page location.
 }
 
 .footers #footer_copyright {
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 15px;
 }
 
@@ -374,7 +374,7 @@ together change the link colors depending on page location.
 
 .error-messages {
   margin: 0 auto;
-  font-family: 'latoregular', Arial, sans-serif;
+  font-family: 'Lato-Regular', Arial, sans-serif;
 }
 
 #error-header {

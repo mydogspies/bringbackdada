@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -36,6 +38,14 @@ public class ContentServiceImpl implements ContentService {
         Content savedContent = contentRepository.save(detachedContent); // TODO fix this line
         logger.debug("Content detached from cmd object and saved as id: " + savedContent.getId());
         return contentToContentCmd.convert(savedContent);
+    }
+
+    @Override
+    public List<Content> sortContentByContentOrder(List<Content> sortedList) {
+        List<Content> sortedOrder = sortedList.stream()
+                .sorted(Comparator.comparing(Content::getContentOrder))
+                .collect(Collectors.toList());
+        return sortedOrder;
     }
 
     @Override
@@ -66,7 +76,7 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public void deleteById(Long aLong) {
-
+        contentRepository.deleteById(aLong);
     }
 
     @Override

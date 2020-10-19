@@ -17,14 +17,12 @@
     <link rel="stylesheet" type="text/css" href="/css/featherlight.gallery.custom.css">
     <link rel="stylesheet" type="text/css" th:href="@{/fonts/fonts.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
-    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/featherlight.min.js"></script>
-    <script src="/js/featherlight.gallery.min.js"></script>
-    <script src="/js/macy@2.js"></script>
-    <script src="/js/scripts.js"></script>
-    <script src="/js/jquery.detect_swipe.min.js"></script>
-
-
+    <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/js/featherlight.min.js"></script>
+    <script type="text/javascript" src="/js/featherlight.gallery.min.js"></script>
+    <script type="text/javascript" src="/js/macy@2.js"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="/js/jquery.detect_swipe.min.js"></script>
 </head>
 <body>
 
@@ -33,10 +31,10 @@
     <div id="header_logo_text">bri+gba*kDADA</div>
     <div id="top_menu_container">
         <div class="top_menu">
-            <span class="menu_item"><a href="/" target="_self">home</a></span>
-            <span class="menu_item"><a href="/site/photo-projects" target="_self">photography projects</a></span>
-            <span class="menu_item"><a href="/site/photography-blog" target="_self">artist blog</a></span>
-            <span class="menu_item"><a href="/site/about-bringbackdada" target="_self">about bringbackdada</a></span>
+            <span class="menu_item" id="home"><a href="/" target="_self">home</a></span>
+            <!-- <span class="menu_item" id="photo-projects"><a href="/site/photo-projects" target="_self">photography projects</a></span> -->
+            <span class="menu_item" id="photography-blog"><a href="/site/photography-blog" target="_self">artist blog</a></span>
+            <span class="menu_item" id="about-bringbackdada"><a href="/site/about-bringbackdada" target="_self">about bringbackdada</a></span>
         </div>
     </div>
 </div>
@@ -63,6 +61,15 @@
         <div><a href="/admin/add-new-gallery" target="_self">add a gallery</a></div>
         <div><a href="/admin/add-new-blog" target="_self">add a blog</a></div>
         <div><a href="/admin/add-new-project" target="_self">add a project</a></div>
+    </div>
+</div>
+
+<div th:fragment="delete_admin" class="headers" id="delete_admin">
+    <div class="add_admin_grid">
+        <div><a href="/admin/delete-content" target="_self">delete content</a></div>
+        <div><a href="/admin/delete-gallery" target="_self">delete a gallery</a></div>
+        <div><a href="/admin/delete-blog" target="_self">delete a blog</a></div>
+        <div><a href="/admin/delete-project" target="_self">delete a project</a></div>
     </div>
 </div>
 

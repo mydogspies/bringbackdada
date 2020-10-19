@@ -41,6 +41,10 @@ public class Content {
     @Lob
     private byte[] imageFile;
 
+    private Integer contentOrder;
+
+    private Boolean visible;
+
     public Long getId() {
         return id;
     }
@@ -136,4 +140,21 @@ public class Content {
     public void setImageFile(byte[] imageFile) {
         this.imageFile = imageFile;
     }
+
+    public Integer getContentOrder() {
+        return contentOrder;
+    }
+
+    public void setContentOrder(Integer contentOrder) {
+        this.contentOrder = contentOrder;
+    }
+
+    public Boolean getVisible() {
+        return visible;
+    }
+
+    public void setVisible(Boolean visible) {
+        this.visible = visible;
+    }
 }
+

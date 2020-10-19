@@ -2,7 +2,6 @@ package com.bringbackdada.site.model;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Gallery {
@@ -16,6 +15,8 @@ public class Gallery {
     @JoinTable
     @ManyToMany
     private List<Content> content;
+
+    private Integer galleryOrder;
 
     @Lob
     private String description;
@@ -64,5 +65,13 @@ public class Gallery {
 
     public void setFeatured(Boolean featured) {
         isFeatured = featured;
+    }
+
+    public Integer getGalleryOrder() {
+        return galleryOrder;
+    }
+
+    public void setGalleryOrder(Integer galleryOrder) {
+        this.galleryOrder = galleryOrder;
     }
 }
