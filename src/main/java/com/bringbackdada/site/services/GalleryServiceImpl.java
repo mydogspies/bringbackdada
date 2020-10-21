@@ -60,10 +60,10 @@ public class GalleryServiceImpl implements GalleryService {
     }
 
     @Override
-    public Set<Gallery> findAll() {
+    public List<Gallery> findAll() {
         Iterable<Gallery> result = galleryRepository.findAll();
-        Set<Gallery> resultSet = StreamSupport.stream(result.spliterator(), false)
-                .collect(Collectors.toSet());
+        List<Gallery> resultSet = StreamSupport.stream(result.spliterator(), false)
+                .collect(Collectors.toList());
         return resultSet;
     }
 
@@ -89,7 +89,7 @@ public class GalleryServiceImpl implements GalleryService {
     }
 
     @Override
-    public int count(Set<Gallery> set) {
+    public int count(List<Gallery> set) {
         return 0;
     }
 

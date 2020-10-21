@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,7 +35,7 @@ class CreatorServiceImplTest {
 
         when(creatorRepository.findAll()).thenReturn(creatorSet);
 
-        Set<Creator> creators = creatorService.findAll();
+        List<Creator> creators = creatorService.findAll();
 
         assertEquals(creators.size(), 1);
         verify(creatorRepository, times(1)).findAll();

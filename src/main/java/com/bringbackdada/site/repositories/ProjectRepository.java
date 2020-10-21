@@ -8,6 +8,5 @@ import java.util.Optional;
 public interface ProjectRepository extends CrudRepository<Project, Long> {
 
     Iterable<Project> findAll();
-
     Optional<Project> findById(Long id);
 }

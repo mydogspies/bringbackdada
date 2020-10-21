@@ -341,5 +341,30 @@
     </div>
 </div>
 
+<!-- CREATOR DELETE FIELDS-->
+<div class="form-container" id="creator-delete-form" th:fragment="creator-delete">
+
+    <div class="form_title_text">DELETE A CREATOR</div>
+
+    <div class="form">
+        <form id="creator-delete" class="form-group"
+              th:action="@{/admin/delete-this-creator}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label" for="gallerySet">Select creator to delete</label>
+                <select name="creatorToDelete" id="allCreators">
+                    <option th:value="${iter.id}" th:each="iter : ${allCreators}" th:text="${iter.id + ' ' + iter.name}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Delete permanently</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

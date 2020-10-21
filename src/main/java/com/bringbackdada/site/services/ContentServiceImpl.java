@@ -8,12 +8,10 @@ import com.bringbackdada.site.repositories.ContentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -49,10 +47,10 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public Set<Content> findAll() {
+    public List<Content> findAll() {
         Iterable<Content> result = contentRepository.findAll();
-        Set<Content> resultSet = StreamSupport.stream(result.spliterator(), false)
-                .collect(Collectors.toSet());
+        List<Content> resultSet = StreamSupport.stream(result.spliterator(), false)
+                .collect(Collectors.toList());
         return resultSet;
     }
 
@@ -80,7 +78,7 @@ public class ContentServiceImpl implements ContentService {
     }
 
     @Override
-    public int count(Set<Content> set) {
+    public int count(List<Content> set) {
         return 0;
     }
 }

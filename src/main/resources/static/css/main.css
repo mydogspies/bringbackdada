@@ -65,6 +65,33 @@ in fragments, only as the container for page specific content. See home.html as 
   color: #aca19d;
 }
 
+/* HOME PAGE */
+
+.home_page_content {
+  width: 55%;
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 8px;
+}
+
+.home_paragraph {
+  padding-bottom: 8px;
+  margin: 0 auto;
+}
+
+.home_paragraph_text {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.home_paragraph_small_text {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 13px;
+  color: #c4cfbe;
+}
+
+
 /* ABOUT PAGE */
 
 #about_page_content {
@@ -97,6 +124,15 @@ in fragments, only as the container for page specific content. See home.html as 
   font-family: 'OpenSans-Regular', Arial, sans-serif;
   font-size: 13px;
   color: #c4cfbe;
+}
+
+/* PHOTO SERIES */
+
+.blogs {
+  width: 85%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* BLOGS ROLL - FEATURED CONTENT */

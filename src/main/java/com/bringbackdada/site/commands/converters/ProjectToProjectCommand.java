@@ -7,8 +7,8 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ProjectToProjectCommand implements Converter<Project, ProjectCommand> {
@@ -40,25 +40,25 @@ public class ProjectToProjectCommand implements Converter<Project, ProjectComman
         command.setProjectCategory(project.getProjectCategory());
         command.setDescription(project.getDescription());
 
-        Set<GalleryCommand> gallerySet = new HashSet<>();
+        List<GalleryCommand> gallerySet = new ArrayList<>();
         for (Gallery gallery : project.getGallery()) {
             gallerySet.add(galleryToGalleryCmd.convert(gallery));
         }
         command.setGallery(gallerySet);
 
-        Set<CreatorCommand> creatorSet = new HashSet<>();
+        List<CreatorCommand> creatorSet = new ArrayList<>();
         for (Creator creator : project.getCreator()) {
             creatorSet.add(creatorToCreatorCmd.convert(creator));
         }
         command.setCreator(creatorSet);
 
-        Set<BlogCommand> blogSet = new HashSet<>();
+        List<BlogCommand> blogSet = new ArrayList<>();
         for (Blog blog : project.getBlog()) {
             blogSet.add(blogToBlogCmd.convert(blog));
         }
         command.setBlog(blogSet);
 
-        Set<TagCommand> tagSet = new HashSet<>();
+        List<TagCommand> tagSet = new ArrayList<>();
         for (Tag tag : project.getTags()) {
             tagSet.add(tagToTagCmd.convert(tag));
         }

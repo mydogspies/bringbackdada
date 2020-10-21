@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,9 +15,9 @@ public class ProjectCommand {
     private Long id;
     private String name;
     private ProjectCategory projectCategory;
-    private Set<GalleryCommand> gallery;
-    private Set<CreatorCommand> creator;
-    private Set<BlogCommand> blog;
+    private List<GalleryCommand> gallery;
+    private List<CreatorCommand> creator;
+    private List<BlogCommand> blog;
     private String description;
-    private Set<TagCommand> tags;
+    private List<TagCommand> tags;
 }

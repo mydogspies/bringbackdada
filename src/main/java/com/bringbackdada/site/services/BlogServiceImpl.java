@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -38,10 +39,10 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Set<Blog> findAll() {
+    public List<Blog> findAll() {
         Iterable<Blog> result = blogRepository.findAll();
-        Set<Blog> resultSet = StreamSupport.stream(result.spliterator(), false)
-                .collect(Collectors.toSet());
+        List<Blog> resultSet = StreamSupport.stream(result.spliterator(), false)
+                .collect(Collectors.toList());
         return resultSet;
     }
 
@@ -73,7 +74,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public int count(Set<Blog> set) {
+    public int count(List<Blog> set) {
         return 0;
     }
 

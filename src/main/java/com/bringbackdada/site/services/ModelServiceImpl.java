@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.Model;
 import com.bringbackdada.site.repositories.ModelRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -19,10 +20,10 @@ public class ModelServiceImpl implements ModelService {
 
 
     @Override
-    public Set<Model> findAll() {
+    public List<Model> findAll() {
         Iterable<Model> result = modelRepository.findAll();
-        Set<Model> resultSet = StreamSupport.stream(result.spliterator(), false)
-                .collect(Collectors.toSet());
+        List<Model> resultSet = StreamSupport.stream(result.spliterator(), false)
+                .collect(Collectors.toList());
         return resultSet;
     }
 
@@ -48,7 +49,7 @@ public class ModelServiceImpl implements ModelService {
     }
 
     @Override
-    public int count(Set<Model> set) {
+    public int count(List<Model> set) {
         return 0;
     }
 }

@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.License;
 import com.bringbackdada.site.repositories.LicenseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,10 +20,10 @@ public class LicenseServiceImpl implements LicenseService {
     }
 
     @Override
-    public Set<License> findAll() {
+    public List<License> findAll() {
         Iterable<License> result = licenseRepository.findAll();
-        Set<License> resultSet = StreamSupport.stream(result.spliterator(), false)
-                .collect(Collectors.toSet());
+        List<License> resultSet = StreamSupport.stream(result.spliterator(), false)
+                .collect(Collectors.toList());
         return resultSet;
     }
 
@@ -50,7 +51,7 @@ public class LicenseServiceImpl implements LicenseService {
     }
 
     @Override
-    public int count(Set<License> set) {
+    public int count(List<License> set) {
         return 0;
     }
 }

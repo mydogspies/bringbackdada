@@ -13,7 +13,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -48,7 +50,7 @@ class BlogControllerIT {
         blog.setId(1L);
         blog.setMilliseconds(Instant.now());
 
-        Set<Blog> blogSet = new HashSet<>();
+        List<Blog> blogSet = new ArrayList<>();
         blogSet.add(blog);
 
         Content content = new Content();

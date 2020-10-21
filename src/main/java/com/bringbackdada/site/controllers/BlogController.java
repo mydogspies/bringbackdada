@@ -44,7 +44,7 @@ public class BlogController {
     @GetMapping(value = {"/site/photography-blog", "/site/photography-blog.html"})
     public String getBlog(Model model) {
 
-        Set<Blog> blogSet = blogService.findAll();
+        List<Blog> blogSet = blogService.findAll();
 
         if (!blogSet.isEmpty()) {
             List<Blog> sortedBlogList = sortBlog(blogSet);
@@ -111,7 +111,7 @@ public class BlogController {
     }
 
     // TODO verify sort order and functionality with real life data
-    private List<Blog> sortBlog(Set<Blog> blog) {
+    private List<Blog> sortBlog(List<Blog> blog) {
         List<Blog> blogList = new ArrayList<>(blog);
         Comparator<Blog> timeSorter = Comparator.comparing(Blog::getMilliseconds);
         blogList.sort(timeSorter);

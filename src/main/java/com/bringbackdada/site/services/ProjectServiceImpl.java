@@ -4,8 +4,8 @@ import com.bringbackdada.site.model.Project;
 import com.bringbackdada.site.repositories.ProjectRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -17,8 +17,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Set<Project> findAll() {
-        Set<Project> projects = new HashSet<>();
+    public List<Project> findAll() {
+        List<Project> projects = new ArrayList<>();
         projectRepository.findAll().iterator().forEachRemaining(projects::add);
         return projects;
     }
@@ -45,7 +45,7 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public int count(Set<Project> set) {
+    public int count(List<Project> set) {
         return 0;
     }
 }

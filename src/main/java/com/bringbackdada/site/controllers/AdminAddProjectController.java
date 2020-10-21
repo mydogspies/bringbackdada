@@ -44,9 +44,6 @@ public class AdminAddProjectController {
     @PostMapping(value={"/admin/save-new-project"})
     public String saveOrUpdateProject() {
 
-
-
-
         return "admin-data-saved";
     }
 }

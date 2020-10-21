@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.Creator;
 import com.bringbackdada.site.repositories.CreatorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,10 +20,10 @@ public class CreatorServiceImpl implements CreatorService {
     }
 
     @Override
-    public Set<Creator> findAll() {
+    public List<Creator> findAll() {
         Iterable<Creator> result = creatorRepository.findAll();
-        Set<Creator> resultSet = StreamSupport.stream(result.spliterator(), false)
-                        .collect(Collectors.toSet());
+        List<Creator> resultSet = StreamSupport.stream(result.spliterator(), false)
+                        .collect(Collectors.toList());
         return resultSet;
     }
 
@@ -46,11 +47,11 @@ public class CreatorServiceImpl implements CreatorService {
 
     @Override
     public void deleteById(Long aLong) {
-
+        creatorRepository.deleteById(aLong);
     }
 
     @Override
-    public int count(Set<Creator> set) {
+    public int count(List<Creator> set) {
         return 0;
     }
 }

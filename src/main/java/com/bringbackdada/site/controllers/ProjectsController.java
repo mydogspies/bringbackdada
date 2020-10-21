@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -33,7 +34,7 @@ public class ProjectsController {
     @RequestMapping({"/site/photo-projects","/site/photo-projects.html"})
     public String getProjectsPage(Model model){
 
-        Set<Project> projects = projectService.findAll();
+        List<Project> projects = projectService.findAll();
 
         if (!projects.isEmpty()) {
 

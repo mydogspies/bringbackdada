@@ -4,6 +4,7 @@ import com.bringbackdada.site.model.Tag;
 import com.bringbackdada.site.repositories.TagRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -16,7 +17,7 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
-    public Set<Tag> findAll() {
+    public List<Tag> findAll() {
         return null;
     }
 
@@ -42,7 +43,7 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
-    public int count(Set<Tag> set) {
+    public int count(List<Tag> set) {
         return 0;
     }
 }

@@ -1,6 +1,7 @@
 package com.bringbackdada.site.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,19 +17,19 @@ public class Project {
     private ProjectCategory projectCategory;
 
     @OneToMany
-    private Set<Gallery> gallery;
+    private List<Gallery> gallery;
 
     @OneToMany
-    private Set<Creator> creator;
+    private List<Creator> creator;
 
     @OneToMany
-    private Set<Blog> blog;
+    private List<Blog> blog;
 
     @Lob
     private String description;
 
     @ManyToMany
-    private Set<Tag> tags;
+    private List<Tag> tags;
 
     public Long getId() {
         return id;
@@ -54,27 +55,27 @@ public class Project {
         this.projectCategory = projectCategory;
     }
 
-    public Set<Gallery> getGallery() {
+    public List<Gallery> getGallery() {
         return gallery;
     }
 
-    public void setGallery(Set<Gallery> gallery) {
+    public void setGallery(List<Gallery> gallery) {
         this.gallery = gallery;
     }
 
-    public Set<Creator> getCreator() {
+    public List<Creator> getCreator() {
         return creator;
     }
 
-    public void setCreator(Set<Creator> creator) {
+    public void setCreator(List<Creator> creator) {
         this.creator = creator;
     }
 
-    public Set<Blog> getBlog() {
+    public List<Blog> getBlog() {
         return blog;
     }
 
-    public void setBlog(Set<Blog> blog) {
+    public void setBlog(List<Blog> blog) {
         this.blog = blog;
     }
 
@@ -86,11 +87,11 @@ public class Project {
         this.description = description;
     }
 
-    public Set<Tag> getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(Set<Tag> tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 }
