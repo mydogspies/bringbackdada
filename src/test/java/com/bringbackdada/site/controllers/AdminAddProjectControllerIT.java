@@ -1,9 +1,6 @@
 package com.bringbackdada.site.controllers;
 
-import com.bringbackdada.site.services.BlogService;
-import com.bringbackdada.site.services.CreatorService;
-import com.bringbackdada.site.services.GalleryService;
-import com.bringbackdada.site.services.UserService;
+import com.bringbackdada.site.services.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +31,12 @@ class AdminAddProjectControllerIT {
 
     @MockBean
     BlogService blogService;
+
+    @MockBean
+    ProjectService projectService;
+
+    @MockBean
+    TagService tagService;
 
     @Test
     @WithMockUser(username = "admin", password = "$2y$12$LoUoUX4t54/gDGDNvNf6w.hBhpVffPdoI3lZG0P0bVvEnBRVCsw5i")
