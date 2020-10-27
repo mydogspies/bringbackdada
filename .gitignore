@@ -11,18 +11,18 @@ bbd_database_create.sql
 
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+.mvn/wrapper/maven-wrapper.jar
+**/src/main/**/target/
+**/src/test/**/target/
 
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddBlogControllerTest.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddGalleryControllerTest.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddProjectControllerTest.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddGalleryControllerIT.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddContentControllerTest.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddProjectControllerIT.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddContentControllerIT.java
-!/src/test/java/com/bringbackdada/site/controllers/AdminAddBlogControllerIT.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddBlogControllerTest.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddGalleryControllerTest.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddProjectControllerTest.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddGalleryControllerIT.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddContentControllerTest.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddProjectControllerIT.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddContentControllerIT.java
+/src/test/java/com/bringbackdada/site/controllers/AdminAddBlogControllerIT.java
 
 ### STS ###
 .apt_generated
