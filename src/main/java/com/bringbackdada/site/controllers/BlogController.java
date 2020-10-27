@@ -113,6 +113,7 @@ public class BlogController {
     // TODO verify sort order and functionality with real life data
     private List<Blog> sortBlog(List<Blog> blog) {
         List<Blog> blogList = new ArrayList<>(blog);
+        blogList.removeIf(blg -> blg.getId() == 3L); // removes the placeholder blog related to no content (always id=3)
         Comparator<Blog> timeSorter = Comparator.comparing(Blog::getMilliseconds);
         blogList.sort(timeSorter);
         return blogList;

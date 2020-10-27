@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments/admin_fragments :: head_admin_tag">
+    <title>Delete a project</title>
+</head>
+
+<body onload="onLoadFuncs()">
+
+<div class="container">
+    <div th:replace="fragments/layout_fragments :: header_admin"></div>
+    <div th:replace="fragments/layout_fragments :: add_admin"></div>
+    <div th:replace="fragments/layout_fragments :: delete_admin"></div>
+    <div th:replace="fragments/admin_fragments :: project-delete"></div>
+    <div th:replace="fragments/layout_fragments :: footer_admin"></div>
+</div>
+
+<script th:src="@{/bootstrap-4.5.2-dist/js/bootstrap.bundle.js}"></script>
+<script src="/js/jquery.js"></script>
+
+</body>
+</html>

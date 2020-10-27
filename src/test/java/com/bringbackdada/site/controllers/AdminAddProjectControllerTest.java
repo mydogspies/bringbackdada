@@ -1,8 +1,10 @@
 package com.bringbackdada.site.controllers;
 
-import com.bringbackdada.site.services.BlogService;
-import com.bringbackdada.site.services.CreatorService;
-import com.bringbackdada.site.services.GalleryService;
+import com.bringbackdada.site.commands.converters.BlogToBlogCmd;
+import com.bringbackdada.site.commands.converters.CreatorToCreatorCmd;
+import com.bringbackdada.site.commands.converters.GalleryToGalleryCmd;
+import com.bringbackdada.site.commands.converters.TagToTagCmd;
+import com.bringbackdada.site.services.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -31,10 +33,36 @@ class AdminAddProjectControllerTest {
     @Mock
     BlogService blogService;
 
+    @Mock
+    ProjectService projectService;
+
+    @Mock
+    TagService tagService;
+
+    @Mock
+    GalleryToGalleryCmd galleryToGalleryCmd;
+
+    @Mock
+    CreatorToCreatorCmd creatorToCreatorCmd;
+
+    @Mock
+    BlogToBlogCmd blogToBlogCmd;
+
+    @Mock
+    TagToTagCmd tagToTagCmd;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.controller = new AdminAddProjectController(galleryService, creatorService, blogService);
+        this.controller = new AdminAddProjectController(
+                galleryService,
+                creatorService,
+                blogService,
+                projectService,
+                tagService,
+                galleryToGalleryCmd,
+                creatorToCreatorCmd,
+                blogToBlogCmd, tagToTagCmd);
     }
 
     @Test

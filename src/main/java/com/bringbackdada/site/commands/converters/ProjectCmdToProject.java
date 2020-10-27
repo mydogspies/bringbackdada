@@ -33,8 +33,6 @@ public class ProjectCmdToProject implements Converter<ProjectCommand, Project> {
     @Override
     public Project convert(ProjectCommand projectCommand) {
 
-        if (projectCommand == null) { return null; }
-
         Project project = new Project();
         project.setId(projectCommand.getId());
         project.setName(projectCommand.getName());
@@ -66,5 +64,6 @@ public class ProjectCmdToProject implements Converter<ProjectCommand, Project> {
         project.setTags(tagSet);
 
         return project;
+
     }
 }

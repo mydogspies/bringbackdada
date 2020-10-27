@@ -30,7 +30,7 @@ public class AdminDeleteGalleryController {
     public String showAddProjectPage(Model model) {
 
         model.addAttribute("galleries", galleryService.findAll());
-        model.addAttribute("title_text", "Bringbackdada | admin | delete a project");
+        model.addAttribute("title_text", "Bringbackdada | admin | delete a gallery");
 
         logger.info("--> Called delete-gallery.html");
         return "delete-gallery";

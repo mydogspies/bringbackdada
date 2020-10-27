@@ -2,7 +2,6 @@ package com.bringbackdada.site.model;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Project {
@@ -22,7 +21,7 @@ public class Project {
     @OneToMany
     private List<Creator> creator;
 
-    @OneToMany
+    @ManyToMany
     private List<Blog> blog;
 
     @Lob

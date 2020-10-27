@@ -10,13 +10,12 @@ function onLoadFuncs() {
     var page = path.split("/").pop();
     styleCurrentPageLink(page);
 
+    console.log(page);
+
     /* must define what pages we load the masonry scripts... */
-    if (page === "") {
+    if (page === "" || page === "photo-projects") {
         loadMasonry();
     }
-
-
-
 }
 
 /* Swap link styling depending on page loaded */

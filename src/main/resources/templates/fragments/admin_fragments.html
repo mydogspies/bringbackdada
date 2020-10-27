@@ -233,7 +233,7 @@
             <div class="form-field">
                 <label class="form label">Project title</label>
                 <label>
-                    <input type="text" name="name">
+                    <input type="text" name="projectTitle">
                 </label>
             </div>
 
@@ -355,6 +355,31 @@
                 <label class="form label" for="gallerySet">Select creator to delete</label>
                 <select name="creatorToDelete" id="allCreators">
                     <option th:value="${iter.id}" th:each="iter : ${allCreators}" th:text="${iter.id + ' ' + iter.name}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Delete permanently</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- PROJECT DELETE FIELDS -->
+<div class="form-container" id="project-delete-form" th:fragment="project-delete">
+
+    <div class="form_title_text">DELETE A PROJECT</div>
+
+    <div class="form">
+        <form id="project-delete" class="form-group"
+              th:action="@{/admin/delete-a-project}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label" for="projects">Select project to delete</label>
+                <select name="projectToDelete" id="projects">
+                    <option th:value="${iter.id}" th:each="iter : ${projects}" th:text="${iter.name}">--placeholder--</option>
                 </select>
             </div>
 

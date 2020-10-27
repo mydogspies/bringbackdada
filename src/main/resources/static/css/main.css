@@ -128,11 +128,33 @@ in fragments, only as the container for page specific content. See home.html as 
 
 /* PHOTO SERIES */
 
-.blogs {
+.projects {
   width: 85%;
   margin: 25px auto;
   display: flex;
   justify-content: center;
+}
+
+#project_page_title {
+  margin: 20px 0 10px 0;
+  background-color: #1b2831;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.project_heading {
+  margin: 12px 0 15px 0;
+  font-family: 'Lato-Regular', Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: #aca19d;
+}
+
+.project_text {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* BLOGS ROLL - FEATURED CONTENT */

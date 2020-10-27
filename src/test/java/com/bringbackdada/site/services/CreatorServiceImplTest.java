@@ -1,5 +1,6 @@
 package com.bringbackdada.site.services;
 
+import com.bringbackdada.site.commands.converters.CreatorToCreatorCmd;
 import com.bringbackdada.site.model.Creator;
 import com.bringbackdada.site.repositories.CreatorRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +10,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -21,10 +21,13 @@ class CreatorServiceImplTest {
     @Mock
     CreatorRepository creatorRepository;
 
+    @Mock
+    CreatorToCreatorCmd creatorToCreatorCmd;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        creatorService = new CreatorServiceImpl(creatorRepository);
+        creatorService = new CreatorServiceImpl(creatorRepository, creatorToCreatorCmd);
     }
 
     @Test
