@@ -30,6 +30,10 @@ public class Project {
     @ManyToMany
     private List<Tag> tags;
 
+    private Boolean rollVisible;
+
+    private Integer projectOrder;
+
     public Long getId() {
         return id;
     }
@@ -92,5 +96,21 @@ public class Project {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public Boolean getRollVisible() {
+        return rollVisible;
+    }
+
+    public void setRollVisible(Boolean rollVisible) {
+        this.rollVisible = rollVisible;
+    }
+
+    public Integer getProjectOrder() {
+        return projectOrder;
+    }
+
+    public void setProjectOrder(Integer projectOrder) {
+        this.projectOrder = projectOrder;
     }
 }

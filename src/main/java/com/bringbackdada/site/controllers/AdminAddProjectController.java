@@ -68,7 +68,9 @@ public class AdminAddProjectController {
                                       @RequestParam("galleries") List<Long> galleryIdList,
                                       @RequestParam("creators") List<Long> creatorIdList,
                                       @RequestParam("blogs") List<Long> blogIdList,
-                                      @RequestParam("tags") String tags){
+                                      @RequestParam("tags") String tags,
+                                      @RequestParam("rollVisible") Boolean vis,
+                                      @RequestParam("projectOrder") Integer order){
 
         ProjectCommand command = new ProjectCommand();
         command.setName(projectTitle);
@@ -79,6 +81,8 @@ public class AdminAddProjectController {
         // TODO implement the tag function -> SEE BELOW!
         command.setTags(makeTagStringToList(tags));
         command.setBlog(getBlogList(blogIdList));
+        command.setRollVisible(vis);
+        command.setProjectOrder(order);
 
         projectService.saveProjectCommand(command);
         return "admin-data-saved";

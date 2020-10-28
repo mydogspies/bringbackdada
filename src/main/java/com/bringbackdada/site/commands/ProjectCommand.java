@@ -20,4 +20,6 @@ public class ProjectCommand {
     private List<BlogCommand> blog;
     private String description;
     private List<TagCommand> tags;
+    private Boolean rollVisible;
+    private Integer projectOrder;
 }

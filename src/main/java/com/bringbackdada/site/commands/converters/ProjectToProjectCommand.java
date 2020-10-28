@@ -39,6 +39,8 @@ public class ProjectToProjectCommand implements Converter<Project, ProjectComman
         command.setId(project.getId());
         command.setProjectCategory(project.getProjectCategory());
         command.setDescription(project.getDescription());
+        command.setRollVisible(project.getRollVisible());
+        command.setProjectOrder(project.getProjectOrder());
 
         List<GalleryCommand> gallerySet = new ArrayList<>();
         for (Gallery gallery : project.getGallery()) {

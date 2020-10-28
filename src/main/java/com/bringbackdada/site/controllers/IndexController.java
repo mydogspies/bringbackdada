@@ -63,7 +63,7 @@ public class IndexController {
         logger.debug("contentList = " + contentList);
 
         model.addAttribute("contentList", contentList);
-        model.addAttribute("title_text", "Bringbackdada.com - HOME");
+        model.addAttribute("title_text", "Bringbackdada.com - Fine art photography and composition");
 
         logger.info("--> Called home.html");
         return "home";

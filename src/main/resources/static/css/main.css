@@ -143,7 +143,7 @@ in fragments, only as the container for page specific content. See home.html as 
 }
 
 .project_heading {
-  margin: 12px 0 15px 0;
+  margin: 12px 0 6px 0;
   font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 18px;
   text-align: center;
@@ -396,7 +396,7 @@ together change the link colors depending on page location.
 /* The FOOTER text and links */
 
 #footer_public {
-  margin-top: 16px;
+  margin: 16px 0 10px 0;
   text-align: center;
 }
 
@@ -417,7 +417,7 @@ together change the link colors depending on page location.
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-/* MACY CONTAINER */
+/* MACY INDEX CONTAINER */
 
 .macy-image {
   display: block;
@@ -426,6 +426,17 @@ together change the link colors depending on page location.
 
 #masonry_grid {
   margin: 20px 0 0 0;
+}
+
+/* MACY PROJECT CONTAINER */
+
+.macy-project-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.project_gallery_container {
+  margin:  17px 0 10px 0;
 }
 
 /* ERROR PAGES */

@@ -11,7 +11,7 @@
 <body>
 
 <div th:fragment="project_roll">
-
+    <script th:inline="javascript">var galleryCount = [[${galleries}]];</script>
     <div class="page_titles" id="project_page_title">VARIOUS PHOTO SERIES & PROJECTS</div>
 
     <div th:each="iter : ${projectViewList}">
@@ -21,23 +21,23 @@
                 <div th:text="${project.name}" class="project_heading"></div>
                 <div th:text="${project.description}" class="project_text"></div>
 
-                <div id="macy-container" data-featherlight-gallery data-featherlight-filter="a" data-featherlight-type="image">
+                <div th:id="'macy-container' + ${projectIt.itemId}" data-featherlight-gallery
+                     data-featherlight-filter="a" data-featherlight-type="image" class="project_gallery_container">
                     <div class="masonry-content" th:each="content : ${projectIt.content}">
                         <div class="macy-item">
-                            <a th:href="@{'/gallery/image/' + ${content.id}}" class="gallery2">
-                                <img th:src="@{'/gallery/image/' + ${content.id}}" width="225" class="macy-image" alt="image"/>
+                            <a th:href="@{'/project/image/' + ${content.id}}" class="gallery2">
+                                <img th:src="@{'/project/image/' + ${content.id}}" width="215" class="macy-project-image"
+                                     alt="image"/>
                             </a>
                         </div>
                     </div>
 
+                </div>
 
             </div>
 
-<!--        <div th:text="${projectIt.name}" class="project_heading"></div>-->
-<!--        <div th:text="${projectIt.description}" class="project_text"></div>-->
-
+        </div>
     </div>
-
 </div>
 
 </body>

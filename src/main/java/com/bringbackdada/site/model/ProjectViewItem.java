@@ -10,6 +10,7 @@ import java.util.List;
 @Setter
 public class ProjectViewItem {
 
+    Integer itemId;
     Project project;
     List<Content> content;
 }
