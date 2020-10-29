@@ -49,7 +49,7 @@
 <!-- INDIVIDUAL BLOG ENTRY -->
 
 <div th:fragment="blog_entry" id="blog_entry" class="blog_entry_container">
-    <div class="blog_entry_image_container"><img th:src="'/blog/image/' + ${contentId}" height="100px" id="blog_entry_image"/></div>
+    <div class="blog_entry_image_container"><img th:src="'/blog/image/' + ${contentId}" height="100px" id="blog_entry_image" th:alt="${altText}"/></div>
     <div th:text="${entryName}" class="page_titles" id="blog_headline"></div>
     <div class="blog_entry_small_text" id="blog_headline_addition">by: <span th:text="${author}"></span></div>
     <div th:utext="${text}" class="blog_entry_text"></div>

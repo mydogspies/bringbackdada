@@ -48,11 +48,16 @@ public class IndexController {
             for (Gallery gallery : galleryService.sortGalleryByGalleryOrder(galleryList)) {
 
                 List<Content> unsortedContentList = new ArrayList<>();
-                for (Content content : gallery.getContent()) {
-                    if (content.getVisible()) {
-                        unsortedContentList.add(content);
+                if (gallery.getFeatured()) {
+
+                    for (Content content : gallery.getContent()) {
+                        if (content.getVisible()) {
+                            unsortedContentList.add(content);
+                        }
                     }
                 }
+
+
                 contentList.addAll(contentService.sortContentByContentOrder(unsortedContentList));
 
             }

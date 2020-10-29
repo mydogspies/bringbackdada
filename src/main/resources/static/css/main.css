@@ -68,9 +68,9 @@ in fragments, only as the container for page specific content. See home.html as 
 /* HOME PAGE */
 
 .home_page_content {
-  width: 55%;
+  width: 65%;
   margin: 0 auto;
-  padding-top: 25px;
+  padding-top: 28px;
   padding-bottom: 8px;
 }
 
@@ -138,7 +138,7 @@ in fragments, only as the container for page specific content. See home.html as 
 #project_page_title {
   margin: 20px 0 10px 0;
   background-color: #1b2831;
-  padding: 10px;
+  padding: 14px;
   border-radius: 10px;
 }
 
@@ -342,7 +342,7 @@ a single column.
 
 #blog_headline {
   margin: 16px 0 0 0;
-  padding-top: 6px;
+  padding-top: 10px;
   background-color: #1b2831;
   border-radius: 10px;
   font-family: 'Lato-Regular', Arial, sans-serif;
@@ -357,7 +357,7 @@ a single column.
 }
 
 .blog_entry_image_container {
-  margin: 24px 0 0 0;
+  margin: 26px 0 0 0;
 }
 
 #blog_entry_image {
@@ -428,9 +428,22 @@ bugs out below 400 pixels we do it selectively.
 }
 
 .top_menu {
+  display: grid;
+  grid-template-columns: 1fr;
   font-family: 'Lato-Regular', Arial, sans-serif;
   font-size: 15px;
   justify-self: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .top_menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    font-family: 'Lato-Regular', Arial, sans-serif;
+    font-size: 15px;
+    justify-self: center;
+  }
 }
 
 .menu_item {
@@ -483,7 +496,7 @@ together change the link colors depending on page location.
 }
 
 #masonry_grid {
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
 }
 
 /* MACY PROJECT CONTAINER */
@@ -494,6 +507,7 @@ together change the link colors depending on page location.
 }
 
 .project_gallery_container {
+  width: 85%;
   margin:  17px 0 10px 0;
 }
 
@@ -517,7 +531,7 @@ together change the link colors depending on page location.
   text-align: center;
 }
 
-/* FAIRLIGHT GALLERY */
+/* FEATHERLIGHT GALLERY */
 
 /* customized gallery */
 .featherlight-gallery2 {

@@ -27,14 +27,26 @@
 <body>
 
 <!-- HEADER FOR PUBLIC PAGES -->
+<!--<div th:fragment="header_public" class="headers" id="header_public">-->
+<!--    <div id="header_logo_text">bri+gba*kDADA</div>-->
+<!--    <div id="top_menu_container">-->
+<!--        <div class="top_menu">-->
+<!--            <span class="menu_item" id="home"><a href="/" target="_self">home</a></span>-->
+<!--            <span class="menu_item" id="photo-projects"><a href="/site/photo-projects" target="_self">photographic series</a></span>-->
+<!--            <span class="menu_item" id="photography-blog"><a href="/site/photography-blog" target="_self">artist blog</a></span>-->
+<!--            <span class="menu_item" id="about-bringbackdada"><a href="/site/about-bringbackdada" target="_self">about bringbackdada</a></span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 <div th:fragment="header_public" class="headers" id="header_public">
     <div id="header_logo_text">bri+gba*kDADA</div>
     <div id="top_menu_container">
         <div class="top_menu">
-            <span class="menu_item" id="home"><a href="/" target="_self">home</a></span>
-            <span class="menu_item" id="photo-projects"><a href="/site/photo-projects" target="_self">photographic series</a></span>
-            <span class="menu_item" id="photography-blog"><a href="/site/photography-blog" target="_self">artist blog</a></span>
-            <span class="menu_item" id="about-bringbackdada"><a href="/site/about-bringbackdada" target="_self">about bringbackdada</a></span>
+            <div class="menu_item" id="home"><a href="/" target="_self">home</a></div>
+            <div class="menu_item" id="photo-projects"><a href="/site/photo-projects" target="_self">photographic series</a></div>
+            <div class="menu_item" id="photography-blog"><a href="/site/photography-blog" target="_self">artist blog</a></div>
+            <div class="menu_item" id="about-bringbackdada"><a href="/site/about-bringbackdada" target="_self">about bringbackdada</a></div>
         </div>
     </div>
 </div>

@@ -46,6 +46,7 @@ public class ContentToContentCmd implements Converter<Content, ContentCommand> {
         command.setOnFrontPage(content.getOnFrontPage());
         command.setContentOrder(content.getContentOrder());
         command.setVisible(content.getVisible());
+        command.setAltText(content.getAltText());
 
         Set<CreatorCommand> creatorSet = new HashSet<>();
         if(content.getCreator() != null && content.getCreator().size() > 0) {

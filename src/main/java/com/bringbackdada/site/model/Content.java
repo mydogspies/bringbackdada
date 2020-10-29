@@ -33,6 +33,9 @@ public class Content {
     @Lob
     private String description;
 
+    @Lob
+    private String altText;
+
     @ManyToMany
     private Set<Tag> tags;
 
@@ -115,6 +118,14 @@ public class Content {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getAltText() {
+        return altText;
+    }
+
+    public void setAltText(String altText) {
+        this.altText = altText;
     }
 
     public Set<Tag> getTags() {

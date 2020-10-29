@@ -93,7 +93,7 @@ function loadProjectGallery(macy,id) {
         },
         margin: {
             x: 10,
-            y: 15
+            y: 12
         }
 
     });

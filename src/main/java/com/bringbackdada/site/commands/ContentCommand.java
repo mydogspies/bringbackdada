@@ -21,6 +21,7 @@ public class ContentCommand {
     private byte[] imageFile = null;
     private License license;
     private String description;
+    private String altText;
     private Set<TagCommand> tags = new HashSet<>();
     private Boolean onFrontPage;
     private Integer contentOrder;

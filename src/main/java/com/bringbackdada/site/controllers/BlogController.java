@@ -78,11 +78,15 @@ public class BlogController {
         if (blog != null) {
             CreatorCommand creator = blog.getCreator();
             Long contentId = blog.getContentId();
+            Content content = contentService.findById(contentId);
+            String altText = content.getAltText();
+
             model.addAttribute("contentId", contentId);
             model.addAttribute("title_text", "Bringbackdada | " + blog.getEntryName());
             model.addAttribute("entryName", blog.getEntryName());
             model.addAttribute("text", blog.getEntryContent());
             model.addAttribute("author", creator.getName());
+            model.addAttribute("altText", altText);
         }
 
         logger.info("--> Calling blog-entry.html");
@@ -90,10 +94,9 @@ public class BlogController {
     }
 
     @GetMapping("/blog/image/{id}")
-    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
+    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response, Model model) throws IOException {
 
         response.setContentType("image/jpeg");
-
         Content content = contentService.findById(id);
 
         InputStream is = new ByteArrayInputStream(content.getImageFile());
