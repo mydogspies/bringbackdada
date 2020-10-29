@@ -1,5 +1,6 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.commands.converters.BlogToBlogCmd;
 import com.bringbackdada.site.exceptions.NotFoundException;
 import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.model.Content;
@@ -14,9 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
@@ -34,12 +33,15 @@ class BlogControllerIT {
     @Mock
     ContentService mockContentService;
 
+    @Mock
+    BlogToBlogCmd blogToBlogCmd;
+
     MockMvc mockMvc;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.blogController = new BlogController(mockBlogService, mockContentService);
+        this.blogController = new BlogController(mockBlogService, mockContentService, blogToBlogCmd);
         this.mockMvc = MockMvcBuilders.standaloneSetup(blogController).build();
     }
 

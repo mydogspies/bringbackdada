@@ -22,7 +22,17 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/css/*", "/js/*", "/images/*", "/site/*", "/fonts/*", "/gallery/image/*", "/blog/image/*", "/project/image/*")
+                .antMatchers("/",
+                        "/home",
+                        "/css/*",
+                        "/js/*",
+                        "/images/*",
+                        "/site/*",
+                        "/fonts/*",
+                        "/gallery/image/*",
+                        "/blog/image/*",
+                        "/project/image/*",
+                        "/blog/*")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()

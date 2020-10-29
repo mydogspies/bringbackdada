@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<!-- BLOG ROLL PAGE -->>
+
 <div th:fragment="blog_roll" class="blogs" id="blog_roll">
     <div class="page_titles" id="blog_page_title">THE PHOTOGRAPHY & PROJECT BLOG</div>
 
@@ -18,7 +20,9 @@
         <div class="blog_image_container"><img th:src="'/blog/image/' + ${firstBlog.contentId}" class="blog_main_image"/></div>
 
         <div id="featured_blog_content_container">
-            <div th:text="${firstBlog.entryName}" class="featured_blog_body" id="feature_blog_name"></div>
+            <div class="featured_blog_body" id="feature_blog_name">
+                <a th:href="@{'/blog/' + ${firstBlog.id}}" th:text="${firstBlog.entryName}"></a>
+            </div>
             <div th:text="${firstBlog.contentSnippet}" class="featured_blog_body" id="feature_blog_snippet"></div>
             <div th:text="${firstBlog.creator.name}" class="featured_blog_body" id="feature_blog_creator"></div>
             <div th:text="${firstBlog.time}" class="featured_blog_body" id="feature_blog_time"></div>
@@ -31,13 +35,25 @@
         <div class="blog_image_container"><img th:src="'/blog/image/' + ${iter.contentId}" class="blog_main_image"/></div>
 
         <div id="blog_content_container">
-            <div th:text="${iter.entryName}" class="blog_body" id="blog_name"></div>
+            <div  class="blog_body" id="blog_name">
+                <a th:href="@{'/blog/' + ${iter.id}}" th:text="${iter.entryName}">link</a>
+            </div>
             <div th:text="${iter.contentSnippet}" class="blog_body" id="blog_snippet"></div>
             <div th:text="${iter.creator.name}" class="blog_body" id="blog_creator"></div>
-            <div th:text="${firstBlog.time}" class="blog_body" id="blog_time"></div>
+            <div th:text="${iter.time}" class="blog_body" id="blog_time"></div>
         </div>
 
     </div>
+</div>
+
+<!-- INDIVIDUAL BLOG ENTRY -->
+
+<div th:fragment="blog_entry" id="blog_entry" class="blog_entry_container">
+    <div class="blog_entry_image_container"><img th:src="'/blog/image/' + ${contentId}" height="100px" id="blog_entry_image"/></div>
+    <div th:text="${entryName}" class="page_titles" id="blog_headline"></div>
+    <div class="blog_entry_small_text" id="blog_headline_addition">by: <span th:text="${author}"></span></div>
+    <div th:utext="${text}" class="blog_entry_text"></div>
+    <div class="blog_entry_end">* * *</div>
 
 </div>
 

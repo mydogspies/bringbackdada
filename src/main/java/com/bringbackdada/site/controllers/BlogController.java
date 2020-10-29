@@ -1,5 +1,8 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.commands.BlogCommand;
+import com.bringbackdada.site.commands.CreatorCommand;
+import com.bringbackdada.site.commands.converters.BlogToBlogCmd;
 import com.bringbackdada.site.exceptions.NotFoundException;
 import com.bringbackdada.site.model.Blog;
 import com.bringbackdada.site.model.Content;
@@ -35,14 +38,16 @@ public class BlogController {
 
     private final BlogService blogService;
     private final ContentService contentService;
+    private final BlogToBlogCmd blogToBlogCmd;
 
-    public BlogController(BlogService blogService, ContentService contentService) {
+    public BlogController(BlogService blogService, ContentService contentService, BlogToBlogCmd blogToBlogCmd) {
         this.blogService = blogService;
         this.contentService = contentService;
+        this.blogToBlogCmd = blogToBlogCmd;
     }
 
     @GetMapping(value = {"/site/photography-blog", "/site/photography-blog.html"})
-    public String getBlog(Model model) {
+    public String getBlogRoll(Model model) {
 
         List<Blog> blogSet = blogService.findAll();
 
@@ -65,6 +70,37 @@ public class BlogController {
         }
     }
 
+    @GetMapping(value = "/blog/{id}")
+    public String getBlogEntry(@PathVariable("id") Long id, Model model) {
+
+        BlogCommand blog = blogToBlogCmd.convert(blogService.findById(id));
+
+        if (blog != null) {
+            CreatorCommand creator = blog.getCreator();
+            Long contentId = blog.getContentId();
+            model.addAttribute("contentId", contentId);
+            model.addAttribute("title_text", "Bringbackdada | " + blog.getEntryName());
+            model.addAttribute("entryName", blog.getEntryName());
+            model.addAttribute("text", blog.getEntryContent());
+            model.addAttribute("author", creator.getName());
+        }
+
+        logger.info("--> Calling blog-entry.html");
+        return "blog-entry";
+    }
+
+    @GetMapping("/blog/image/{id}")
+    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
+
+        response.setContentType("image/jpeg");
+
+        Content content = contentService.findById(id);
+
+        InputStream is = new ByteArrayInputStream(content.getImageFile());
+        IOUtils.copy(is, response.getOutputStream());
+    }
+
+
     private List<Map<String, Object>> thymeOutput(List<Blog> blogList) {
 
         List<Map<String, Object>> outputList = new ArrayList<>();
@@ -76,6 +112,7 @@ public class BlogController {
             outputMap.put("entryContent", blog.getEntryContent());
             outputMap.put("contentSnippet", blog.getContentSnippet());
             outputMap.put("creator", blog.getCreator());
+            outputMap.put("id", blog.getId());
 
             // TODO implement a format of Instant
             Instant instant = blog.getMilliseconds();
@@ -99,16 +136,6 @@ public class BlogController {
         return outputList;
     }
 
-    @GetMapping("/blog/image/{id}")
-    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
-
-        response.setContentType("image/jpeg");
-
-        Content content = contentService.findById(id);
-
-        InputStream is = new ByteArrayInputStream(content.getImageFile());
-        IOUtils.copy(is, response.getOutputStream());
-    }
 
     // TODO verify sort order and functionality with real life data
     private List<Blog> sortBlog(List<Blog> blog) {

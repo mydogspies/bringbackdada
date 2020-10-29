@@ -318,6 +318,64 @@ a single column.
   color: #85909e;
 }
 
+/* INDIVIDUAL BLOG ENTRY */
+
+.blog_entry_container {
+  width: 65%;
+  display: block;
+  margin: 0 auto;
+}
+
+.blog_entry_text {
+  margin: 18px 0 15px 0;
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.blog_entry_small_text {
+  font-family: 'Lato-Regular', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #85909e;
+}
+
+#blog_headline {
+  margin: 16px 0 0 0;
+  padding-top: 6px;
+  background-color: #1b2831;
+  border-radius: 10px;
+  font-family: 'Lato-Regular', Arial, sans-serif;
+  font-size: 25px;
+}
+
+#blog_headline_addition {
+  text-align: center;
+  padding-bottom: 6px;
+  background-color: #1b2831;
+  border-radius: 10px;
+}
+
+.blog_entry_image_container {
+  margin: 24px 0 0 0;
+}
+
+#blog_entry_image {
+  display: block;
+  margin: 0 auto;
+}
+
+.blog_entry_end {
+  font-family: 'Lato-Regular', Arial, sans-serif;
+  font-size: 14px;
+  color: #aca19d;
+  text-align: center;
+  padding: 7px;
+  background-color: #1b2831;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
 /* FORMS */
 
 .input_forms {
