@@ -4,11 +4,11 @@ import com.bringbackdada.site.commands.GalleryCommand;
 import com.bringbackdada.site.commands.converters.GalleryCmdToGallery;
 import com.bringbackdada.site.commands.converters.GalleryToGalleryCmd;
 import com.bringbackdada.site.model.Gallery;
+import com.bringbackdada.site.model.GalleryOld;
 import com.bringbackdada.site.repositories.GalleryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -34,7 +34,7 @@ public class GalleryServiceImpl implements GalleryService {
         Iterable<Gallery> result = galleryRepository.findAll();
         List<Gallery> galleryList = new ArrayList<>();
         for (Gallery gallery : result) {
-            if (gallery.getFeatured().equals(true));
+            if (gallery.getFrontPageFeatured().equals(true));
             galleryList.add(gallery);
         }
         return galleryList;
@@ -52,7 +52,7 @@ public class GalleryServiceImpl implements GalleryService {
     public GalleryCommand saveGalleryCommand(GalleryCommand command) {
         Gallery detachedGallery = galleryCmdToGallery.convert(command);
         Gallery savedGallery = galleryRepository.save(detachedGallery);
-        logger.debug("Gallery detached from cmd object and saved as id: " + savedGallery.getId());
+        logger.debug("GalleryOld detached from cmd object and saved as id: " + savedGallery.getId());
         return galleryToGalleryCmd.convert(savedGallery);
     }
 
@@ -82,7 +82,7 @@ public class GalleryServiceImpl implements GalleryService {
 
         if (galleryOpt.isEmpty()) {
             logger.error("findById(): No such gallery with id " + aLong);
-            throw new RuntimeException("Gallery not found");
+            throw new RuntimeException("GalleryOld not found");
         }
 
         return (Gallery) galleryOpt.get();

@@ -2,6 +2,7 @@ package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
+import com.bringbackdada.site.model.GalleryOld;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
@@ -48,13 +49,15 @@ public class IndexController {
             for (Gallery gallery : galleryService.sortGalleryByGalleryOrder(galleryList)) {
 
                 List<Content> unsortedContentList = new ArrayList<>();
-                if (gallery.getFeatured()) {
+                if (gallery.getFrontPageFeatured()) {
 
-                    for (Content content : gallery.getContent()) {
-                        if (content.getVisible()) {
-                            unsortedContentList.add(content);
-                        }
-                    }
+                    // TODO implement new GalleryItem
+
+//                    for (Content content : gallery.getContent()) {
+//                        if (content.getVisible()) {
+//                            unsortedContentList.add(content);
+//                        }
+//                    }
                 }
 
 

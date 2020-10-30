@@ -2,6 +2,7 @@ package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
+import com.bringbackdada.site.model.GalleryOld;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryService;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,12 +41,13 @@ class IndexControllerTest {
     @Test
     void getEntryInputPageAndCheckTitleTextAttribute() {
 
+        // TODO implement new GalleryItem
         List<Gallery> galleryList = new ArrayList<>();
-        List<Content> contentList = new ArrayList<>();
+        // List<Content> contentList = new ArrayList<>();
         Gallery gallery = new Gallery();
         Content content = new Content();
-        contentList.add(content);
-        gallery.setContent(contentList);
+        // contentList.add(content);
+        // gallery.setContent(contentList);
         galleryList.add(gallery);
 
         when(mockGalleryService.getGalleryByFeatured()).thenReturn(galleryList);

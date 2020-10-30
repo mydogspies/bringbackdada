@@ -57,9 +57,10 @@ public class ProjectsController {
                 galleryList = project.getGallery();
                 id++;
 
-                for (Gallery gallery : galleryList) {
-                    contentList.addAll(gallery.getContent());
-                }
+                // TODO implement new GalleryItem code!!
+//                for (GalleryOld gallery : galleryList) {
+//                    contentList.addAll(gallery.getContent());
+//                }
 
                 projectItem.setProject(project);
                 projectItem.setContent(contentService.sortContentByContentOrder(contentList));

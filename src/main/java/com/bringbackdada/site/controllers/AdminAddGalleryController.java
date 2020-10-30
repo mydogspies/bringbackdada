@@ -2,6 +2,7 @@ package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.commands.ContentCommand;
 import com.bringbackdada.site.commands.GalleryCommand;
+import com.bringbackdada.site.commands.GalleryItemCommand;
 import com.bringbackdada.site.commands.converters.ContentToContentCmd;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryService;
@@ -51,16 +52,19 @@ public class AdminAddGalleryController {
 
         GalleryCommand command = new GalleryCommand();
         command.setDescription(description);
-        command.setIsFeatured(featured != 0);
-        command.setGalleryTitle(title);
+        command.setFrontPageFeatured(featured != 0);
+        command.setDescription(title);
 
-        List<ContentCommand> contentCmdList = new ArrayList<>();
+        List<GalleryItemCommand> galleryItemCmdList = new ArrayList<>();
         for (Long id : contentList) {
-            ContentCommand contentCmd = contentConverter.convert(contentService.findById(id));
-            contentCmdList.add(contentCmd);
+
+            // TODO must save content as GalleryItem!!
+
+//            ContentCommand contentCmd = contentConverter.convert(contentService.findById(id));
+//            contentCmdList.add(contentCmd);
         }
-        command.setContent(contentCmdList);
-        galleryService.saveGalleryCommand(command);
+        command.setGalleryItem(galleryItemCmdList);
+        // galleryService.saveGalleryCommand(command); // TODO once GalleryItem code is implemented
 
         return "admin-data-saved";
     }
