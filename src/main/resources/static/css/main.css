@@ -560,3 +560,10 @@ together change the link colors depending on page location.
 .featherlight-gallery2.featherlight-first-slide .featherlight-previous {
   display: none;
 }
+
+/* MISC FORM BOXES */
+
+#new_gallery_select_box {
+  width: 200px;
+  height: 500px;
+}

@@ -20,6 +20,7 @@ public class Gallery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     private String galleryName;
 
     @JoinTable

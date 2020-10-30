@@ -9,5 +9,5 @@ public interface ContentService extends CrudService<Content, Long> {
 
     ContentCommand saveContentCommand(ContentCommand command);
     List<Content> sortContentByContentOrder(List<Content> sortedList);
-
+    List<ContentCommand> findAllAsCommands();
 }

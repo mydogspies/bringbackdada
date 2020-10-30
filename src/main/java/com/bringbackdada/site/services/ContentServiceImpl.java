@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -52,6 +53,18 @@ public class ContentServiceImpl implements ContentService {
         List<Content> resultSet = StreamSupport.stream(result.spliterator(), false)
                 .collect(Collectors.toList());
         return resultSet;
+    }
+
+    @Override
+    public List<ContentCommand> findAllAsCommands() {
+        List<ContentCommand> contentCommandList = new ArrayList<>();
+        Iterable<Content> result = contentRepository.findAll();
+        List<Content> resultSet = StreamSupport.stream(result.spliterator(), false)
+                .collect(Collectors.toList());
+        for (Content content : resultSet) {
+            contentCommandList.add(contentToContentCmd.convert(content));
+        }
+        return contentCommandList;
     }
 
     @Override

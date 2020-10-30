@@ -25,31 +25,18 @@ public class DataInitializer {
     private final Logger logger = LoggerFactory.getLogger(DataInitializer.class);
 
     private final CreatorServiceImpl creatorService;
-    private final GalleryServiceImpl galleryService;
     private final ModelServiceImpl modelService;
     private final LicenseServiceImpl licenseService;
-    private final ContentServiceImpl contentService;
-    private final BlogServiceImpl blogService;
     private final TagServiceImpl tagService;
-    private final ProjectServiceImpl projectService;
 
     public DataInitializer(CreatorServiceImpl creatorService,
-                           GalleryServiceImpl galleryService,
                            ModelServiceImpl modelService,
                            LicenseServiceImpl licenseService,
-                           ContentServiceImpl contentService,
-                           BlogServiceImpl blogService,
-                           TagServiceImpl tagService,
-                           ProjectServiceImpl projectService) {
+                           TagServiceImpl tagService) {
         this.creatorService = creatorService;
-        this.galleryService = galleryService;
         this.modelService = modelService;
         this.licenseService = licenseService;
-        this.contentService = contentService;
-        this.blogService = blogService;
         this.tagService = tagService;
-        this.projectService = projectService;
-        // initializeDefaultTestEntries(); // TODO for dev only!!!
         // initializeDefaultDatabase();
     }
 
@@ -114,10 +101,6 @@ public class DataInitializer {
         tags.add(tag2);
         tags.add(tag3);
         tags.add(tag4);
-
-        /* DEFAULT "ZERO" CONTENT */
-        Content zeroContent = new Content();
-        contentService.save(zeroContent);
 
         logger.info("Default entries initialized in the database");
     }

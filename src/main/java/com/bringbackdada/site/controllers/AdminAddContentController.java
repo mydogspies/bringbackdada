@@ -62,7 +62,8 @@ public class AdminAddContentController {
                                       @RequestParam("category") ContentCategory category,
                                       @RequestParam("featured") Integer featured,
                                       @RequestParam("contentOrder") Integer order,
-                                      @RequestParam("visible") Boolean visible){
+                                      @RequestParam("visible") Boolean visible,
+                                      @RequestParam("altText") String altText){
 
         ContentCommand command = new ContentCommand();
 
@@ -75,6 +76,7 @@ public class AdminAddContentController {
         command.setOnFrontPage(featured != 0);
         command.setContentOrder(order);
         command.setVisible(visible);
+        command.setAltText(altText);
 
         License license = licenseService.findById(licenseId);
         command.setLicense(license);

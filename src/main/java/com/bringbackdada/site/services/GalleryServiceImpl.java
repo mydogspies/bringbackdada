@@ -4,7 +4,6 @@ import com.bringbackdada.site.commands.GalleryCommand;
 import com.bringbackdada.site.commands.converters.GalleryCmdToGallery;
 import com.bringbackdada.site.commands.converters.GalleryToGalleryCmd;
 import com.bringbackdada.site.model.Gallery;
-import com.bringbackdada.site.model.GalleryOld;
 import com.bringbackdada.site.repositories.GalleryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,26 +33,12 @@ public class GalleryServiceImpl implements GalleryService {
         Iterable<Gallery> result = galleryRepository.findAll();
         List<Gallery> galleryList = new ArrayList<>();
         for (Gallery gallery : result) {
-            if (gallery.getFrontPageFeatured().equals(true));
-            galleryList.add(gallery);
+            if (gallery.getFrontPageFeatured().equals(true)) {
+                galleryList.add(gallery);
+            }
+
         }
         return galleryList;
-    }
-
-    @Override
-    public List<Gallery> sortGalleryByGalleryOrder(List<Gallery> unsortedGalleryList) {
-        List<Gallery> sortedList = unsortedGalleryList.stream()
-                .sorted(Comparator.comparing(Gallery::getGalleryOrder))
-                .collect(Collectors.toList());
-        return sortedList;
-    }
-
-    @Override
-    public GalleryCommand saveGalleryCommand(GalleryCommand command) {
-        Gallery detachedGallery = galleryCmdToGallery.convert(command);
-        Gallery savedGallery = galleryRepository.save(detachedGallery);
-        logger.debug("GalleryOld detached from cmd object and saved as id: " + savedGallery.getId());
-        return galleryToGalleryCmd.convert(savedGallery);
     }
 
     @Override
@@ -78,20 +63,28 @@ public class GalleryServiceImpl implements GalleryService {
 
     @Override
     public Gallery findById(Long aLong) {
-        Optional galleryOpt = galleryRepository.findById(aLong);
+        Optional<Gallery> galleryOpt = galleryRepository.findById(aLong);
 
         if (galleryOpt.isEmpty()) {
             logger.error("findById(): No such gallery with id " + aLong);
             throw new RuntimeException("GalleryOld not found");
         }
 
-        return (Gallery) galleryOpt.get();
+        return galleryOpt.get();
     }
 
     @Override
     public Gallery save(Gallery object) {
         galleryRepository.save(object);
         return object;
+    }
+
+    @Override
+    public GalleryCommand saveGalleryCommand(GalleryCommand command) {
+        Gallery detachedGallery = galleryCmdToGallery.convert(command);
+        Gallery savedGallery = galleryRepository.save(detachedGallery);
+        logger.debug("Gallery detached from cmd object and saved as id: " + savedGallery.getId());
+        return galleryToGalleryCmd.convert(savedGallery);
     }
 
     @Override
@@ -102,6 +95,14 @@ public class GalleryServiceImpl implements GalleryService {
     @Override
     public void deleteById(Long aLong) {
         galleryRepository.deleteById(aLong);
+    }
+
+    @Override
+    public List<Gallery> sortGalleryByGalleryOrder(List<Gallery> unsortedGalleryList) {
+        List<Gallery> sortedList = unsortedGalleryList.stream()
+                .sorted(Comparator.comparing(Gallery::getGalleryOrder))
+                .collect(Collectors.toList());
+        return sortedList;
     }
 
     @Override

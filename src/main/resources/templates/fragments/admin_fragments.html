@@ -69,6 +69,13 @@
             </div>
 
             <div class="form-field">
+                <label class="form label">Image ALT text</label>
+                <label>
+                    <input type="text" name="altText">
+                </label>
+            </div>
+
+            <div class="form-field">
                 <label class="form label" for="category">Content category</label>
                 <select name="category" id="category">
                     <option th:each="state : ${T(com.bringbackdada.site.model.ContentCategory).values()}"
@@ -126,7 +133,7 @@
                 </label>
             </div>
 
-            <div class="form-field">
+            <div class="form-field" id="new_gallery_select_box">
                 <label class="form label" for="content">Select content</label>
                 <select name="content" id="content" multiple="multiple">
                     <option th:value="${iter.id}" th:each="iter : ${contentSet}" th:text="${iter.contentTitle}">--placeholder--</option>
@@ -141,10 +148,24 @@
             </div>
 
             <div class="form-field">
+                <label class="form label">Gallery order</label>
+                <label>
+                    <input type="text" name="galleryOrder">
+                </label>
+            </div>
+
+            <div class="form-field">
                 <label class="form label" for="notFeatured">Not featured</label>
                 <input type="radio" id="notFeatured" name="featured" value="0" checked="checked">
                 <label class="form label" for="featured">Featured</label>
                 <input type="radio" id="featured" name="featured" value="1">
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="item_visible">Visible</label>
+                <input type="radio" id="item_visible" name="visible" value="1" checked="checked">
+                <label class="form label" for="item_not_visible">Hidden</label>
+                <input type="radio" id="item_not_visible" name="visible" value="0">
             </div>
 
             <div class="form-field">
