@@ -29,7 +29,7 @@ public class AdminDeleteGalleryController {
     @GetMapping(value={"/admin/delete-gallery", "admin/delete-gallery.html"})
     public String showAddProjectPage(Model model) {
 
-        model.addAttribute("galleries", galleryService.findAll());
+        model.addAttribute("galleries", galleryService.findAllAsCommands());
         model.addAttribute("title_text", "Bringbackdada | admin | delete a gallery");
 
         logger.info("--> Called delete-gallery.html");

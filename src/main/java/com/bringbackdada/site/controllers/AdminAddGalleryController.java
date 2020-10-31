@@ -64,7 +64,6 @@ public class AdminAddGalleryController {
         command.setVisible(visible);
 
         List<GalleryItemCommand> galleryItemCmdList = new ArrayList<>();
-
         for (Long id : contentList) {
             GalleryItem galleryItem = new GalleryItem();
             Content content = contentService.findById(id);
@@ -74,7 +73,6 @@ public class AdminAddGalleryController {
             galleryItemCmdList.add(galleryConverter.convert(galleryItem));
         }
         command.setGalleryItem(galleryItemCmdList);
-
         galleryService.saveGalleryCommand(command);
 
         return "admin-data-saved";

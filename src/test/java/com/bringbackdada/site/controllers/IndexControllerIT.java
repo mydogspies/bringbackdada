@@ -1,9 +1,10 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.commands.converters.ContentToContentCmd;
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
-import com.bringbackdada.site.model.GalleryOld;
 import com.bringbackdada.site.services.ContentService;
+import com.bringbackdada.site.services.GalleryItemService;
 import com.bringbackdada.site.services.GalleryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,12 +30,18 @@ class IndexControllerIT {
     GalleryService mockGalleryService;
 
     @Mock
+    GalleryItemService galleryItemService;
+
+    @Mock
     ContentService contentService;
+
+    @Mock
+    ContentToContentCmd contentToContentCmd;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.controller = new IndexController(mockGalleryService, contentService);
+        this.controller = new IndexController(mockGalleryService, galleryItemService, contentService, contentToContentCmd);
     }
 
     @Test

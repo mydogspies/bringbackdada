@@ -154,6 +154,7 @@
                 </label>
             </div>
 
+
             <div class="form-field">
                 <label class="form label" for="notFeatured">Not featured</label>
                 <input type="radio" id="notFeatured" name="featured" value="0" checked="checked">
@@ -338,7 +339,7 @@
             <div class="form-field">
                 <label class="form label" for="galleries">Select gallery to delete</label>
                 <select name="galleryToDelete" id="galleries">
-                    <option th:value="${iter.id}" th:each="iter : ${galleries}" th:text="${iter.galleryTitle}">--placeholder--</option>
+                    <option th:value="${iter.id}" th:each="iter : ${galleries}" th:text="${iter.galleryName}">--placeholder--</option>
                 </select>
             </div>
 

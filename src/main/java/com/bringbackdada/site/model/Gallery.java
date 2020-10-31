@@ -24,7 +24,7 @@ public class Gallery {
     private String galleryName;
 
     @JoinTable
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<GalleryItem> galleryItem;
 
     @Lob

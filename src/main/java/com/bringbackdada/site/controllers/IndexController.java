@@ -1,9 +1,12 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.commands.ContentCommand;
+import com.bringbackdada.site.commands.converters.ContentToContentCmd;
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
-import com.bringbackdada.site.model.GalleryOld;
+import com.bringbackdada.site.model.GalleryItem;
 import com.bringbackdada.site.services.ContentService;
+import com.bringbackdada.site.services.GalleryItemService;
 import com.bringbackdada.site.services.GalleryService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
@@ -30,38 +33,35 @@ public class IndexController {
     private final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     private final GalleryService galleryService;
+    private final GalleryItemService galleryItemService;
     private final ContentService contentService;
+    private final ContentToContentCmd contentToContentCmd;
 
-    public IndexController(GalleryService galleryService, ContentService contentService) {
+    public IndexController(GalleryService galleryService, GalleryItemService galleryItemService, ContentService contentService, ContentToContentCmd contentToContentCmd) {
         this.galleryService = galleryService;
+        this.galleryItemService = galleryItemService;
         this.contentService = contentService;
+        this.contentToContentCmd = contentToContentCmd;
     }
 
     @GetMapping({"", "/", "index", "index.html"})
     public String getIndexPage(Model model){
 
         List<Gallery> galleryList = galleryService.getGalleryByFeatured();
-        List<Content> contentList = new ArrayList<>();
-
-        // TODO should be command object instead of model object?
+        List<ContentCommand> contentList = new ArrayList<>();
 
         if (!galleryList.isEmpty()) {
             for (Gallery gallery : galleryService.sortGalleryByGalleryOrder(galleryList)) {
 
-                List<Content> unsortedContentList = new ArrayList<>();
                 if (gallery.getFrontPageFeatured()) {
-
-                    // TODO implement new GalleryItem
-
-//                    for (Content content : gallery.getContent()) {
-//                        if (content.getVisible()) {
-//                            unsortedContentList.add(content);
-//                        }
-//                    }
+                    List<GalleryItem> galleryItemList = galleryItemService
+                            .sortGalleryItemByGalleryItemOrder(gallery.getGalleryItem());
+                    for (GalleryItem galleryItem : galleryItemList) {
+                        if (galleryItem.getVisible() && galleryItem.getContent().getOnFrontPage()) {
+                            contentList.add(contentToContentCmd.convert(galleryItem.getContent()));
+                        }
+                    }
                 }
-
-
-                contentList.addAll(contentService.sortContentByContentOrder(unsortedContentList));
 
             }
         } else {

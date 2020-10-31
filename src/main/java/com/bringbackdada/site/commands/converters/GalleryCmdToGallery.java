@@ -31,7 +31,8 @@ public class GalleryCmdToGallery implements Converter<GalleryCommand, Gallery> {
         gallery.setGalleryName(galleryCommand.getGalleryName());
         gallery.setDescription(galleryCommand.getDescription());
         gallery.setFrontPageFeatured(galleryCommand.getFrontPageFeatured());
-        gallery.setGalleryOrder(gallery.getGalleryOrder());
+        gallery.setGalleryOrder(galleryCommand.getGalleryOrder());
+        gallery.setVisible(galleryCommand.getVisible());
 
         List<GalleryItem> contentList = new ArrayList<>();
         for (GalleryItemCommand galleryItemCmd : galleryCommand.getGalleryItem()) {
