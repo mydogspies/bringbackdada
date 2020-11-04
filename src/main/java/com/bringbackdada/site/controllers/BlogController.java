@@ -51,7 +51,7 @@ public class BlogController {
 
         List<Blog> blogList = blogService.findAll();
 
-        if (!blogList.isEmpty() && blogList.size() != 1) { // because there is always a default "no blog" entry in the db.
+        if (!blogList.isEmpty()) {
             List<Blog> sortedBlogList = sortBlog(blogList);
 
             List<Map<String, Object>> thymeFormattedOutput = thymeOutput(sortedBlogList);
@@ -103,42 +103,25 @@ public class BlogController {
         IOUtils.copy(is, response.getOutputStream());
     }
 
-
     private List<Map<String, Object>> thymeOutput(List<Blog> blogList) {
 
         List<Map<String, Object>> outputList = new ArrayList<>();
 
         for (Blog blog : blogList) {
             Map<String, Object> outputMap = new HashMap<>();
-
             outputMap.put("entryName", blog.getEntryName());
             outputMap.put("entryContent", blog.getEntryContent());
             outputMap.put("contentSnippet", blog.getContentSnippet());
             outputMap.put("creator", blog.getCreator());
             outputMap.put("id", blog.getId());
-
-            // TODO implement a format of Instant
+            outputMap.put("contentId", blog.getContentId());
             Instant instant = blog.getMilliseconds();
             String datetime = DateTimeFormatter.ISO_LOCAL_DATE.withZone(ZoneId.of("UTC")).format(instant);
             outputMap.put("time", datetime);
-
-            outputMap.put("contentId", blog.getContentId());  // TODO this is the new method
-
-            // TODO refactor for persisted images
-//            if (!blog.getBlogImageId().equals(1L)) {
-//                Long imgId = blog.getBlogImageId();
-//                Content content = contentService.findById(imgId);
-//                outputMap.put("imgUrl", "/images" + content.getContentUrl() + "/" + content.getContentFile());
-//            } else {
-//                outputMap.put("imgUrl", "n/a");
-//            }
-
-
             outputList.add(outputMap);
         }
         return outputList;
     }
-
 
     // TODO verify sort order and functionality with real life data
     private List<Blog> sortBlog(List<Blog> blog) {

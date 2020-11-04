@@ -73,17 +73,20 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog save(Blog object) {
         blogRepository.save(object);
+        logger.debug("Blog [" + object.getEntryName() + "] has been saved");
         return object;
     }
 
     @Override
     public void delete(Blog object) {
-
+        logger.debug("Blog [" + object.getEntryName() + "] with id " + object.getId() + " has been permanently deleted");
+        blogRepository.delete(object);
     }
 
     @Override
     public void deleteById(Long aLong) {
-
+        blogRepository.deleteById(aLong);
+        logger.debug("Blog with id " + aLong + " has been permanently deleted");
     }
 
     @Override
