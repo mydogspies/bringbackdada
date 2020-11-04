@@ -135,7 +135,7 @@ public class AdminAddProjectController {
     private List<TagCommand> makeTagStringToList(String tags) {
         List<TagCommand> tagList = new ArrayList<>();
         if (tags.equals("")) {
-            tagList.add(tagToTagCmd.convert(tagService.findById(15L)));
+            tagList.add(tagToTagCmd.convert(tagService.findById(5L)));
         } else {
             // TODO implement the tag parsing method!
             // The actual db logic should be in TagServices!!

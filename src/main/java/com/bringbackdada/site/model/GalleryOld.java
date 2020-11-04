@@ -3,6 +3,7 @@ package com.bringbackdada.site.model;
 import javax.persistence.*;
 import java.util.List;
 
+@Deprecated
 @Entity
 public class GalleryOld {
 

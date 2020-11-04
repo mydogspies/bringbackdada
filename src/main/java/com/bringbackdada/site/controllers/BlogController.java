@@ -49,10 +49,10 @@ public class BlogController {
     @GetMapping(value = {"/site/photography-blog", "/site/photography-blog.html"})
     public String getBlogRoll(Model model) {
 
-        List<Blog> blogSet = blogService.findAll();
+        List<Blog> blogList = blogService.findAll();
 
-        if (!blogSet.isEmpty()) {
-            List<Blog> sortedBlogList = sortBlog(blogSet);
+        if (!blogList.isEmpty() && blogList.size() != 1) { // because there is always a default "no blog" entry in the db.
+            List<Blog> sortedBlogList = sortBlog(blogList);
 
             List<Map<String, Object>> thymeFormattedOutput = thymeOutput(sortedBlogList);
 

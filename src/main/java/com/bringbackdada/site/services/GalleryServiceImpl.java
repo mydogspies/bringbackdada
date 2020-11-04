@@ -107,7 +107,7 @@ public class GalleryServiceImpl implements GalleryService {
 
     @Override
     public int count(List<Gallery> set) {
-        return 0;
+        return (int) galleryRepository.count();
     }
 
 }

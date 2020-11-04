@@ -17,17 +17,17 @@
     <div th:each="iter : ${projectViewList}">
 
         <div th:each="projectIt : ${iter.projectItem}">
-            <div th:each="project : ${projectIt.project}">
+            <div th:each="project : ${projectIt.projectCmd}">
                 <div th:text="${project.name}" class="project_heading"></div>
                 <div th:text="${project.description}" class="project_text"></div>
 
                 <div th:id="'macy-container' + ${projectIt.itemId}" data-featherlight-gallery
                      data-featherlight-filter="a" data-featherlight-type="image" class="project_gallery_container">
-                    <div class="masonry-content" th:each="content : ${projectIt.content}">
+                    <div class="masonry-content" th:each="content : ${projectIt.featuredContent}">
                         <div class="macy-item">
                             <a th:href="@{'/project/image/' + ${content.id}}" class="gallery2">
                                 <img th:src="@{'/project/image/' + ${content.id}}" width="190" class="macy-project-image"
-                                     alt="image"/>
+                                     th:alt="${content.altText}"/>
                             </a>
                         </div>
                     </div>

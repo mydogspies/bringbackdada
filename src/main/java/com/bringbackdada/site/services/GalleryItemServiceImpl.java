@@ -39,7 +39,7 @@ public class GalleryItemServiceImpl implements GalleryItemService {
             logger.error("findById(): No such GalleryItem with id " + aLong);
             throw new RuntimeException("GalleryItem not found");
         }
-        return null;
+        return galleryItemOpt.get();
     }
 
     @Override
