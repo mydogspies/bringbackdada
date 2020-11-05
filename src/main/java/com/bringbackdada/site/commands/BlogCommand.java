@@ -21,4 +21,5 @@ public class BlogCommand {
     private CreatorCommand creator;
     private Set<ContentCategory> category;
     private Long contentId;
+    private Boolean visible;
 }

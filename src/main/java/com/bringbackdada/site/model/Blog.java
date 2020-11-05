@@ -36,4 +36,5 @@ public class Blog {
     private Set<ContentCategory> category;
 
     private Long contentId;
+    private Boolean visible;
 }

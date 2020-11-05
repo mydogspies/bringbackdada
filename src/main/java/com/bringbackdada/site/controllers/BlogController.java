@@ -56,6 +56,11 @@ public class BlogController {
 
             List<Map<String, Object>> thymeFormattedOutput = thymeOutput(sortedBlogList);
 
+            if (thymeFormattedOutput.isEmpty()) {
+                logger.warn("getBlogRoll(): No blogs set to visible.");
+                throw new NotFoundException("getBlogRoll(): No blogs set to visible in database.");
+            }
+
             Map<String, Object> firstEntry = thymeFormattedOutput.get(0);
             model.addAttribute("firstBlog", firstEntry);
             thymeFormattedOutput.remove(0);
@@ -66,7 +71,8 @@ public class BlogController {
             logger.info("--> Calling blog.html");
             return "blog";
         } else {
-            throw new NotFoundException("getBlog(): No blogs returned from database");
+            logger.warn("getBlogRoll(): No blogs returned from database.");
+            throw new NotFoundException("getBlogRoll(): No blogs returned from database.");
         }
     }
 
@@ -75,7 +81,7 @@ public class BlogController {
 
         BlogCommand blog = blogToBlogCmd.convert(blogService.findById(id));
 
-        if (blog != null) {
+        if (blog != null && blog.getVisible()) {
             CreatorCommand creator = blog.getCreator();
             Long contentId = blog.getContentId();
             Content content = contentService.findById(contentId);
@@ -108,17 +114,19 @@ public class BlogController {
         List<Map<String, Object>> outputList = new ArrayList<>();
 
         for (Blog blog : blogList) {
-            Map<String, Object> outputMap = new HashMap<>();
-            outputMap.put("entryName", blog.getEntryName());
-            outputMap.put("entryContent", blog.getEntryContent());
-            outputMap.put("contentSnippet", blog.getContentSnippet());
-            outputMap.put("creator", blog.getCreator());
-            outputMap.put("id", blog.getId());
-            outputMap.put("contentId", blog.getContentId());
-            Instant instant = blog.getMilliseconds();
-            String datetime = DateTimeFormatter.ISO_LOCAL_DATE.withZone(ZoneId.of("UTC")).format(instant);
-            outputMap.put("time", datetime);
-            outputList.add(outputMap);
+            if (blog.getVisible()) {
+                Map<String, Object> outputMap = new HashMap<>();
+                outputMap.put("entryName", blog.getEntryName());
+                outputMap.put("entryContent", blog.getEntryContent());
+                outputMap.put("contentSnippet", blog.getContentSnippet());
+                outputMap.put("creator", blog.getCreator());
+                outputMap.put("id", blog.getId());
+                outputMap.put("contentId", blog.getContentId());
+                Instant instant = blog.getMilliseconds();
+                String datetime = DateTimeFormatter.ISO_LOCAL_DATE.withZone(ZoneId.of("UTC")).format(instant);
+                outputMap.put("time", datetime);
+                outputList.add(outputMap);
+            }
         }
         return outputList;
     }
