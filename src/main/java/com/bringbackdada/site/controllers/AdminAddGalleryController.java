@@ -1,8 +1,11 @@
 package com.bringbackdada.site.controllers;
 
-import com.bringbackdada.site.commands.ContentCommand;
 import com.bringbackdada.site.commands.GalleryCommand;
+import com.bringbackdada.site.commands.GalleryItemCommand;
 import com.bringbackdada.site.commands.converters.ContentToContentCmd;
+import com.bringbackdada.site.commands.converters.GalleryItemToGalleryItemCmd;
+import com.bringbackdada.site.model.Content;
+import com.bringbackdada.site.model.GalleryItem;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryService;
 import org.slf4j.Logger;
@@ -25,17 +28,19 @@ public class AdminAddGalleryController {
     private final ContentService contentService;
     private final GalleryService galleryService;
     private final ContentToContentCmd contentConverter;
+    private final GalleryItemToGalleryItemCmd galleryConverter;
 
-    public AdminAddGalleryController(ContentService contentService, GalleryService galleryService, ContentToContentCmd contentConverter) {
+    public AdminAddGalleryController(ContentService contentService, GalleryService galleryService, ContentToContentCmd contentConverter, GalleryItemToGalleryItemCmd galleryConverter) {
         this.contentService = contentService;
         this.galleryService = galleryService;
         this.contentConverter = contentConverter;
+        this.galleryConverter = galleryConverter;
     }
 
     @GetMapping(value={"/admin/add-new-gallery", "/admin/add-new-gallery.html"})
     public String showAddGalleryPage(Model model) {
 
-        model.addAttribute("contentSet", contentService.findAll());
+        model.addAttribute("contentSet", contentService.findAllAsCommands());
         model.addAttribute("title_text", "Bringbackdada | admin | add a new gallery");
 
         logger.info("--> Called add-gallery.html");
@@ -47,19 +52,27 @@ public class AdminAddGalleryController {
     public String saveOrUpdateGallery(@RequestParam("content") List<Long> contentList,
                                       @RequestParam("description") String description,
                                       @RequestParam("featured") Integer featured,
-                                      @RequestParam("title") String title) {
+                                      @RequestParam("title") String title,
+                                      @RequestParam("galleryOrder") Integer order,
+                                      @RequestParam("visible") Boolean visible) {
 
         GalleryCommand command = new GalleryCommand();
         command.setDescription(description);
-        command.setIsFeatured(featured != 0);
-        command.setGalleryTitle(title);
+        command.setFrontPageFeatured(featured != 0);
+        command.setGalleryName(title);
+        command.setGalleryOrder(order);
+        command.setVisible(visible);
 
-        List<ContentCommand> contentCmdList = new ArrayList<>();
+        List<GalleryItemCommand> galleryItemCmdList = new ArrayList<>();
         for (Long id : contentList) {
-            ContentCommand contentCmd = contentConverter.convert(contentService.findById(id));
-            contentCmdList.add(contentCmd);
+            GalleryItem galleryItem = new GalleryItem();
+            Content content = contentService.findById(id);
+            galleryItem.setContent(content);
+            galleryItem.setItemOrder(content.getContentOrder());
+            galleryItem.setVisible(true);
+            galleryItemCmdList.add(galleryConverter.convert(galleryItem));
         }
-        command.setContent(contentCmdList);
+        command.setGalleryItem(galleryItemCmdList);
         galleryService.saveGalleryCommand(command);
 
         return "admin-data-saved";

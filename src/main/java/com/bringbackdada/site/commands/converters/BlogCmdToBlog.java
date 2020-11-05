@@ -32,6 +32,7 @@ public class BlogCmdToBlog implements Converter<BlogCommand, Blog> {
         blog.setCreator(creatorCmdToCreator.convert(blogCommand.getCreator()));
         blog.setCategory(blogCommand.getCategory());
         blog.setContentId(blogCommand.getContentId());
+        blog.setVisible(blogCommand.getVisible());
 
         return blog;
     }

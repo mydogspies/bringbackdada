@@ -1,8 +1,18 @@
 package com.bringbackdada.site.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * This is the Gallery object that contains a list of GalleryItem objects plus fields specific to it.
+ * NOTE! The old pre-1.0.1 Gallery pojo has been refactored into GalleryOld.
+ * @since 1.0.1
+ */
+@Setter
+@Getter
 @Entity
 public class Gallery {
 
@@ -10,68 +20,17 @@ public class Gallery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String galleryTitle;
+
+    private String galleryName;
 
     @JoinTable
-    @ManyToMany
-    private List<Content> content;
-
-    private Integer galleryOrder;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<GalleryItem> galleryItem;
 
     @Lob
     private String description;
 
-    private Boolean isFeatured;
-
-    public Gallery() {
-        this.isFeatured = false;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getGalleryTitle() {
-        return galleryTitle;
-    }
-
-    public void setGalleryTitle(String galleryTitle) {
-        this.galleryTitle = galleryTitle;
-    }
-
-    public List<Content> getContent() {
-        return content;
-    }
-
-    public void setContent(List<Content> content) {
-        this.content = content;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Boolean getFeatured() {
-        return isFeatured;
-    }
-
-    public void setFeatured(Boolean featured) {
-        isFeatured = featured;
-    }
-
-    public Integer getGalleryOrder() {
-        return galleryOrder;
-    }
-
-    public void setGalleryOrder(Integer galleryOrder) {
-        this.galleryOrder = galleryOrder;
-    }
+    private Integer galleryOrder;
+    private Boolean frontPageFeatured;
+    private Boolean visible;
 }

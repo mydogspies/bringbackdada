@@ -54,10 +54,14 @@ public class ProjectCmdToProject implements Converter<ProjectCommand, Project> {
         project.setCreator(creatorSet);
 
         List<Blog> blogSet = new ArrayList<>();
-        for (BlogCommand blogCmd : projectCommand.getBlog()) {
-            blogSet.add(blogCmdToBlog.convert(blogCmd));
+        if (projectCommand.getBlog() != null) {
+            for (BlogCommand blogCmd : projectCommand.getBlog()) {
+                blogSet.add(blogCmdToBlog.convert(blogCmd));
+            }
+            project.setBlog(blogSet);
+        } else {
+            project.setBlog(null);
         }
-        project.setBlog(blogSet);
 
         List<Tag> tagSet = new ArrayList<>();
         for (TagCommand tagCmd : projectCommand.getTags()) {
@@ -66,6 +70,5 @@ public class ProjectCmdToProject implements Converter<ProjectCommand, Project> {
         project.setTags(tagSet);
 
         return project;
-
     }
 }

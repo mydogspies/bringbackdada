@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<!--/* Workaround for bug https://youtrack.jetbrains.com/issue/IDEA-132738 -->
+<!--*/-->
+
+<head>
+    <title>change_gallery_fragments</title>
+</head>
+
+<body>
+
+<
+
+<!-- GALLERY REORDER FIND FIELDS-->
+<div class="form-container" id="gallery-reorder-form1" th:fragment="gallery_reorder_find">
+
+    <div class="form_title_text">CHOOSE GALLERY TO RE-ORDER</div>
+
+    <div class="form">
+        <form id="gallery-find" class="form-group"
+              th:action="@{/admin/reorder-gallery}" method="post">
+            <input type="hidden">
+
+            <div class="form-field">
+                <label class="form label" for="galleries">Select gallery to reorder</label>
+                <select name="galleryId" id="galleries">
+                    <option th:value="${iter.id}" th:each="iter : ${galleries}" th:text="${iter.galleryName}">
+                        --placeholder--
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Choose</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- GALLERY REORDER FIELDS-->
+<div class="form-container" id="gallery-reorder-form2" th:fragment="gallery_reorder">
+
+    <div class="form_title_text">CHANGE ORDER</div>
+
+    <div class="form">
+        <form id="gallery-reorder" class="form-group"
+              th:action="@{/admin/change_gallery_reorder}" method="post" th:object="${formItems}">
+
+            <div th:each="iter : *{galleryItems}">
+
+                <div>
+                    <img th:src="@{'/gallery/image/' + ${iter.contentId}}" width="100"/>
+                </div>
+                <div th:text="${iter.contentId}"></div>
+                <div class="form-field">
+                    <label class="form label">order</label>
+                    <label>
+                        <input type="hidden" th:field="*{galleryItems[__${iter.id}__].galleryItemId}">
+                        <input type="hidden" th:field="*{galleryItems[__${iter.id}__].contentId}">
+                        <input type="text" th:field="*{galleryItems[__${iter.id}__].itemOrder}" />
+                        <input type="checkbox" th:field="*{galleryItems[__${iter.id}__].visible}" />
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Reorder</button>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

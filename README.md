@@ -12,9 +12,13 @@ is done with Junit5 and Mockito plus Circle CI. The site runs as a Docker contai
 ####IMPORTANT
 
 Note though that the repo here is parts of the development
-environment and does not necessarily represent the final production version. Use it if you are
-looking for subjective examples of a what a simple but working website based on Spring could
-look like. 
+environment and does not necessarily represent the final production version. The code here does not
+contain the underlying database, configuration files nor any external code. This repo is only intended
+as a subjective example of a Spring based website and as the archive for changes to
+the sharp version online.
 
-No guarantees it will work in your environment and no support so please do not file
-any issues here except for errors or problems related with the production site directly.
+####BUG REPORTS
+
+If you find any bugs or error on the bringbackdada.com website, feel free to use the issue tracker
+to file a report!
+

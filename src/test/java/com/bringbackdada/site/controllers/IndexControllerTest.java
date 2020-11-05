@@ -1,8 +1,10 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.commands.converters.ContentToContentCmd;
 import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
 import com.bringbackdada.site.services.ContentService;
+import com.bringbackdada.site.services.GalleryItemService;
 import com.bringbackdada.site.services.GalleryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,23 +31,30 @@ class IndexControllerTest {
     ContentService contentService;
 
     @Mock
+    ContentToContentCmd contentToContentCmd;
+
+    @Mock
+    GalleryItemService galleryItemService;
+
+    @Mock
     Model model;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.controller = new IndexController(mockGalleryService, contentService);
+        this.controller = new IndexController(mockGalleryService, galleryItemService, contentService, contentToContentCmd);
     }
 
     @Test
     void getEntryInputPageAndCheckTitleTextAttribute() {
 
+        // TODO implement new GalleryItem
         List<Gallery> galleryList = new ArrayList<>();
-        List<Content> contentList = new ArrayList<>();
+        // List<Content> contentList = new ArrayList<>();
         Gallery gallery = new Gallery();
         Content content = new Content();
-        contentList.add(content);
-        gallery.setContent(contentList);
+        // contentList.add(content);
+        // gallery.setContent(contentList);
         galleryList.add(gallery);
 
         when(mockGalleryService.getGalleryByFeatured()).thenReturn(galleryList);

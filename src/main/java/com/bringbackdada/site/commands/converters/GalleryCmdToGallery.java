@@ -1,9 +1,9 @@
 package com.bringbackdada.site.commands.converters;
 
-import com.bringbackdada.site.commands.ContentCommand;
 import com.bringbackdada.site.commands.GalleryCommand;
-import com.bringbackdada.site.model.Content;
+import com.bringbackdada.site.commands.GalleryItemCommand;
 import com.bringbackdada.site.model.Gallery;
+import com.bringbackdada.site.model.GalleryItem;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
@@ -15,10 +15,10 @@ import java.util.List;
 @Component
 public class GalleryCmdToGallery implements Converter<GalleryCommand, Gallery> {
 
-    private final ContentCmdToContent contentConverter;
+    private final GalleryItemCmdToGalleryItem converter;
 
-    public GalleryCmdToGallery(ContentCmdToContent contentConverter) {
-        this.contentConverter = contentConverter;
+    public GalleryCmdToGallery(GalleryItemCmdToGalleryItem converter) {
+        this.converter = converter;
     }
 
     @Synchronized
@@ -26,20 +26,19 @@ public class GalleryCmdToGallery implements Converter<GalleryCommand, Gallery> {
     @Override
     public Gallery convert(GalleryCommand galleryCommand) {
 
-        if (galleryCommand == null) { return null; }
-
         Gallery gallery = new Gallery();
         gallery.setId(galleryCommand.getId());
-        gallery.setGalleryTitle(galleryCommand.getGalleryTitle());
+        gallery.setGalleryName(galleryCommand.getGalleryName());
         gallery.setDescription(galleryCommand.getDescription());
-        gallery.setFeatured(galleryCommand.getIsFeatured());
-        gallery.setGalleryOrder(gallery.getGalleryOrder());
+        gallery.setFrontPageFeatured(galleryCommand.getFrontPageFeatured());
+        gallery.setGalleryOrder(galleryCommand.getGalleryOrder());
+        gallery.setVisible(galleryCommand.getVisible());
 
-        List<Content> contentList = new ArrayList<>();
-        for (ContentCommand content : galleryCommand.getContent()) {
-            contentList.add(contentConverter.convert(content));
+        List<GalleryItem> contentList = new ArrayList<>();
+        for (GalleryItemCommand galleryItemCmd : galleryCommand.getGalleryItem()) {
+            contentList.add(converter.convert(galleryItemCmd));
         }
-        gallery.setContent(contentList);
+        gallery.setGalleryItem(contentList);
 
         return gallery;
     }

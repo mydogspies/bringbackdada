@@ -52,9 +52,16 @@ public class AdminAddProjectController {
     @GetMapping(value={"/admin/add-new-project", "admin/add-new-project.html"})
     public String showAddProjectPage(Model model) {
 
-        model.addAttribute("gallerySet", galleryService.findAllAsCommands());
-        model.addAttribute("creatorSet", creatorService.findAllAsCommands());
-        model.addAttribute("blogSet", blogService.findAllAsCommands());
+        List<BlogCommand> blogList = new ArrayList<>();
+        BlogCommand noBlog = new BlogCommand();
+        noBlog.setEntryName("NO BLOG");
+        noBlog.setId(0L);
+        blogList.add(noBlog);
+        blogList.addAll(blogService.findAllAsCommands());
+
+        model.addAttribute("galleryList", galleryService.findAllAsCommands());
+        model.addAttribute("creatorList", creatorService.findAllAsCommands());
+        model.addAttribute("blogList", blogList);
         model.addAttribute("title_text", "Bringbackdada | admin | add new project");
 
         logger.info("--> Called add-project.html");
@@ -78,11 +85,19 @@ public class AdminAddProjectController {
         command.setDescription(description);
         command.setGallery(getGalleryList(galleryIdList));
         command.setCreator(getCreatorList(creatorIdList));
-        // TODO implement the tag function -> SEE BELOW!
-        command.setTags(makeTagStringToList(tags));
-        command.setBlog(getBlogList(blogIdList));
         command.setRollVisible(vis);
         command.setProjectOrder(order);
+        // TODO implement the tag function -> SEE BELOW!
+        command.setTags(makeTagStringToList(tags));
+
+        Long firstId = blogIdList.get(0);
+        if (firstId != 0) {
+            command.setBlog(getBlogList(blogIdList));
+        } else {
+            command.setBlog(null);
+        }
+
+
 
         projectService.saveProjectCommand(command);
         return "admin-data-saved";
@@ -135,7 +150,7 @@ public class AdminAddProjectController {
     private List<TagCommand> makeTagStringToList(String tags) {
         List<TagCommand> tagList = new ArrayList<>();
         if (tags.equals("")) {
-            tagList.add(tagToTagCmd.convert(tagService.findById(15L)));
+            tagList.add(tagToTagCmd.convert(tagService.findById(5L)));
         } else {
             // TODO implement the tag parsing method!
             // The actual db logic should be in TagServices!!

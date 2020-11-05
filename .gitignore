@@ -2,12 +2,13 @@
 /10_RESOURCES
 /data
 /logs
-bbd_database_create.sql
+db-build/bbd_database_create.sql
 /docker-build
 /db-build
 /src/main/scripts
 /src/main/resources/application-dev.yml
 /src/main/resources/application-prod.yml
+/src/main/resources/templates/application-h2o.yml
 
 HELP.md
 target/
@@ -51,4 +52,3 @@ build/
 
 ### VS Code ###
 .vscode/
-

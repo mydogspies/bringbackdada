@@ -41,6 +41,7 @@ public class ProjectToProjectCommand implements Converter<Project, ProjectComman
         command.setDescription(project.getDescription());
         command.setRollVisible(project.getRollVisible());
         command.setProjectOrder(project.getProjectOrder());
+        command.setName(project.getName());
 
         List<GalleryCommand> gallerySet = new ArrayList<>();
         for (Gallery gallery : project.getGallery()) {
@@ -55,10 +56,15 @@ public class ProjectToProjectCommand implements Converter<Project, ProjectComman
         command.setCreator(creatorSet);
 
         List<BlogCommand> blogSet = new ArrayList<>();
-        for (Blog blog : project.getBlog()) {
-            blogSet.add(blogToBlogCmd.convert(blog));
+        if (project.getBlog() != null) {
+            for (Blog blog : project.getBlog()) {
+                blogSet.add(blogToBlogCmd.convert(blog));
+            }
+            command.setBlog(blogSet);
+        } else {
+            command.setBlog(null);
         }
-        command.setBlog(blogSet);
+
 
         List<TagCommand> tagSet = new ArrayList<>();
         for (Tag tag : project.getTags()) {

@@ -69,6 +69,13 @@
             </div>
 
             <div class="form-field">
+                <label class="form label">Image ALT text</label>
+                <label>
+                    <input type="text" name="altText">
+                </label>
+            </div>
+
+            <div class="form-field">
                 <label class="form label" for="category">Content category</label>
                 <select name="category" id="category">
                     <option th:each="state : ${T(com.bringbackdada.site.model.ContentCategory).values()}"
@@ -126,7 +133,7 @@
                 </label>
             </div>
 
-            <div class="form-field">
+            <div class="form-field" id="new_gallery_select_box">
                 <label class="form label" for="content">Select content</label>
                 <select name="content" id="content" multiple="multiple">
                     <option th:value="${iter.id}" th:each="iter : ${contentSet}" th:text="${iter.contentTitle}">--placeholder--</option>
@@ -141,10 +148,25 @@
             </div>
 
             <div class="form-field">
+                <label class="form label">Gallery order</label>
+                <label>
+                    <input type="text" name="galleryOrder">
+                </label>
+            </div>
+
+
+            <div class="form-field">
                 <label class="form label" for="notFeatured">Not featured</label>
                 <input type="radio" id="notFeatured" name="featured" value="0" checked="checked">
                 <label class="form label" for="featured">Featured</label>
                 <input type="radio" id="featured" name="featured" value="1">
+            </div>
+
+            <div class="form-field">
+                <label class="form label" for="item_visible">Visible</label>
+                <input type="radio" id="item_visible" name="visible" value="1" checked="checked">
+                <label class="form label" for="item_not_visible">Hidden</label>
+                <input type="radio" id="item_not_visible" name="visible" value="0">
             </div>
 
             <div class="form-field">
@@ -228,7 +250,6 @@
     <div class="form">
         <form id="project_input" class="form-group"
               th:action="@{/admin/save-new-project}" method="post">
-            <input type="hidden">
 
             <div class="form-field">
                 <label class="form label">Project title</label>
@@ -257,21 +278,21 @@
             <div class="form-field">
                 <label class="form label" for="gallerySet">Select galleries</label>
                 <select name="galleries" id="gallerySet" multiple="multiple">
-                    <option th:value="${iter.id}" th:each="iter : ${gallerySet}" th:text="${iter.galleryTitle}">--placeholder--</option>
+                    <option th:value="${iter.id}" th:each="iter : ${galleryList}" th:text="${iter.galleryName}">--placeholder--</option>
                 </select>
             </div>
 
             <div class="form-field">
                 <label class="form label" for="creatorSet">Select creators</label>
                 <select name="creators" id="creatorSet" multiple="multiple">
-                    <option th:value="${iter.id}" th:each="iter : ${creatorSet}" th:text="${iter.name}">--placeholder--</option>
+                    <option th:value="${iter.id}" th:each="iter : ${creatorList}" th:text="${iter.name}">--placeholder--</option>
                 </select>
             </div>
 
             <div class="form-field">
                 <label class="form label" for="blogSet">Select blogs</label>
                 <select name="blogs" id="blogSet" multiple="multiple">
-                    <option th:value="${iter.id}" th:each="iter : ${blogSet}" th:text="${iter.entryName}">--placeholder--</option>
+                    <option th:value="${iter.id}" th:each="iter : ${blogList}" th:text="${iter.entryName}">--placeholder--</option>
                 </select>
             </div>
 
@@ -317,7 +338,7 @@
             <div class="form-field">
                 <label class="form label" for="galleries">Select gallery to delete</label>
                 <select name="galleryToDelete" id="galleries">
-                    <option th:value="${iter.id}" th:each="iter : ${galleries}" th:text="${iter.galleryTitle}">--placeholder--</option>
+                    <option th:value="${iter.id}" th:each="iter : ${galleries}" th:text="${iter.galleryName}">--placeholder--</option>
                 </select>
             </div>
 
@@ -393,6 +414,30 @@
                 <label class="form label" for="projects">Select project to delete</label>
                 <select name="projectToDelete" id="projects">
                     <option th:value="${iter.id}" th:each="iter : ${projects}" th:text="${iter.name}">--placeholder--</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <button type="submit" class="btn btn-primary">Delete permanently</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- BLOG DELETE FIELDS-->
+<div class="form-container" id="blog-delete-form" th:fragment="blog-delete">
+
+    <div class="form_title_text">DELETE A BLOG</div>
+
+    <div class="form">
+        <form id="blog-delete" class="form-group"
+              th:action="@{/admin/delete-this-blog}" method="post">
+
+            <div class="form-field">
+                <label class="form label" for="blogSet">Select a blog to delete</label>
+                <select name="blogToDelete" id="allBlogs">
+                    <option th:value="${iter.id}" th:each="iter : ${allBlogs}" th:text="${iter.id + ' ' + iter.entryName}">--placeholder--</option>
                 </select>
             </div>
 

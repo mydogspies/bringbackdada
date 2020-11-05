@@ -1,9 +1,9 @@
 package com.bringbackdada.site.commands.converters;
 
-import com.bringbackdada.site.commands.ContentCommand;
 import com.bringbackdada.site.commands.GalleryCommand;
-import com.bringbackdada.site.model.Content;
+import com.bringbackdada.site.commands.GalleryItemCommand;
 import com.bringbackdada.site.model.Gallery;
+import com.bringbackdada.site.model.GalleryItem;
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
@@ -15,10 +15,10 @@ import java.util.List;
 @Component
 public class GalleryToGalleryCmd implements Converter<Gallery, GalleryCommand> {
 
-    private final ContentToContentCmd contentConverter;
+    private final GalleryItemToGalleryItemCmd converter;
 
-    public GalleryToGalleryCmd(ContentToContentCmd contentConverter) {
-        this.contentConverter = contentConverter;
+    public GalleryToGalleryCmd(GalleryItemToGalleryItemCmd converter) {
+        this.converter = converter;
     }
 
     @Synchronized
@@ -26,20 +26,18 @@ public class GalleryToGalleryCmd implements Converter<Gallery, GalleryCommand> {
     @Override
     public GalleryCommand convert(Gallery gallery) {
 
-        if (gallery == null) { return null; }
-
         GalleryCommand command = new GalleryCommand();
         command.setId(gallery.getId());
-        command.setGalleryTitle(gallery.getGalleryTitle());
+        command.setGalleryName(gallery.getGalleryName());
         command.setDescription(gallery.getDescription());
-        command.setIsFeatured(gallery.getFeatured());
+        command.setFrontPageFeatured(gallery.getFrontPageFeatured());
         command.setGalleryOrder(gallery.getGalleryOrder());
 
-        List<ContentCommand> contentList = new ArrayList<>();
-        for (Content content : gallery.getContent()) {
-            contentList.add(contentConverter.convert(content));
+        List<GalleryItemCommand> contentList = new ArrayList<>();
+        for (GalleryItem galleryItem : gallery.getGalleryItem()) {
+            contentList.add(converter.convert(galleryItem));
         }
-        command.setContent(contentList);
+        command.setGalleryItem(contentList);
 
         return command;
     }

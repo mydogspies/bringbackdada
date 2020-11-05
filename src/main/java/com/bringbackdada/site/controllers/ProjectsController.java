@@ -1,8 +1,13 @@
 package com.bringbackdada.site.controllers;
 
+import com.bringbackdada.site.commands.ContentCommand;
+import com.bringbackdada.site.commands.converters.ContentToContentCmd;
+import com.bringbackdada.site.commands.converters.GalleryToGalleryCmd;
+import com.bringbackdada.site.commands.converters.ProjectToProjectCommand;
 import com.bringbackdada.site.exceptions.NotFoundException;
 import com.bringbackdada.site.model.*;
 import com.bringbackdada.site.services.ContentService;
+import com.bringbackdada.site.services.GalleryItemService;
 import com.bringbackdada.site.services.ProjectService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
@@ -22,8 +27,10 @@ import java.util.List;
 
 /**
  * The controller for the projects page
- *
+ * Note: This controller requires the internal objects ProjectView and ProjectViewItem.
  * @since 0.0.1
+ * @see ProjectView
+ * @see ProjectViewItem
  */
 @Controller
 public class ProjectsController {
@@ -32,10 +39,18 @@ public class ProjectsController {
 
     private final ProjectService projectService;
     private final ContentService contentService;
+    private final GalleryItemService galleryItemService;
+    private final ProjectToProjectCommand projectToProjectCommand;
+    private final GalleryToGalleryCmd galleryToGalleryCmd;
+    private final ContentToContentCmd contentToContentCmd;
 
-    public ProjectsController(ProjectService projectService, ContentService contentService) {
+    public ProjectsController(ProjectService projectService, ContentService contentService, GalleryItemService galleryItemService, ProjectToProjectCommand projectToProjectCommand, GalleryToGalleryCmd galleryToGalleryCmd, ContentToContentCmd contentToContentCmd) {
         this.projectService = projectService;
         this.contentService = contentService;
+        this.galleryItemService = galleryItemService;
+        this.projectToProjectCommand = projectToProjectCommand;
+        this.galleryToGalleryCmd = galleryToGalleryCmd;
+        this.contentToContentCmd = contentToContentCmd;
     }
 
     @RequestMapping({"/site/photo-projects", "/site/photo-projects.html"})
@@ -47,25 +62,31 @@ public class ProjectsController {
         Integer id = 0;
 
         for (Project project : projects) {
+            ProjectViewItem projectViewItem = new ProjectViewItem();
+            List<ContentCommand> contentList = new ArrayList<>();
 
-            ProjectViewItem projectItem = new ProjectViewItem();
-            List<Content> contentList = new ArrayList<>();
-            List<Gallery> galleryList;
-
-            // Only add project if it's flagged as visible for the project page
+            // if the project is set to be visible on the project page...
             if (project.getRollVisible()) {
-                galleryList = project.getGallery();
-                id++;
-
+                List<Gallery> galleryList = project.getGallery();
                 for (Gallery gallery : galleryList) {
-                    contentList.addAll(gallery.getContent());
+                    // if the gallery is set to be globally visible
+                    if (gallery.getVisible()) {
+                        id++;
+                        for (GalleryItem item : galleryItemService
+                                .sortGalleryItemByGalleryItemOrder(gallery.getGalleryItem())) {
+                            ContentCommand contentCmd = contentToContentCmd.convert(item.getContent());
+                            // if the content is set to be globally visible
+                            if (contentCmd.getVisible()) {
+                                contentList.add(contentCmd);
+                            }
+                        }
+                    }
                 }
-
-                projectItem.setProject(project);
-                projectItem.setContent(contentService.sortContentByContentOrder(contentList));
-                projectItem.setItemId(id);
-                projectViewItemList.add(projectItem);
+                projectViewItem.setItemId(id);
+                projectViewItem.setFeaturedContent(contentList);
+                projectViewItem.setProjectCmd(projectToProjectCommand.convert(project));
             }
+            projectViewItemList.add(projectViewItem);
         }
         projectView.setProjectItem(projectViewItemList);
 
