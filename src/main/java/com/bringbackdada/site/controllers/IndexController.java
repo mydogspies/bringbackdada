@@ -11,6 +11,7 @@ import com.bringbackdada.site.services.GalleryService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -85,6 +86,7 @@ public class IndexController {
         Content content = contentService.findById(id);
 
         if (content.getVisible()) {
+            response.setHeader("Cache-Control", "max-age=14400");
             InputStream is = new ByteArrayInputStream(content.getImageFile());
             IOUtils.copy(is, response.getOutputStream());
         }
