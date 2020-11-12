@@ -111,7 +111,7 @@ public class ProjectsController {
         Content content = contentService.findById(id);
 
         if (content != null) {
-            response.setHeader("Cache-Control", "max-age=14400");
+            response.setHeader("Cache-Control", "max-age=31556926");
             InputStream is = new ByteArrayInputStream(content.getImageFile());
             IOUtils.copy(is, response.getOutputStream());
         }

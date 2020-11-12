@@ -105,7 +105,7 @@ public class BlogController {
     public void showGalleryImage(@PathVariable Long id, HttpServletResponse response, Model model) throws IOException {
 
         response.setContentType("image/jpeg");
-        response.setHeader("Cache-Control", "max-age=14400");
+        response.setHeader("Cache-Control", "max-age=31556926");
         Content content = contentService.findById(id);
 
         InputStream is = new ByteArrayInputStream(content.getImageFile());
