@@ -134,6 +134,13 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 
+		<!-- imagej -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
+			<version>1.53g</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
