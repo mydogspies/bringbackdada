@@ -11,6 +11,7 @@ import com.bringbackdada.site.services.ContentService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -76,6 +77,7 @@ public class BlogController {
         }
     }
 
+    @Cacheable("blogs")
     @GetMapping(value = "/blog/{id}")
     public String getBlogEntry(@PathVariable("id") Long id, Model model) {
 
@@ -103,6 +105,7 @@ public class BlogController {
     public void showGalleryImage(@PathVariable Long id, HttpServletResponse response, Model model) throws IOException {
 
         response.setContentType("image/jpeg");
+        response.setHeader("Cache-Control", "max-age=31556926");
         Content content = contentService.findById(id);
 
         InputStream is = new ByteArrayInputStream(content.getImageFile());
@@ -130,6 +133,7 @@ public class BlogController {
         }
         return outputList;
     }
+
 
     // TODO verify sort order and functionality with real life data
     private List<Blog> sortBlog(List<Blog> blog) {

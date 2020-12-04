@@ -2,12 +2,12 @@ package com.bringbackdada.site.controllers;
 
 import com.bringbackdada.site.commands.ContentCommand;
 import com.bringbackdada.site.commands.converters.ContentToContentCmd;
-import com.bringbackdada.site.model.Content;
 import com.bringbackdada.site.model.Gallery;
 import com.bringbackdada.site.model.GalleryItem;
 import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryItemService;
 import com.bringbackdada.site.services.GalleryService;
+import com.bringbackdada.site.services.ImageService;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,12 +34,14 @@ public class IndexController {
 
     private final GalleryService galleryService;
     private final GalleryItemService galleryItemService;
+    private final ImageService imageService;
     private final ContentService contentService;
     private final ContentToContentCmd contentToContentCmd;
 
-    public IndexController(GalleryService galleryService, GalleryItemService galleryItemService, ContentService contentService, ContentToContentCmd contentToContentCmd) {
+    public IndexController(GalleryService galleryService, GalleryItemService galleryItemService, ImageService imageService, ContentService contentService, ContentToContentCmd contentToContentCmd) {
         this.galleryService = galleryService;
         this.galleryItemService = galleryItemService;
+        this.imageService = imageService;
         this.contentService = contentService;
         this.contentToContentCmd = contentToContentCmd;
     }
@@ -80,13 +82,14 @@ public class IndexController {
     @GetMapping("/gallery/image/{id}")
     public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
 
+        int width = 225;
         response.setContentType("image/jpeg");
 
-        Content content = contentService.findById(id);
-
-        if (content.getVisible()) {
-            InputStream is = new ByteArrayInputStream(content.getImageFile());
+        InputStream is = imageService.getImageStream(id, width);
+        if (is != null) {
+            response.setHeader("Cache-Control", "max-age=31556926");
             IOUtils.copy(is, response.getOutputStream());
+            is.close();
         }
 
     }
