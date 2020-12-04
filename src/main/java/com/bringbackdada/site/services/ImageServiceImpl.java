@@ -2,8 +2,6 @@ package com.bringbackdada.site.services;
 
 import com.bringbackdada.site.model.Content;
 import ij.ImagePlus;
-import ij.io.FileInfo;
-import ij.io.ImageReader;
 import ij.process.ImageProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,14 +33,16 @@ public class ImageServiceImpl implements ImageService {
         InputStream is = new ByteArrayInputStream(content.getImageFile());
 
         if (content.getVisible()) {
-            // InputStream is = new ByteArrayInputStream(content.getImageFile());
-            InputStream resizedImageStream = null;
-            try {
-                resizedImageStream = resizedImage(is, width);
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (width > 0) {
+                try {
+                    return resizedImageStream(is, width);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                return is;
             }
-            return resizedImageStream;
+
         }
         return null;
 
@@ -54,9 +54,9 @@ public class ImageServiceImpl implements ImageService {
      * @return
      * @throws IOException
      */
-    public InputStream resizedImage (InputStream is, int width) throws IOException {
+    public InputStream resizedImageStream (InputStream is, int width) throws IOException {
 
-        double sigmaFactor = 0.3;
+        double sigmaFactor = 0.28;
         int interpolationMethod = ImageProcessor.NONE; // equals 0
 
         BufferedImage img = ImageIO.read(is);

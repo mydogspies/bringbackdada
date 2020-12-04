@@ -11,11 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserService userService;
-
     @Autowired
     public AppSecurityConfig(UserService userService) {
-        this.userService = userService;
     }
 
     @Override
@@ -30,19 +27,14 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/site/*",
                         "/fonts/*",
                         "/gallery/image/*",
+                        "/gallery/image/thumbs/*",
                         "/blog/image/*",
                         "/project/image/*",
+                        "/project/image/thumb/*",
                         "/blog/*")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin();
     }
-
-    // TODO code below obsolete in case of a single user
-//    @Override
-//    protected UserDetailsService userDetailsService() {
-//        UserDetails user = userService.loadUserByUsername("admin");
-//        return new InMemoryUserDetailsManager(user);
-//    }
 }

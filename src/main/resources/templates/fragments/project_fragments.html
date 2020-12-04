@@ -26,7 +26,7 @@
                     <div class="masonry-content" th:each="content : ${projectIt.featuredContent}">
                         <div class="macy-item">
                             <a th:href="@{'/project/image/' + ${content.id}}" class="gallery2">
-                                <img th:src="@{'/project/image/' + ${content.id}}" width="190" class="macy-project-image"
+                                <img th:src="@{'/project/image/thumb/' + ${content.id}}" class="macy-project-image"
                                      th:alt="${content.altText}"/>
                             </a>
                         </div>

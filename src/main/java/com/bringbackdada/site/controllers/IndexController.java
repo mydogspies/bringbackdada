@@ -35,14 +35,12 @@ public class IndexController {
     private final GalleryService galleryService;
     private final GalleryItemService galleryItemService;
     private final ImageService imageService;
-    private final ContentService contentService;
     private final ContentToContentCmd contentToContentCmd;
 
-    public IndexController(GalleryService galleryService, GalleryItemService galleryItemService, ImageService imageService, ContentService contentService, ContentToContentCmd contentToContentCmd) {
+    public IndexController(GalleryService galleryService, GalleryItemService galleryItemService, ImageService imageService, ContentToContentCmd contentToContentCmd) {
         this.galleryService = galleryService;
         this.galleryItemService = galleryItemService;
         this.imageService = imageService;
-        this.contentService = contentService;
         this.contentToContentCmd = contentToContentCmd;
     }
 
@@ -79,18 +77,43 @@ public class IndexController {
         return "home";
     }
 
-    @GetMapping("/gallery/image/{id}")
-    public void showGalleryImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
+    /**
+     * Takes an image id and returns a resized image to the browser as a HttpServletResponse.
+     * @param id The unique Id of the Content object which contains the image.
+     * @param response HttpServletResponse
+     * @throws IOException
+     */
+    @GetMapping("/gallery/image/thumbs/{id}")
+    public void showGalleryThumbImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
 
         int width = 225;
         response.setContentType("image/jpeg");
-
         InputStream is = imageService.getImageStream(id, width);
+
         if (is != null) {
             response.setHeader("Cache-Control", "max-age=31556926");
             IOUtils.copy(is, response.getOutputStream());
             is.close();
         }
+    }
 
+    /**
+     * Takes an image id and returns a full size image to the browser as a HttpServletResponse.
+     * NOTE: Setting the width attribute to 0 (zero) will return the original image stream as is in the database.
+     * @param id The unique Id of the Content object which contains the image.
+     * @param response HttpServletResponse
+     * @throws IOException
+     */
+    @GetMapping("/gallery/image/{id}")
+    public void showGalleryFullImage(@PathVariable Long id, HttpServletResponse response) throws IOException {
+
+        response.setContentType("image/jpeg");
+
+        InputStream is = imageService.getImageStream(id, 0); // 0 = original width
+        if (is != null) {
+            response.setHeader("Cache-Control", "max-age=31556926");
+            IOUtils.copy(is, response.getOutputStream());
+            is.close();
+        }
     }
 }

@@ -34,9 +34,6 @@ class IndexControllerIT {
     GalleryItemService galleryItemService;
 
     @Mock
-    ContentService contentService;
-
-    @Mock
     ContentToContentCmd contentToContentCmd;
 
     @Mock
@@ -45,7 +42,7 @@ class IndexControllerIT {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.initMocks(this);
-        this.controller = new IndexController(mockGalleryService, galleryItemService, imageService, contentService, contentToContentCmd);
+        this.controller = new IndexController(mockGalleryService, galleryItemService, imageService, contentToContentCmd);
     }
 
     @Test
