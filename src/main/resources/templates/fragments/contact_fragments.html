@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<meta charset="UTF-8">
+<title>Contact</title>
+</head>
+<body>
+
+<!-- CONTACT PAGE -->>
+
+<div th:fragment="contact_page" class="contacts" id="contact_page">
+
+    <div id="contact_page_content">
+
+        <div class="contact_page_heading">Contact us</div>
+        <div class="contact_paragraph">
+            <div class="contact_paragraph_text">
+                Here comes the info text
+            </div>
+        </div>
+
+        <form id="contact_input" th:action="@{/site/submit-contact-form}" method="post">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                       placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">Your email address is not stored nor shared with
+                    anyone.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Your message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="frc-captcha" data-sitekey="FCMRESTVDJA1EFG3"></div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+</html>

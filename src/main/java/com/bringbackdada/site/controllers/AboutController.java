@@ -18,7 +18,7 @@ public class AboutController {
 
     @RequestMapping({"/site/about-bringbackdada","/site/about-bringbackdada.html"})
     public String getAboutPage(Model model){
-        model.addAttribute("title_text", "Bringbackdada - ABOUT");
+        model.addAttribute("title_text", "Bringbackdada - All about this project and how to contact");
 
         logger.info("--> Calling about.html");
         return "about";
