@@ -1,2 +1,2 @@
 org.springframework.boot.env.EnvironmentPostProcessor=\
-com.bringbackdada.site.env.DockerEnvVariableProcessor
+com.bringbackdada.site.env.EnvVariableProcessor

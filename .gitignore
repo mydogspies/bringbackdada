@@ -10,6 +10,7 @@ db-build/bbd_database_create.sql
 /src/main/resources/application-dev.yml
 /src/main/resources/application-prod.yml
 /src/main/resources/templates/application-h2o.yml
+/src/main/resources/envfiles/
 
 HELP.md
 target/
@@ -53,3 +54,4 @@ build/
 
 ### VS Code ###
 .vscode/
+
