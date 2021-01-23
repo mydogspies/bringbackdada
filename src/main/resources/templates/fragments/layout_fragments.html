@@ -25,7 +25,17 @@
     <script type="text/javascript" src="/js/jquery.detect_swipe.min.js"></script>
 </head>
 
-<!-- GENERAL HEAD CONTENT FOR ALL PAGES -->
+<!-- HEAD BY NO JS RESPONSE -->
+<head th:fragment="head_tag_noscript">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${title_text}">Bringbackdada.com</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/fonts/fonts.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+</head>
+
+<!-- HEAD CONTENT FOR CONTACT PAGE -->
 <head th:fragment="head_tag_contact">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8">

@@ -26,8 +26,14 @@ public class EnvVariableProcessor implements EnvironmentPostProcessor{
 
         Resource captchaApiKey = new ClassPathResource("/envfiles/captcha_api_key.txt");
         Resource captchaSiteKey = new ClassPathResource("/envfiles/captcha_site_key.txt");
+        Resource mailservUser = new ClassPathResource("/envfiles/mailserv_user.txt");
+        Resource mailservKey = new ClassPathResource("/envfiles/mailserv_key.txt");
+        Resource mailservAddress = new ClassPathResource("/envfiles/mailserv_address.txt");
         Properties props = new Properties();
 
+        /*
+        FriendlyCaptcha credentials
+         */
         if (captchaApiKey.exists()) {
             try {
                 String capApiKey = StreamUtils.copyToString(captchaApiKey.getInputStream(), Charset.defaultCharset());
@@ -52,6 +58,48 @@ public class EnvVariableProcessor implements EnvironmentPostProcessor{
             }
         } else {
             logger.warn("EnvVariableProcessor -> ERROR! (captchaSiteKey) no such resource loaded!");
+        }
+
+        /*
+        Mail server credentials
+         */
+        if (mailservUser.exists()) {
+            try {
+                String mailUser = StreamUtils.copyToString(mailservUser.getInputStream(), Charset.defaultCharset());
+                props.put("mail.server.user", mailUser);
+                logger.info("EnvVariableProcessor -> Mailserv user was loaded using envfiles directory");
+            } catch (IOException e) {
+                logger.warn("EnvVariableProcessor -> Error reading loaded mailserv user");
+                throw new RuntimeException(e);
+            }
+        } else {
+            logger.warn("EnvVariableProcessor -> ERROR! (mailservUser) no such resource loaded!");
+        }
+
+        if (mailservKey.exists()) {
+            try {
+                String mailKey = StreamUtils.copyToString(mailservKey.getInputStream(), Charset.defaultCharset());
+                props.put("mail.server.key", mailKey);
+                logger.info("EnvVariableProcessor -> Mailserv key was loaded using envfiles directory");
+            } catch (IOException e) {
+                logger.warn("EnvVariableProcessor -> Error reading loaded mailserv key");
+                throw new RuntimeException(e);
+            }
+        } else {
+            logger.warn("EnvVariableProcessor -> ERROR! (mailservKey) no such resource loaded!");
+        }
+
+        if (mailservAddress.exists()) {
+            try {
+                String mailAddress = StreamUtils.copyToString(mailservAddress.getInputStream(), Charset.defaultCharset());
+                props.put("mail.server.address", mailAddress);
+                logger.info("EnvVariableProcessor -> Mailserv address was loaded using envfiles directory");
+            } catch (IOException e) {
+                logger.warn("EnvVariableProcessor -> Error reading loaded mailserv address");
+                throw new RuntimeException(e);
+            }
+        } else {
+            logger.warn("EnvVariableProcessor -> ERROR! (mailservAddress) no such resource loaded!");
         }
 
         environment.getPropertySources().addLast(new PropertiesPropertySource("appProperties", props));

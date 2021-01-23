@@ -19,6 +19,7 @@ import java.util.Set;
  * IMPORTANT! This class must always load first, before adding any other data to the database.
  * @since 0.0.1
  */
+@Deprecated
 @Component("datainitializer")
 public class DataInitializer {
 
