@@ -76,6 +76,7 @@ public class EnvVariableProcessor implements EnvironmentPostProcessor{
             logger.warn("EnvVariableProcessor -> ERROR! (mailservUser) no such resource loaded!");
         }
 
+
         if (mailservKey.exists()) {
             try {
                 String mailKey = StreamUtils.copyToString(mailservKey.getInputStream(), Charset.defaultCharset());

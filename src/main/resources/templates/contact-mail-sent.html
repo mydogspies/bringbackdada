@@ -9,7 +9,12 @@
 <div class="top_container">
     <div class="index_grid_container">
         <div th:replace="fragments/layout_fragments :: header_public"></div>
-        <div>MAIL SENT!</div>
+
+        <div class="error-messages">
+            <div id="error-header">Your message has been received!</div>
+            <div id="error-body">Bringbackdada is a side project and sometimes is may take a few days for us to reply. Please we ask you for a tiny bit of patience.</div>
+        </div>
+
         <div th:replace="fragments/layout_fragments :: footer_public"></div>
     </div>
 </div>
