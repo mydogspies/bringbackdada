@@ -2,6 +2,8 @@
 /* This script is the ajax call for form submission from /site/contact-mydogspies */
 $(document).ready(function () {
 
+    document.getElementById("col").style.display = 'none';
+
     var form = $("#contactForm");
     form.submit(function (event) {
         // event.preventDefault();
@@ -10,7 +12,7 @@ $(document).ready(function () {
 
     function validateForm() {
 
-        let emailFieldContent = document.getElementsByTagName('input')[3].value;
+        let emailFieldContent = document.getElementsByTagName('input')[4].value;
         if (validateEmailFormat(emailFieldContent)) {
             sendMailDataToServer();
         } else {

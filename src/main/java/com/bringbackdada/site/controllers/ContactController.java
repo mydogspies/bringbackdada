@@ -40,13 +40,20 @@ public class ContactController {
     }
 
     @PostMapping(value = "/site/submit-contact-form")
-    public String processContactForm(@ModelAttribute FormMailData data, BindingResult result) {
+    public String processContactForm(@ModelAttribute FormMailData data, BindingResult result,
+                                     @RequestParam("postcode") String botcheck) {
 
         if (result.hasErrors()) {
             System.out.println("FREAKING ERROR");
+            // TODO throw exception
             return "404error"; // TODO should really return a 503
         } else {
-            System.out.println(data.getFirstName());
+            // check for bots
+            if(!botcheck.isEmpty()) {
+                // TODO return error
+            }
+
+            // TODO show submitted info on the confirmation page
             return "contact-mail-sent";
         }
 
@@ -56,13 +63,10 @@ public class ContactController {
 //        final String apikey = environment.getProperty("captcha.api.key");
 //        final String sitekey = environment.getProperty("captcha.site.key");
 
-        // then check our internal honey pot
-//        // TODO implement honey pot
-//
 //        // forward message to admin address
 //        // TODO implement mailing logic
 
-        // return "contact-mail-sent";
+
     }
 
 }

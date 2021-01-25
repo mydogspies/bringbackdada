@@ -9,16 +9,18 @@ import lombok.Setter;
 @NoArgsConstructor
 public class FormMailData {
 
-    private String firstName;
-    private String lastName;
-    private String mailAddress;
-    private String message;
+    private String onenamefirst;
+    private String twonamelast;
+    private String yoursomeaddressmail;
+    private String talktome;
 
     @Override
     public String toString() {
         return "FormMailData{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                "first name='" + onenamefirst + '\'' +
+                ", last name='" + twonamelast + '\'' +
+                ", email address='" + yoursomeaddressmail + '\'' +
+                ", message='" + talktome + '\'' +
                 '}';
     }
 }
