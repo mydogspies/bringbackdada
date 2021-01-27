@@ -47,14 +47,16 @@ public class ContactController {
                                      @RequestParam("postcode") String botcheck) {
 
         if (result.hasErrors()) {
+            logger.error("processContactForm(): An error with the form/ajax submission triggered a 404 - Bad Request.");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Something went wrong with the contact form. Please try again or contact admin at https://github.com/mydogspies/bringbackdada");
         } else {
             // check for bots
             if(!botcheck.isEmpty()) {
+                logger.debug("processContactForm(): The form honeypot logic triggered a 404 - Bad Request.");
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No automated form requests allowed! Go away bot!");
             }
 
-            // TODO refactor at some point the from and to address logic
+            // TODO refactor at some point the "from" and "to" address logic
             final String internalFromAddress = environment.getProperty("mail.server.user");
             String toAddress = internalFromAddress; // in this case simply the same
             String subject = "Contact form submission <bringbackada.com> ";
@@ -66,21 +68,9 @@ public class ContactController {
 
             sender.sendContactFormMessage(contactMail);
 
-
-            // TODO show submitted info on the confirmation page
+            logger.info("processContactForm(): Message received via Contact form.");
             return "contact-mail-sent";
         }
-
-
-        //        // first check FriendlyCaptcha response
-//        final String url = "https://friendlycaptcha.com/api/v1/siteverify";
-//        final String apikey = environment.getProperty("captcha.api.key");
-//        final String sitekey = environment.getProperty("captcha.site.key");
-
-//        // forward message to admin address
-//        // TODO implement mailing logic
-
-
     }
 
 }
