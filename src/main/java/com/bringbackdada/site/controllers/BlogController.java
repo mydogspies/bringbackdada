@@ -149,7 +149,7 @@ public class BlogController {
     public ModelAndView dataNotFound404(Model model) {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("404error");
+        modelAndView.setViewName("error-404");
 
         model.addAttribute("title_text", "Bringbackdada | No blogs found");
 

@@ -4,7 +4,6 @@ import com.bringbackdada.site.commands.ContentCommand;
 import com.bringbackdada.site.commands.converters.ContentToContentCmd;
 import com.bringbackdada.site.model.Gallery;
 import com.bringbackdada.site.model.GalleryItem;
-import com.bringbackdada.site.services.ContentService;
 import com.bringbackdada.site.services.GalleryItemService;
 import com.bringbackdada.site.services.GalleryService;
 import com.bringbackdada.site.services.ImageService;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -65,7 +63,7 @@ public class IndexController {
 
             }
         } else {
-            return "404error";
+            return "error-404";
         }
 
         logger.debug("contentList = " + contentList);

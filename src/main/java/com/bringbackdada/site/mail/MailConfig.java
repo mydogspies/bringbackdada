@@ -25,12 +25,13 @@ public class MailConfig {
 
         JavaMailSenderImpl emailSender = new JavaMailSenderImpl();
         emailSender.setHost(server);
-        emailSender.setPort(587);
+        emailSender.setPort(465);
         emailSender.setUsername(user);
         emailSender.setPassword(password);
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.ssl.enable", "true");
         props.put("mail.smtp.ssl.protocols", "TLSv1.2");
         props.put("mail.smtp.starttls.enable", "true");
         emailSender.setJavaMailProperties(props);

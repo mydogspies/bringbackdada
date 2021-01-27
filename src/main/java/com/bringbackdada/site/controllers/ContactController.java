@@ -6,10 +6,13 @@ import com.bringbackdada.site.mail.MailService;
 import com.bringbackdada.site.model.FormMailData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 /**
  * The controller for the contact page
@@ -21,9 +24,11 @@ public class ContactController {
 
     private final Logger logger = LoggerFactory.getLogger(ContactController.class);
     private final MailService sender;
+    private final Environment environment;
 
-    public ContactController(MailConfig config) {
+    public ContactController(MailConfig config, Environment environment) {
         this.sender = new MailService(config.emailSender());
+        this.environment = environment;
     }
 
 
@@ -42,22 +47,23 @@ public class ContactController {
                                      @RequestParam("postcode") String botcheck) {
 
         if (result.hasErrors()) {
-            System.out.println("FREAKING ERROR");
-            // TODO throw exception
-            return "404error"; // TODO should really return a 503
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Something went wrong with the contact form. Please try again or contact admin at https://github.com/mydogspies/bringbackdada");
         } else {
             // check for bots
             if(!botcheck.isEmpty()) {
-                // TODO return error
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No automated form requests allowed! Go away bot!");
             }
 
-            ContactMail contactMail = new ContactMail(
-                    data.getYoursomeaddressmail(),
-                    "admin@mydogspies.com",
-                    "Contact form submission",
-                    data.getTalktome());
+            // TODO refactor at some point the from and to address logic
+            final String internalFromAddress = environment.getProperty("mail.server.user");
+            String toAddress = internalFromAddress; // in this case simply the same
+            String subject = "Contact form submission <bringbackada.com> ";
+            String body = "Following message was submitted via Contact page form:\n" +
+                    "Sender> " + data.getOnenamefirst() + " " + data.getTwonamelast() + "\n" +
+                    "Address> " + data.getYoursomeaddressmail() + "\n\n" +
+                    data.getTalktome();
+            ContactMail contactMail = new ContactMail(internalFromAddress, toAddress, subject, body);
 
-            System.out.println(contactMail.toString());
             sender.sendContactFormMessage(contactMail);
 
 

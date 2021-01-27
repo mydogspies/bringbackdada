@@ -6,7 +6,6 @@ $(document).ready(function () {
 
     var form = $("#contactForm");
     form.submit(function (event) {
-        // event.preventDefault();
         validateForm();
     });
 
