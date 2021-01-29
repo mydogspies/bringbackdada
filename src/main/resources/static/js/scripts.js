@@ -1,16 +1,13 @@
 window.onload = function() {
-    console.log("scripts loaded")
-    var loadFunc = onLoadFuncs();
+    let loadFunc = onLoadFuncs();
 }
 
 /* FUNCTIONS TO BE CALLED ON EVERY LOAD */
 function onLoadFuncs() {
 
-    var path = window.location.pathname;
-    var page = path.split("/").pop();
+    let path = window.location.pathname;
+    let page = path.split("/").pop();
     styleCurrentPageLink(page);
-
-    console.log(page);
 
     /* this we load ofr the main index page */
     if (page === "") {
@@ -19,7 +16,7 @@ function onLoadFuncs() {
 
     /* this we load for the projects page with multiple galleries on it */
     if (page === "photo-projects") {
-        var macy = new Array(galleryCount);
+        let macy = new Array(galleryCount);
         for (let i = 1; i <= galleryCount; i++) {
             loadProjectGallery(macy, i);
         }
@@ -40,7 +37,10 @@ function styleCurrentPageLink(page) {
 
     /* and all the cases in the header */
     const element = document.getElementById(page);
-    element.classList.add('onCurrentPage');
+    if (element) {
+        element.classList.add('onCurrentPage');
+    }
+
 }
 
 /* MASONRY GALLERY */
@@ -48,7 +48,7 @@ function styleCurrentPageLink(page) {
 /* This is the masonry func for the home/index page */
 function loadIndexGallery() {
 
-    var macy = Macy({
+    let macy = Macy({
         container: '#macy-container',
         trueOrder: true,
         waitForImages: false,
@@ -70,7 +70,6 @@ function loadIndexGallery() {
 
     window.addEventListener("resize", function(){
         macy.recalculate(true);
-        console.log("resize");
     }, true);
 }
 
@@ -101,25 +100,4 @@ function loadProjectGallery(macy,id) {
     window.addEventListener("resize", function(){
         macy[id].recalculate(true);
     }, true);
-}
-
-/* FORM SCRIPTS */
-
-function submitAddContentForm() {
-    $.ajax(
-        {
-            type: "POST",
-            data: $("#content_input_form").serialize(),
-            cache: false,
-            url: "/admin/save-new-content",
-            success: function(data)
-            {
-                alert("Data saved");
-            },
-            error: function()
-            {
-                alert("Error - Data not saved");
-            }
-
-        });
 }

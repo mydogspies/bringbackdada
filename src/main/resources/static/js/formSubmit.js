@@ -2,23 +2,27 @@
 /* This script is the ajax call for form submission from /site/contact-mydogspies */
 $(document).ready(function () {
 
-    document.getElementById("col").style.display = 'none';
+    let elems = document.getElementsByClassName('coll');
+    for (let i = 0; i < elems.length; i++) {
+        elems[i].style.display = 'none';
+    }
 
-    var form = $("#contactForm");
+    // init friendlycaptcha
+    const element = document.querySelector("#captcha");
+    const fWidget = new friendlyChallenge.WidgetInstance(element);
+
+    // this is the main form event
+    let form = $("#contactForm");
+    getIP();
     form.submit(function (event) {
-        validateForm();
-    });
-
-    function validateForm() {
-
-        let emailFieldContent = document.getElementsByTagName('input')[4].value;
-        if (validateEmailFormat(emailFieldContent)) {
+        if (fWidget.valid) {
             sendMailDataToServer();
         } else {
-            alert('Email address does not have valid format!')
+            alert("You must verify you are not a robot!");
             return false;
         }
-    }
+
+    });
 
     function sendMailDataToServer() {
         $.ajax({
@@ -26,20 +30,57 @@ $(document).ready(function () {
             url: form.attr("action"),
             data: form.serialize(),
             success: function (response) {
-                // TODO implement
+                console.log(response);
+                fWidget.destroy();
             },
-            error: function(jqXHR, textStatus, errorThrown) {
-                // TODO send error logs to site admin - not console!
+            error: function (jqXHR, textStatus, errorThrown) {
+                // TODO send error to log
+                fWidget.reset();
                 console.log(textStatus);
                 console.log(errorThrown);
             }
         });
     }
 
-    function validateEmailFormat(emailAddress) {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(emailAddress).toLowerCase());
+    function getIP() {
+        const ipFormInput = document.getElementById('ip');
+        fetch('https://api.ipify.org', {mode: 'cors'})
+            .then((response) => response.text())
+            .then(data => {
+                ipFormInput.value = data;
+                console.log(data);
+            })
+            .catch((err) => {
+                // TODO send to log
+                console.error(`Error getting IP Address: ${err}`)
+            })
     }
+
+    // deal with tags in the textarea
+    let errorMessage = "Please match the requested format.";
+    $(this).find("textarea").on("input change propertychange", function () {
+
+        let pattern = $(this).attr("pattern");
+
+        if (typeof pattern !== typeof undefined && pattern !== false) {
+            let patternRegex = new RegExp("^" + pattern.replace(/^\^|\$$/g, '') + "$", "g");
+            let hasError = !$(this).val().match(patternRegex);
+
+            if (typeof this.setCustomValidity === "function") {
+                this.setCustomValidity(hasError ? errorMessage : "");
+            } else {
+                $(this).toggleClass("error", !!hasError);
+                $(this).toggleClass("ok", !hasError);
+
+                if (hasError) {
+                    $(this).attr("title", errorMessage);
+                } else {
+                    $(this).removeAttr("title");
+                }
+            }
+        }
+    });
+
 
 });
 

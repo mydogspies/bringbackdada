@@ -13,11 +13,6 @@
     <div id="contact_page_content">
 
         <div class="contact_page_heading">Contact us</div>
-        <div class="contact_paragraph">
-            <div class="contact_paragraph_text">
-                Here comes the info text
-            </div>
-        </div>
 
         <form id="contactForm" th:action="@{/site/submit-contact-form}" th:object="${formdata}" method="post">
             <div class="form-group">
@@ -25,17 +20,18 @@
                     <div class="col">
                         <label for="onenamefirst">First name</label>
                         <input type="text" class="form-control" placeholder="First name" autofocus
-                               id="onenamefirst" name="onenamefirst" required="required" th:field="*{onenamefirst}"/>
+                               id="onenamefirst" name="onenamefirst" required="required"
+                               maxlength="20" th:field="*{onenamefirst}"/>
                     </div>
                     <div class="col">
                         <label for="twonamelast">Last name</label>
                         <input type="text" class="form-control" placeholder="Last name"
-                               id="twonamelast" name="twonamelast" required="required" th:field="*{twonamelast}"/>
+                               id="twonamelast" name="twonamelast" required="required"
+                               maxlength="10" th:field="*{twonamelast}"/>
                     </div>
-                    <div id="col">
+                    <div class="coll">
                         <label for="postcode">Your postcode</label>
-                        <input type="text" class="form-control"
-                               id="postcode" name="postcode"/>
+                        <input type="text" id="postcode" name="postcode"/>
                     </div>
                 </div>
 
@@ -43,20 +39,27 @@
             <div class="form-group">
                 <label for="yoursomeaddressmail">Email address</label>
                 <input type="email" class="form-control" id="yoursomeaddressmail" aria-describedby="emailHelp"
-                       placeholder="Enter your email" required="required" th:field="*{yoursomeaddressmail}">
+                       placeholder="Enter your email" required="required"
+                       maxlength="60" th:field="*{yoursomeaddressmail}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 <small id="emailHelp" class="form-text text-muted">Your email address is not stored nor shared with
                     anyone.</small>
             </div>
 
             <div class="form-group">
                 <label for="talktome">Your message</label>
-                <textarea class="form-control" id="talktome" rows="3"
-                          required="required" th:field="*{talktome}"></textarea>
+                <textarea class="form-control" id="talktome" rows="3" maxlength="500" name="messageArea"
+                          required="required" th:field="*{talktome}" pattern="([A-z0-9À-ž\s\_.,!?'/$]){2,}"></textarea>
+                <small id="messageHelp" class="form-text text-muted">No HTML tags or links are allowed in the message.</small>
             </div>
 
-            <div class="frc-captcha" data-sitekey="FCMRESTVDJA1EFG3" data-start="none"></div>
+            <div id="captcha" class="frc-captcha" data-sitekey="FCMRESTVDJA1EFG3" data-start="auto"></div>
 
-            <button type="submit" class="btn btn-primary" id="submitButton"
+            <div class="coll">
+                <label for="ip"></label>
+                <input type="text" id="ip" name="ip"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitContactButton"
                     name="submitButton">Submit</button>
         </form>
     </div>

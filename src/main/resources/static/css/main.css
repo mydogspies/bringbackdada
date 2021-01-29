@@ -414,6 +414,10 @@ a single column.
   color: #c4cfbe;
 }
 
+#submitContactButton {
+  margin-top: 20px;
+}
+
 /* HEADERS and FOOTERS */
 
 .headers,
