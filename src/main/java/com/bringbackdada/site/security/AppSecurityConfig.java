@@ -31,7 +31,10 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/blog/image/*",
                         "/project/image/*",
                         "/project/image/thumb/*",
-                        "/blog/*")
+                        "/blog/*",
+                        "/bootstrap-4.5.2-dist/js/*",
+                        "/bootstrap-4.5.2-dist/css/*",
+                        "/friendlycaptcha/*")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()

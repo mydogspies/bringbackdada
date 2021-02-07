@@ -48,7 +48,6 @@ $(document).ready(function () {
             .then((response) => response.text())
             .then(data => {
                 ipFormInput.value = data;
-                console.log(data);
             })
             .catch((err) => {
                 // TODO send to log
