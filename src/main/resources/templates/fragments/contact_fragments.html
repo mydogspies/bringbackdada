@@ -10,7 +10,7 @@
 
 <div th:fragment="contact_page" class="contacts" id="contact_page">
 
-    <div id="contact_page_content">
+    <div class="contact_page_content">
 
         <div class="contact_page_heading">Contact us</div>
 
@@ -41,7 +41,7 @@
                 <input type="email" class="form-control" id="yoursomeaddressmail" aria-describedby="emailHelp"
                        placeholder="Enter your email" required="required"
                        maxlength="60" th:field="*{yoursomeaddressmail}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                <small id="emailHelp" class="form-text text-muted">Your email address is not stored nor shared with
+                <small id="emailHelp" class="form-text text-muted">No caps, all small letters! Your email address is not stored nor shared with
                     anyone.</small>
             </div>
 
@@ -64,5 +64,101 @@
         </form>
     </div>
 </div>
+
+<!-- MODEL FORM PAGE -->>
+
+<div th:fragment="model_page" class="contacts" id="model_page">
+
+    <div class="model_page_content">
+
+        <div class="contact_page_heading">Apply to model with bri+gba*kDADA</div>
+
+        <div class="contact_paragraph">
+            <div class="contact_paragraph_text">
+                You can show your interest in modelling for this project using the form below. Just a head's up from
+                start - you must be minimum <span
+                    class="about_paragraph_small_text_bold_underscore">18 years old</span> (proof expected), <span
+                    class="about_paragraph_small_text">reside in Berlin (Germany)</span> during the time of the shooting
+                and have read the model release template beforehand.
+
+                </div>
+
+        </div>
+        <div class="contact_paragraph">
+            <div class="contact_paragraph_text">In general bri+gba*kDADA is open to any gender
+                and body type but specific shots/projects/series may have very specific requirements. Please, specify
+                if you are ok with <span
+                        class="about_paragraph_small_text">nude/semi-nude</span> work in your message about yourself. Also tell us if you have specific
+                talents or experience, such as dance, prior modelling, acting or any other form of performance experience.
+                Thank you for showing interest! We are looking forward to talking to you!
+            </div>
+        </div>
+
+        <form id="modelForm" th:action="@{/site/submit-model-form}" th:object="${modeldata}" method="post">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="myfirstnome">First name</label>
+                        <input type="text" class="form-control" placeholder="First name" autofocus
+                               id="myfirstnome" name="onenamefirst" required="required"
+                               maxlength="20" th:field="*{myfirstnome}"/>
+                    </div>
+                    <div class="col">
+                        <label for="andthelastone">Last name</label>
+                        <input type="text" class="form-control" placeholder="Last name"
+                               id="andthelastone" name="andthelastone" required="required"
+                               maxlength="10" th:field="*{andthelastone}"/>
+                    </div>
+                    <div class="coll">
+                        <label for="postcode">Your dad's home town postcode</label>
+                        <input type="text" id="postcode" name="postcode"/>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="emailmesomestuff">Email address</label>
+                <input type="email" class="form-control" id="emailmesomestuff" aria-describedby="emailHelp"
+                       placeholder="Enter your email" required="required"
+                       maxlength="60" th:field="*{emailmesomestuff}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <small id="emailHelp" class="form-text text-muted">Your email address is not stored nor shared with
+                    anyone.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="whoami">Tell us a bit about yourself</label>
+                <textarea class="form-control" id="whoami" rows="3" maxlength="500" name="messageArea"
+                          required="required" th:field="*{whoami}" pattern="([A-z0-9À-ž\s\_.,!?'/$]){2,}"></textarea>
+                <small id="messageHelp" class="form-text text-muted">No HTML tags or links are allowed in the message.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="linkaway">Link to images or portfolio</label>
+                <input type="url" class="form-control" placeholder="URL"
+                       id="linkaway" name="linkaway"
+                       maxlength="60" th:field="*{linkaway}"
+                       pattern="https?://.+">
+                <small id="messageHelp" class="form-text text-muted">One or more half or full body images of you. We never store or download your images.</small>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="yesiknow"
+                       name="yesiknow" required>
+                <label for="yesiknow"> Yes, I read the model release template here!</label>
+            </div>
+
+            <div id="captcha" class="frc-captcha" data-sitekey="FCMRESTVDJA1EFG3" data-start="auto"></div>
+
+            <div class="coll">
+                <label for="ip"></label>
+                <input type="text" id="ip" name="ip"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitModelButton"
+                    name="submitButton">Submit</button>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

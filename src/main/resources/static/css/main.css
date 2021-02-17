@@ -126,6 +126,21 @@ in fragments, only as the container for page specific content. See home.html as 
   color: #c4cfbe;
 }
 
+.about_paragraph_small_text_bold {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #c4cfbe;
+}
+
+.about_paragraph_small_text_bold_underscore {
+  font-family: 'OpenSans-Regular', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #c4cfbe;
+}
+
 /* PHOTO SERIES */
 
 .projects {
@@ -378,8 +393,15 @@ a single column.
 
 /* FORMS */
 
-#contact_page_content {
+.contact_page_content {
   width: 50%;
+  margin: 0 auto;
+  padding-top: 22px;
+  padding-bottom: 16px;
+}
+
+.model_page_content {
+  width: 60%;
   margin: 0 auto;
   padding-top: 22px;
   padding-bottom: 16px;
@@ -398,7 +420,7 @@ a single column.
 }
 
 .contact_paragraph {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   margin: 0 auto;
 }
 

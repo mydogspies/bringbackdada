@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head th:replace="fragments/layout_fragments :: head_tag_contact">
+    <title>contact</title>
+</head>
+
+<body>
+<div class="top_container">
+    <div class="index_grid_container">
+        <div th:replace="fragments/layout_fragments :: header_public"></div>
+        <div th:replace="fragments/contact_fragments :: model_page" th:with="${modeldata}"></div>
+        <div th:replace="fragments/layout_fragments :: footer_public"></div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/formModelSubmit.js"></script>
+<script type="text/javascript" src="/bootstrap-4.5.2-dist/js/bootstrap.bundle.js"></script>
+<script type="module" src="/friendlycaptcha/widget.module.min.js" async defer></script>
+<script nomodule src="/friendlycaptcha/widget.min.js" async defer></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<noscript>
+    <style>html {
+        display: none;
+    }</style>
+    <meta http-equiv="refresh" content="0.0;url=/site/noscript">
+</noscript>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head th:replace="fragments/layout_fragments :: head_tag_contact">
+    <title>model mail sent</title>
+</head>
+
+<body>
+<div class="top_container">
+    <div class="index_grid_container">
+        <div th:replace="fragments/layout_fragments :: header_public"></div>
+
+        <div class="error-messages">
+            <div id="error-header">Thank you so much for your interest in modelling!</div>
+            <div id="error-body">Bringbackdada is a side project and sometimes is may take a few days for us to reply. Please, we ask you for a tiny bit of patience.</div>
+        </div>
+
+        <div th:replace="fragments/layout_fragments :: footer_public"></div>
+    </div>
+</div>
+</body>
+</html>

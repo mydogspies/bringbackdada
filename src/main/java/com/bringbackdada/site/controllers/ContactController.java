@@ -4,6 +4,7 @@ import com.bringbackdada.site.mail.ContactMail;
 import com.bringbackdada.site.mail.MailConfig;
 import com.bringbackdada.site.mail.MailService;
 import com.bringbackdada.site.model.FormMailData;
+import com.bringbackdada.site.model.FormModelData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
@@ -37,9 +38,10 @@ public class ContactController {
         this.environment = environment;
     }
 
+    // CONTACT FORM //
 
     @GetMapping({"/site/contact-bringbackdada", "/site/contact-bringbackdada.html"})
-    public String getAboutPage(Model model) {
+    public String getContactPage(Model model) {
 
         model.addAttribute("formdata", new FormMailData());
         model.addAttribute("title_text", "Bringbackdada - Contact Form");
@@ -89,6 +91,63 @@ public class ContactController {
         logger.info("processContactForm(): Message received via Contact form.");
 
         return "contact-mail-sent";
+
+    }
+
+    // MODEL FORM //
+
+    @GetMapping({"/site/model-for-bringbackdada", "/site/model-for-bringbackdada.html"})
+    public String getModelFormPage(Model model) {
+
+        model.addAttribute("modeldata", new FormModelData());
+        model.addAttribute("title_text", "Bringbackdada - Model Form");
+
+        logger.info("--> Calling model.html");
+        return "model";
+    }
+
+    @PostMapping(value = "/site/submit-model-form")
+    public String processModelForm(@ModelAttribute FormModelData data, BindingResult result,
+                                     @RequestParam("postcode") String botcheck,
+                                     @RequestParam("ip") String ip, Model model) {
+
+        // check for incoming errors
+        //
+        if (result.hasErrors()) {
+            logger.error("processContactForm(): An error with the form/ajax submission triggered a 404 - Bad Request.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Something went wrong with the contact form. Please try again or contact admin at https://github.com/mydogspies/bringbackdada");
+        }
+        if (!botcheck.isEmpty()) {
+            logger.debug("processContactForm(): The form honeypot logic triggered a 404 - Bad Request.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No automated form requests allowed! Go away bot!");
+        }
+
+        // validate the incoming data
+        //
+        // TODO additional validation logic
+
+
+        final String internalFromAddress = environment.getProperty("mail.server.user");
+        String ipaddress = "n/a";
+        if (!ip.equals("")) {
+            ipaddress = ip;
+        }
+        String toAddress = internalFromAddress; // in this case simply the same
+        String subject = "Model form submission <bringbackdada.com> ";
+        String body = "Following message was submitted via Model page from from ip [" + ipaddress + "]:\n" + // TODO format this all properly!
+                "Sender> " + data.getMyfirstnome() + " " + data.getAndthelastone() + "\n" +
+                "Address> " + data.getEmailmesomestuff() + "\n\n" +
+                "Link" + data.getLinkaway() + "\n\n" +
+                data.getWhoami();
+        ContactMail contactMail = new ContactMail(internalFromAddress, toAddress, subject, body);
+
+        sender.sendContactFormMessage(contactMail);
+
+        // TODO respond back with sent content showing on the page
+        model.addAttribute("title_text", "Bringbackdada - Thank you for your interest in modelling!");
+        logger.info("processContactForm(): Message received via Model form.");
+
+        return "model-mail-sent";
 
     }
 

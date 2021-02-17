@@ -1,5 +1,5 @@
 /*! Common.js | (GNU v3) Peter A. Mankowski) | github.com/mydogspies */
-/* This script is the ajax call for form submission from /site/contact-bringbackdada */
+/* This script is the ajax call for form submission from /site/model-for-bringbackdada */
 $(document).ready(function () {
 
     let elems = document.getElementsByClassName('coll');
@@ -11,9 +11,14 @@ $(document).ready(function () {
     const element = document.querySelector("#captcha");
     const fWidget = new friendlyChallenge.WidgetInstance(element);
 
+    // define the checkbox
+    let checkbox = document.getElementById('yesiknow');
+
     // this is the main form event
     let form = $("#contactForm");
     getIP();
+
+
     form.submit(function (event) {
         if (fWidget.valid) {
             sendMailDataToServer();
